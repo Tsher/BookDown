@@ -1,0 +1,1300 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0063)http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML 
+xmlns="http://www.w3.org/1999/xhtml"><HEAD><META content="IE=10.000" 
+http-equiv="X-UA-Compatible">
+		     
+<SCRIPT id="allmobilize" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/allmobilize.min.js" charset="utf-8"></SCRIPT>
+
+<META http-equiv="Cache-Control" content="no-transform"><LINK href="#" rel="alternate" 
+media="handheld">		 <TITLE>深入浅出Node.js（八）：Connect模块解析（之二）静态文件中间件  </TITLE>    	
+	 <META http-equiv="pragma" content="no-cache"> 
+<META http-equiv="cache-control" content="no-cache"> 
+<META http-equiv="expires" content="0"> 
+<META http-equiv="content-type" content="text/html; charset=utf-8"> 
+<META name="copyright" content="© 2006 C4Media"> 
+<META name="google-site-verification" content="0qInQx_1WYOeIIbxnh7DnXlw1XOxNgAYakO2k4GhNnY"> 
+<META name="msapplication-TileColor" content="#ffffff"> 
+<META name="msapplication-TileImage" content="/styles/i/logo.jpg"> 
+<META content="3eac1729a8bbe046" property="wb:webmaster">				 <LINK href="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/css.css" 
+rel="stylesheet" type="text/css">     <LINK href="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/site.css" 
+rel="stylesheet" type="text/css" media="screen">     <LINK href="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/site_zh.css" 
+rel="stylesheet" type="text/css" media="screen">     <LINK href="http://infoqstatic.com/styles/i/logo-big.jpg" 
+rel="image_src">     <LINK href="http://infoqstatic.com/favicon.ico" rel="shortcut icon" 
+type="image/x-icon">     <LINK href="http://infoqstatic.com/apple-touch-icon.png" 
+rel="apple-touch-icon">		 <LINK href="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/jquery.jscrollpane.css" 
+rel="stylesheet" type="text/css">     
+<SCRIPT type="text/javascript">
+        var InfoQConstants = {};
+        InfoQConstants.language = 'zh';
+        InfoQConstants.countryCode = '/cn';
+    </SCRIPT>
+     
+<SCRIPT src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/combinedJs.js" type="text/javascript"></SCRIPT>
+         
+<SCRIPT type="text/javascript">
+            
+                var JSi18n = JSi18n || {}; // define only if not already defined
+                JSi18n.error='错误';
+                JSi18n.login_unverifiedAccount='未验证的账号';
+                JSi18n.contentSummary_showPresentations_1='整理准备中，敬请期待';
+                JSi18n.contentSummary_showPresentations_2='我们致力于为您提供来自全球业界及中国本土社区顶尖技术大会精彩的中英文专家演讲的视频，目前资料正在编辑整理中，将于近期发布。';
+                JSi18n.contentSummary_showPresentations_3='感谢您的支持与耐心等待！';
+                JSi18n.contentSummary_showInterviews_1='';
+                JSi18n.contentSummary_showInterviews_2='';
+                JSi18n.contentSummary_showInterviews_3='';
+                JSi18n.contentSummary_showMinibooks_1='';
+                JSi18n.contentSummary_showMinibooks_2='';
+                JSi18n.login_sendingRequest='发送请求……';
+                JSi18n.bookmark_saved='<q>&nbsp;&nbsp;&nbsp;已保存&nbsp;&nbsp;&nbsp;&nbsp;</q>';
+                JSi18n.bookmark_error='<q style=color:black;>&nbsp;&nbsp;&nbsp;出错&nbsp;&nbsp;&nbsp;&nbsp;</q>';
+                JSi18n.categoryManagement_showpopup_viewAllLink_viewAllPrefix='显示所有“';
+                JSi18n.categoryManagement_showpopup_viewAllLink_viewAllSuffix='”内容';
+                JSi18n.categoryManagement_showpopup_includeExcludeLink_Exclude='过滤';
+                JSi18n.categoryManagement_showpopup_includeExcludeLink_Include='取消过滤';
+            
+        </SCRIPT>
+     
+<SCRIPT type="text/javascript">
+        function createOverFunction(i) {
+            var pixels = i * 129;
+            return function() {
+            	$('#personas_' + i).addClass('selected');
+                $('ul.menu > li .top_submenu.c' + i).css('left','-' + pixels + 'px');
+            }
+        };
+        function createOutFunction(i) {
+            return function() {
+                $('ul.menu > li .top_submenu.c' + i).css('left','-999em');
+                $('#personas_' + i).removeClass('selected');
+            }
+        }
+        $(function() {
+            for (var i = 0; i < 5; i++) {
+                $('ul.menu > li').has('.top_submenu.c' + i).hoverIntent({
+                    sensitivity: 15,
+                    interval: 150,
+                    timeout:200,
+                    over: createOverFunction(i),
+                    out: createOutFunction(i)
+                });
+            }
+        });
+    </SCRIPT>
+	 
+<SCRIPT type="text/javascript">
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+	var gads = document.createElement('script');
+	gads.async = true;
+	gads.type = 'text/javascript';
+	var useSSL = 'https:' == document.location.protocol;
+	gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+	var node = document.getElementsByTagName('script')[0];
+	node.parentNode.insertBefore(gads, node);
+})();
+
+
+googletag.cmd.push(function() {
+	googletag.defineSlot('/5286733/zh_geo_banner_bottom', [728, 90], 'id_geo_banner_ad').addService(googletag.pubads());
+	googletag.defineSlot('/5286733/zh_300x250_banner_top', [300, 250], 'id_300x250_banner_top').addService(googletag.pubads());
+	googletag.defineSlot('/5286733/zh_300x250_banner_bottom', [300, 250], 'id_300x250_banner_bottom').addService(googletag.pubads());
+	googletag.defineSlot('/5286733/zh_textlink1', [250, 60], 'id_ad_textlink1').addService(googletag.pubads());
+	googletag.defineSlot('/5286733/zh_textlink2', [250, 60], 'id_ad_textlink2').addService(googletag.pubads());
+	googletag.defineSlot('/5286733/zh_textlink3', [250, 60], 'id_ad_textlink3').addService(googletag.pubads());
+/*	googletag.defineSlot('/5286733/zh_textlink4', [120, 100], 'id_ad_textlink4').addService(googletag.pubads());
+	googletag.defineSlot('/5286733/zh_textlink5', [120, 100], 'id_ad_textlink5').addService(googletag.pubads());*/
+	googletag.defineSlot('/5286733/zh_300x250_category', [300, 250], 'id_300x250_category').addService(googletag.pubads());
+	googletag.defineSlot('/5286733/zh_300x250_banner_searchResults', [300, 250], 'id_300x250_banner_searchResults').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.pubads().collapseEmptyDivs();
+	googletag.enableServices();
+});
+</SCRIPT>
+		 
+<SCRIPT type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()])</SCRIPT>
+	     
+<SCRIPT src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/forum.js" type="text/javascript"></SCRIPT>
+	 
+<META content="/resource/articles/nodejs-8-connect-module-part-2/zh/smallimage/nodejs.jpg" 
+property="og:image">	 <LINK href="/resource/articles/nodejs-8-connect-module-part-2/zh/smallimage/nodejs.jpg" 
+rel="image_src">	 
+<META name="keywords" content="nodejs 8 connect module part 2,语言 &amp; 开发,深入浅出Node.js,专栏,Node.js,">
+	 
+<META name="description" content="本文是深入浅出Node.js专栏的第八篇文章，主要讲述了Connect作为静态文件中间件的使用时的缓存策略、动静分离等。">
+	 
+<META name="tprox" content="1343278800000">                 
+<SCRIPT type="text/javascript">
+            $(function() {
+                var box = $('.related_sponsors.visible.stacked');
+                if (box.length === 0) {
+                    return;
+                }
+                var nextSibling = $(box).next();
+                
+                if ($('#lowerFullwidthVCR').length === 0) {
+                    moveLowerInThePage(box);
+                    return;
+                }
+                
+                if (blockElement(nextSibling)) {
+                    moveLowerInThePage(box);
+                    return;
+                }
+                
+                while (!blockElement($(nextSibling).next())) {
+                        nextSibling = $(nextSibling).next();
+                        if (firstLowerThanSecond(nextSibling, box)) {
+                            return;
+                        }
+                }
+                moveLowerInThePage(box);
+
+                function blockElement(elem) {
+                    if ($(elem).prop('tagName') === 'BLOCKQUOTE'
+                        || $(elem).prop('tagName') === 'IMG'
+                        || $(elem).prop('tagName') === 'PRE'
+                        || ($(elem).prop('tagName') === 'P' && $(elem).children().length === 1 && $(elem).children('img').length === 1)) {
+                        return true;
+                    }
+                    return false;
+                }
+
+                function firstLowerThanSecond(elem1, elem2) {
+                    var elem1BottomYCoordinate = $(elem1).offset().top + $(elem1).height()
+                    var elem2BottomYCoordinate = $(elem2).offset().top + $(elem2).height();
+                    if (elem1BottomYCoordinate > elem2BottomYCoordinate) {
+                        return true;
+                    }
+                    return false;
+                }
+
+                function moveLowerInThePage(box) {
+                    if ($('#lowerFullwidthVCR').length !== 0) {
+                        $('#lowerFullwidthVCR').replaceWith(box);
+                    }
+                    $(box).removeClass('stacked');
+                }
+            });
+        </SCRIPT>
+    	 
+<META content="http://infoqstatic.com/styles/i/logo-big.jpg" 
+property="og:image"> 
+<META name="GENERATOR" content="MSHTML 10.00.9200.16798"></HEAD> 
+<BODY>
+<DIV class="intbt"><A title="bt" href="http://www.infoq.com/int/bt">BT</A>
+	 </DIV>
+<DIV id="wrapper" style="background-color: rgb(255, 255, 255);"><!--	#######		SITE START	#########	 -->
+	 
+<DIV id="site">
+<DIV id="topInfo">
+<UL class="list1">
+  <LI><A title="关于我们" href="http://www.infoq.com/cn/aboutus">关于我们</A></LI>       
+            
+  <LI><A title="让大家在InfoQ上听见你的声音" 
+  href="http://www.infoq.com/cn/contribute">让大家在InfoQ上听见你的声音</A></LI>            
+              	 
+  <LI><A title="合作伙伴" href="http://www.infoq.com/cn/partners">合作伙伴</A></LI>      
+                     </UL>
+<UL class="list2">
+  <LI>欢迎关注我们的：</LI>                        	 
+  <LI><A href="http://e.weibo.com/infoqchina" target="_blank"><IMG alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/weibo_16x16.png" 
+  border="0"></A></LI>	         
+  <LI><A href="http://www.infoq.com/cn/news/2013/02/infoq-wechat" target="_blank"><IMG 
+  alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/weixin_16_16.png" 
+  border="0"></A></LI>                 
+  <LI><A title="" id="headerRssLink" href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#" 
+  target="_blank"><IMG alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/rss.jpg" 
+  border="0"></A></LI>     </UL>
+<DIV class="clear"></DIV></DIV><!--	#######		HEADER START	#########	 --> 
+<DIV id="header">
+<DIV class="top_explain">InfoQ - 促进软件开发领域知识与创新的传播</DIV><!--	#######		search	#########	 -->
+	 
+<DIV class="search_cls">
+<FORM name="search" id="search" action="/cn/search.action" enctype="multipart/form-data" 
+method="get">
+<FIELDSET><INPUT name="queryString" class="searchInput" id="keyword" onfocus="if(this.value=='搜索关键词'){ this.value = ''; }" 
+onblur="if(this.value==''){ this.value = '搜索关键词'; }" type="text" value="搜索关键词">
+				 <INPUT name="page" id="page" type="hidden" value="1">                 
+<INPUT name="searchOrder" id="searchOrder" type="hidden" size="15">
+				 <INPUT class="submitCls" id="search" type="submit">			 </FIELDSET></FORM><!--	#######		login	#########	 -->
+	 
+<DIV id="login"><A title="Login" class="login_btn" onclick="return false;" href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#"><SPAN>登录</SPAN></A></DIV></DIV>
+<DIV class="clear"></DIV><!--	#######		logo	#########	 -->	 
+<DIV class="logo"><A title="" class="image" href="http://www.infoq.com/cn/"><IMG 
+alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/logo_bigger.jpg" border="0"> 
+        </A>
+<DIV class="clear"></DIV>
+<UL class="langs">
+  <LI><A href="http://www.infoq.com/">En</A> |</LI>
+  <LI><A title="InfoQ China" class="active" onclick="return false;" href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#">中文</A> 
+  |</LI>
+  <LI><A href="http://www.infoq.com/jp/">日本</A> |</LI>
+  <LI><A href="http://www.infoq.com/fr/">Fr</A> |</LI>
+  <LI><A href="http://www.infoq.com/br/">Br</A></LI></UL>
+<DIV class="clear"></DIV>
+<P>    		    	    	164,153 一月 独立访问用户 </P>
+<DIV class="clear"></DIV></DIV><!--	#######		menu	#########	 -->		 
+<UL class="menu">
+  <LI id="personas_0"><A title="Development" class="main" href="http://www.infoq.com/cn/development/"><SPAN>语言 
+  &amp; 开发</SPAN></A>
+  <DIV class="top_submenu c0">
+  <DIV class="scroll-pane">
+  <UL class="top_submenu_links">
+    <LI><A title="Java" href="http://www.infoq.com/cn/java/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">Java</A></LI>
+    <LI><A title=".Net" href="http://www.infoq.com/cn/dotnet/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">.Net</A></LI>
+    <LI><A title="云计算" href="http://www.infoq.com/cn/cloud-computing/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">云计算</A></LI>
+    <LI><A title="移动" href="http://www.infoq.com/cn/mobile/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">移动</A></LI>
+    <LI><A title="HTML 5" href="http://www.infoq.com/cn/HTML5Topic/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">HTML 
+    5</A></LI>
+    <LI><A title="JavaScript" href="http://www.infoq.com/cn/javascript/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">JavaScript</A></LI>
+    <LI><A title="Ruby" href="http://www.infoq.com/cn/ruby/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">Ruby</A></LI>
+    <LI><A title="DSLs" href="http://www.infoq.com/cn/dsl/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">DSLs</A></LI>
+    <LI><A title="Python" href="http://www.infoq.com/cn/python/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">Python</A></LI>
+    <LI><A title="PHP" href="http://www.infoq.com/cn/Topic_PHP/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">PHP</A></LI>
+    <LI><A title="PaaS" href="http://www.infoq.com/cn/PaaS/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">PaaS</A></LI></UL></DIV>
+  <DIV class="menu_article">
+  <H2>特别专题<SPAN id="developmentHDLabel"></SPAN></H2>
+  <H3 id="developmentHDTitle"></H3>
+  <DIV class="clear"></DIV>
+  <P><IMG id="developmentHDImg" alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/articles.htm" 
+  border="0">							 <SPAN id="developmentHDSummary"></SPAN>						 </P>
+  <DIV class="clear"></DIV>
+  <DIV class="alignCenter"><A class="view_all_categ" href="http://www.infoq.com/cn/development/"><SPAN>浏览所有<B 
+  id="developmentHDLabel2">语言 &amp; 开发</B></SPAN></A>						 </DIV>
+  <DIV class="clear"></DIV></DIV>
+  <DIV class="clear"></DIV></DIV></LI>						 
+  <LI id="personas_1"><A title="Architecture &amp; Design" class="main" href="http://www.infoq.com/cn/architecture-design/"><SPAN>架构 
+  &amp; 设计</SPAN></A>
+  <DIV class="top_submenu c1">
+  <DIV class="scroll-pane">
+  <UL class="top_submenu_links">
+    <LI><A title="建模" href="http://www.infoq.com/cn/Modeling/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">建模</A></LI>
+    <LI><A title="性能和可伸缩性" href="http://www.infoq.com/cn/performance-scalability/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">性能和可伸缩性</A></LI>
+    <LI><A title="领域驱动设计" href="http://www.infoq.com/cn/domain-driven-design/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">领域驱动设计</A></LI>
+    <LI><A title="AOP" href="http://www.infoq.com/cn/AOP/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">AOP</A></LI>
+    <LI><A title="设计模式" href="http://www.infoq.com/cn/DesignPattern/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">设计模式</A></LI>
+    <LI><A title="安全" href="http://www.infoq.com/cn/Security/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">安全</A></LI>
+    <LI><A title="云计算" href="http://www.infoq.com/cn/cloud-computing/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">云计算</A></LI>
+    <LI><A title="SOA" href="http://www.infoq.com/cn/soa_platforms/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">SOA</A></LI></UL></DIV>
+  <DIV class="menu_article">
+  <H2>特别专题<SPAN id="architecture-designHDLabel"></SPAN></H2>
+  <H3 id="architecture-designHDTitle"></H3>
+  <DIV class="clear"></DIV>
+  <P><IMG id="architecture-designHDImg" alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/articles.htm" 
+  border="0">							 <SPAN id="architecture-designHDSummary"></SPAN>						 </P>
+  <DIV class="clear"></DIV>
+  <DIV class="alignCenter"><A class="view_all_categ" href="http://www.infoq.com/cn/architecture-design/"><SPAN>浏览所有<B 
+  id="architecture-designHDLabel2">架构 &amp; 设计</B></SPAN></A>						 </DIV>
+  <DIV class="clear"></DIV></DIV>
+  <DIV class="clear"></DIV></DIV></LI>			 
+  <LI id="personas_2"><A title="Process &amp; Practices" class="main" href="http://www.infoq.com/cn/process-practices/"><SPAN>过程 
+  &amp; 实践</SPAN></A>
+  <DIV class="top_submenu c2">
+  <DIV class="scroll-pane">
+  <UL class="top_submenu_links">
+    <LI><A title="Agile" href="http://www.infoq.com/cn/agile/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">Agile</A></LI>
+    <LI><A title="领导能力" href="http://www.infoq.com/cn/Leadership/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">领导能力</A></LI>
+    <LI><A title="团队协作" href="http://www.infoq.com/cn/team-collaboration/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">团队协作</A></LI>
+    <LI><A title="敏捷技术" href="http://www.infoq.com/cn/agile_techniques/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">敏捷技术</A></LI>
+    <LI><A title="方法论" href="http://www.infoq.com/cn/methodologies/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">方法论</A></LI>
+    <LI><A title="持续集成" href="http://www.infoq.com/cn/continuous_integration/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">持续集成</A></LI>
+    <LI><A title="精益" href="http://www.infoq.com/cn/lean/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">精益</A></LI>
+    <LI><A title="客户及需求" href="http://www.infoq.com/cn/cust_requirements/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">客户及需求</A></LI></UL></DIV>
+  <DIV class="menu_article">
+  <H2>特别专题<SPAN id="process-practicesHDLabel"></SPAN></H2>
+  <H3 id="process-practicesHDTitle"></H3>
+  <DIV class="clear"></DIV>
+  <P><IMG id="process-practicesHDImg" alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/articles.htm" 
+  border="0">							 <SPAN id="process-practicesHDSummary"></SPAN>						 </P>
+  <DIV class="clear"></DIV>
+  <DIV class="alignCenter"><A class="view_all_categ" href="http://www.infoq.com/cn/process-practices/"><SPAN>浏览所有<B 
+  id="process-practicesHDLabel2">过程 &amp; 实践</B></SPAN></A>						 </DIV>
+  <DIV class="clear"></DIV></DIV>
+  <DIV class="clear"></DIV></DIV></LI>			 
+  <LI id="personas_3"><A title="Operations &amp; Infrastructure" class="main" 
+  href="http://www.infoq.com/cn/operations-infrastructure/"><SPAN>运维 &amp; 
+  基础架构</SPAN></A>
+  <DIV class="top_submenu c3">
+  <DIV class="scroll-pane">
+  <UL class="top_submenu_links">
+    <LI><A title="性能和可伸缩性" href="http://www.infoq.com/cn/performance-scalability/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">性能和可伸缩性</A></LI>
+    <LI><A title="大数据" href="http://www.infoq.com/cn/bigdata/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">大数据</A></LI>
+    <LI><A title="DevOps" href="http://www.infoq.com/cn/devops/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">DevOps</A></LI>
+    <LI><A title="云计算" href="http://www.infoq.com/cn/cloud-computing/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">云计算</A></LI>
+    <LI><A title="虚拟化" href="http://www.infoq.com/cn/virtualization/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">虚拟化</A></LI>
+    <LI><A title="NoSQL" href="http://www.infoq.com/cn/NoSQL/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">NoSQL</A></LI>
+    <LI><A title="应用服务器" href="http://www.infoq.com/cn/ApplicationServers/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">应用服务器</A></LI>
+    <LI><A title="运维" href="http://www.infoq.com/cn/operations/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">运维</A></LI></UL></DIV>
+  <DIV class="menu_article">
+  <H2>特别专题<SPAN id="operations-infrastructureHDLabel"></SPAN></H2>
+  <H3 id="operations-infrastructureHDTitle"></H3>
+  <DIV class="clear"></DIV>
+  <P><IMG id="operations-infrastructureHDImg" alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/articles.htm" 
+  border="0">							 <SPAN id="operations-infrastructureHDSummary"></SPAN>
+  						 </P>
+  <DIV class="clear"></DIV>
+  <DIV class="alignCenter"><A class="view_all_categ" href="http://www.infoq.com/cn/operations-infrastructure/"><SPAN>浏览所有<B 
+  id="operations-infrastructureHDLabel2">运维 &amp; 基础架构</B></SPAN></A>
+  						 </DIV>
+  <DIV class="clear"></DIV></DIV>
+  <DIV class="clear"></DIV></DIV></LI>			 
+  <LI class="last" id="personas_4"><A title="Enterprise Architecture" class="main" 
+  href="http://www.infoq.com/cn/enterprise-architect/"><SPAN>企业架构</SPAN></A>
+  <DIV class="top_submenu c4">
+  <DIV class="scroll-pane">
+  <UL class="top_submenu_links">
+    <LI><A title="企业架构" href="http://www.infoq.com/cn/enterprise-architecture/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">企业架构</A></LI>
+    <LI><A title="业务流程建模" href="http://www.infoq.com/cn/bpm/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">业务流程建模</A></LI>
+    <LI><A title="业务/IT整合" href="http://www.infoq.com/cn/business_it_alignment/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">业务/IT整合</A></LI>
+    <LI><A title="Integration (EAI)" href="http://www.infoq.com/cn/EAI/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">Integration 
+    (EAI)</A></LI>
+    <LI><A title="治理" href="http://www.infoq.com/cn/Governance/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">治理</A></LI>
+    <LI><A title="Web 2.0" href="http://www.infoq.com/cn/web20/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">Web 
+    2.0</A></LI>
+    <LI><A title="SOA" href="http://www.infoq.com/cn/soa/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">SOA</A></LI></UL></DIV>
+  <DIV class="menu_article">
+  <H2>特别专题<SPAN id="enterprise-architectHDLabel"></SPAN></H2>
+  <H3 id="enterprise-architectHDTitle"></H3>
+  <DIV class="clear"></DIV>
+  <P><IMG id="enterprise-architectHDImg" alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/articles.htm" 
+  border="0">							 <SPAN id="enterprise-architectHDSummary"></SPAN>						 </P>
+  <DIV class="clear"></DIV>
+  <DIV class="alignCenter"><A class="view_all_categ" href="http://www.infoq.com/cn/enterprise-architect/"><SPAN>浏览所有<B 
+  id="enterprise-architectHDLabel2">企业架构</B></SPAN></A>						 </DIV>
+  <DIV class="clear"></DIV></DIV>
+  <DIV class="clear"></DIV></DIV></LI>		 </UL><!--	#######		qcon	#########	 --> 
+<IMG alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/banner.png" border="0" 
+usemap="#qconmap"> <MAP name="qconmap"><AREA href="http://www.qconbeijing.com/" 
+  shape="rect" coords="0,0,160,47" target="_blank" alt="QCon Beijing">   <AREA 
+  href="http://www.archsummit.com/" shape="rect" coords="0,48,160,95" target="_blank" 
+  alt="ArchSummit"> </MAP> 				
+<DIV class="clear"></DIV><!--	#######		submenu	#########	 --> 
+<UL class="submenu">
+  <LI><A title="移动" href="http://www.infoq.com/cn/mobile/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">移动</A></LI>
+	 
+  <LI><A title="HTML 5" href="http://www.infoq.com/cn/html-5/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">HTML 
+  5</A></LI>	 
+  <LI><A title="Node.js" href="http://www.infoq.com/cn/nodejs/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">Node.js</A></LI>
+	 
+  <LI><A title="云计算" href="http://www.infoq.com/cn/cloud-computing/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">云计算</A></LI>
+	 
+  <LI><A title="大数据" href="http://www.infoq.com/cn/bigdata/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">大数据</A></LI>
+	 
+  <LI><A title="运维" href="http://www.infoq.com/cn/operations/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">运维</A></LI>
+	 
+  <LI><A title="架构师" href="http://www.infoq.com/cn/architect/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">架构师</A></LI>	
+	
+  <LI><A title="QCon大会" href="http://www.infoq.com/cn/qcon/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">QCon大会</A></LI> 
+      
+  <LI><A title="QClub" href="http://qclubchina.org/">QClub</A></LI>	 
+  <LI><A title="LBS" href="http://www.infoq.com/cn/lbs/?utm_source=infoq&amp;utm_medium=header_graybar&amp;utm_campaign=topic_clk">LBS</A></LI> 
+</UL>
+<DIV class="all_topics"><A href="http://www.infoq.com/cn/topics">全部话题</A></DIV>
+<DIV class="all_topics"><A style="color: rgb(16, 108, 182); font-size: 14px; margin-right: 20px; text-shadow: 1px 1px 1px #a7a7a7;" 
+href="http://www.infoq.com/news/2013/04/infoq-redesign">New UI</A></DIV>
+<DIV class="clear"></DIV>
+<DIV class="breadcrumbs"><SPAN class="first">您目前处于：</SPAN>	 <A title="InfoQ首页" 
+class="normal" href="http://www.infoq.com/cn?utm_source=infoq&amp;utm_medium=breadcrumbs_feature&amp;utm_campaign=breadcrumbs">InfoQ首页</A>
+			                                         <A title="文章" class="normal" href="http://www.infoq.com/cn/articles?utm_source=infoq&amp;utm_medium=breadcrumbs_feature&amp;utm_campaign=breadcrumbs">文章</A> 
+               				 <SPAN class="last">深入浅出Node.js（八）：Connect模块解析（之二）静态文件中间件  
+</SPAN>		     </DIV>
+<DIV class="clear"></DIV></DIV><!--	#######		HEADER END	#########	 -->						 <!--	#######		CONTENT START	#########	 -->
+		 
+<DIV id="content"><!--	#######		left side START	#########	 -->	         
+<H1 class="general with_pic">            深入浅出Node.js（八）：Connect模块解析（之二）静态文件中间件   
+            <SPAN class="article_image_title"><IMG alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/nodejs.jpg" 
+border="0">             </SPAN>         </H1><SPAN class="author_general">		作者		
+							 <A class="editorlink f_taxonomyEditor" href="http://www.infoq.com/cn/author/%E7%94%B0%E6%B0%B8%E5%BC%BA">
+田永强</A>                发布于        七月 26, 2012         <EM>|</EM>         
+	</SPAN>
+<UL class="share_this">
+  <LI>
+  <DIV class="bdshare_t bds_tools get-codes-bdshare" id="bdshare"><A class="bds_tsina">新浪微博</A> 
+      <A class="bds_tqq">腾讯微博</A>     <A class="bds_douban">豆瓣网</A>     <A 
+  class="bds_twi">Twitter</A>     <A class="bds_fbook">Facebook</A>     <A 
+  class="bds_linkedin">linkedin</A>     <A class="bds_mail">邮件分享</A>     <SPAN 
+  class="bds_more">更多</SPAN>     <A class="shareCount"></A> </DIV></LI>          
+        
+  <LI><A title="" class="read_later" id="bookmarkBtn" onclick="Bookmarks.bookmarkContent('articles', 'nodejs-8-connect-module-part-2');return false;" 
+  href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#"><Q>稍后阅读</Q></A></LI> 
+          
+  <LI><A class="reading_list" style="margin-right: 104px;" href="http://www.infoq.com/cn/showbookmarks.action"><Q>我的阅读清单</Q></A></LI> 
+      </UL>
+<DIV class="clear"></DIV>
+<DIV class="article_page_left text_content_container">
+<DIV class="text_info text_info_article">
+<P>上一篇<A 
+href="http://www.infoq.com/cn/articles/nodejs-connect-module">专栏</A>简单介绍了Connect模块的基本架构，它的执行模型十分简单，中间件机制也使得它十分易于扩展，具备良好的可伸缩性。在Connect的良好机制下，我们本章开始将逐步解开Connect生态圈中中间件部分，这部分给予Connect良好的功能扩展。</P>
+<H2>静态文件中间件</H2>
+<P>也许你还记得我曾经写过的<A href="http://www.infoq.com/cn/news/2011/11/tyq-nodejs-static-file-server">Node.js静态文件服务器实战</A>，那篇文章中我叙述了如何利用Node.js实现一个静态文件服务器的许多技术细节，包括路由实现，MIME，缓存控制，传输压缩，安全、欢迎页、断点续传等。但是这里我们不需要去亲自处理细节，<CODE>Connect</CODE>的<CODE>static</CODE>中间件为我们提供上述所有功能。代码只需寥寥3行即可：</P>
+<PRE>var connect = require('connect');  
+var app = connect(); 
+app.use(connect.static(__dirname + '/public')); </PRE>
+<P>在项目中需要临时搭建静态服务器，也无需安装apache之类的服务器，通过NPM安装Connect之后，三行代码即可解决需求。<BR>
+这里需要提及的是在使用该模块的一点性能相关的细节。</P>
+<DIV class="clear"></DIV>
+<DIV class="related_sponsors visible stacked">
+<DIV class="gray_section_related only1 fullWidth">
+<DIV class="related_editorial sponsored only2">
+<P class="title">相关厂商内容</P>
+<DIV class="links">
+<H3 title="" class="entrypdf f_vcrbottom" jsh='{"id":2598,"title":"《PM2.5的大数据分析》—— 英特尔中国研究院首席架构师姜小凡确认QCon分享"}'><A 
+href="http://www.infoq.com/cn/vendorcontent/show.action?vcr=2598&amp;utm_source=infoq&amp;utm_medium=VCR&amp;utm_campaign=vcr_articles_click" 
+target="_blank">	                                《PM2.5的大数据分析》—— 
+英特尔中国研究院首席架构师姜小凡确认QCon分享	                             </A>	                      
+   </H3>
+<H3 title="" class="entrypdf"><A href="http://www.infoq.com/infoq/url.action?i=4498&amp;t=f" 
+target="_blank">	                                    
+《走出软件作坊》作者吕建伟（阿朱）出品QCon北京2014“构建高效能团队”专题	                                 </A>	  
+                           </H3>
+<H3 title="" class="entrypdf"><A href="http://www.infoq.com/infoq/url.action?i=4551&amp;t=f" 
+target="_blank">JavaOne Duke大奖得主郑晔确认参加QCon北京，分享《你应该更新的Java知识》	                   
+              </A>	                             </H3>
+<H3 title="" class="entrypdf"><A href="http://www.infoq.com/infoq/url.action?i=4552&amp;t=f" 
+target="_blank">	                                    
+支付宝、天猫前端开发负责人玉伯、三七确认负责出品QCon北京2014长专题“移动时代的前端”	                                 
+</A>	                             </H3>
+<H3 title="" class="entrypdf"><A href="http://www.infoq.com/infoq/url.action?i=4465&amp;t=f" 
+target="_blank">2013~2014年度InfoQ读者深度调查火热进行中，完成调研可以查看最新的统计结果。结果分享到微博或者微信朋友圈，有机会获得精美礼品。
+	                                 </A>	                             </H3>
+<DIV class="clear"></DIV></DIV></DIV></DIV>
+<DIV class="paid_section  only2">
+<P class="title">相关赞助商</P><A href="http://www.infoq.com/infoq/url.action?i=4109&amp;t=f" 
+target="_blank"><IMG style="margin: 0px 0px 5px 5px; float: right;" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/qcon_logo%2520(1).png" 
+border="0">                     </A>                                             
+    
+<DIV class="links">
+<P>QCon全球软件开发大会（北京站）2014，4月25-27日，<A href="http://www.infoq.com/infoq/url.action?i=3993&amp;t=f" 
+target="_blank">诚邀莅临</A>。</P></DIV></DIV>
+<DIV class="clear"></DIV></DIV>
+<H3>动静分离</H3>
+<P>前一章提及，<CODE>app.use()</CODE>方法在没有指定路由信息时，相当于<CODE>app.use("/", 
+middleware)</CODE>。这意味着静态文件中间件将会在处理所有路径的请求。在动静态请求混杂的场景下，静态中间件会在动态请求时也调用<CODE>fs.stat</CODE>来检测文件系统是否存在静态文件。这造成了不必要的系统调用，使得性能降低。<BR>
+解决影响性能的方法既是动静分离。利用路由检测，避免不必要的系统调用，可以有效降低对动态请求的性能影响。</P>
+<PRE>app.use('/public', connect.static(__dirname + '/public'));</PRE>
+<P>在大型的应用中，动静分离通常无需到一个Node.js实例中进行，CDN的方式直接在域名上将请求分离。小型应用中，适当的进行动静分离即可避免不必要的性能损耗。</P>
+<DIV id="lowerFullwidthVCR"></DIV>
+<H3>缓存策略</H3>
+<P>缓存策略包含客户端和服务端两个部分。<BR>
+客户端的缓存，主要是利用浏览器对HTTP协议响应头中<CODE>cache-control</CODE>和<CODE>expires</CODE>字段的支持。浏览器在得到明确的相应头后，会将文件缓存在本地，依据<CODE>cache-control</CODE>和<CODE>expires</CODE>的值进行相应的过期策略。这使得重复访问的过程中，浏览器可以从本地缓存中读取文件，而无需从网络读取文件，提升加载速度，也可以降低对服务器的压力。<BR>
+默认情况下静态中间件的最大缓存时设置为0，意味着它在浏览器关闭后就被清除。这显然不是我们所期望的结果。除非是在开发环境可以无视<CODE>maxAge</CODE>的设置外，生产环境请务必设置缓存，因为它能有效节省网络带宽。</P>
+<PRE>app.use('/public', connect.static(__dirname + '/public', {maxAge: 86400000})); </PRE>
+<P><CODE>maxAge</CODE>选项的单位为毫秒。YUI3的CDN服务器设置过期时间为10年，是一个值得参考的值。<BR>
+静态文件如果在客户端被缓存，在需要清除缓存的时候，又该如何清除呢？这里的实现方法较多，一种较为推荐的做法是为文件进行md5处理。</P>
+<PRE><CODE>http://some.url/some.js?md5 </CODE></PRE>
+<P>当文件内容产生改变时，md5值也将发生改变，浏览器根据URL的不同会重新获取静态文件。md5的方式可以避免不必要的缓存清除，也能精确清除缓存。<BR>
+由于浏览器本身缓存容量的限制，尽管我们可能设置了10年的过期时间，但是也许两天之后就被新的静态文件挤出了本地缓存。这将持续引起静态服务器的响应，也即意味着，客户端缓存并不能完全解决降低服务器压力的问题。<BR>
+为了解决静态服务器重复读取磁盘造成的压力，这里需要引出第二个相关的中间件：<CODE>staticCache</CODE>。</P>
+<PRE>app.use(connect.staticCache());  
+app.use(“/public”, connect.static(__dirname + '/public', {maxAge: 86400000})); </PRE>
+<P>这是一个提供上层缓存功能的中间件，能够将磁盘中的文件加载到内存中，以提高响应速度和提高性能。<BR>它的官方测试数据如下：</P>
+<PRE>static(): 2700 rps 
+node-static: 5300 rps 
+static() + staticCache(): 7500 rps </PRE>
+<P>另一个专门用于静态文件托管的模块叫<CODE>node-static</CODE>，其性能是Connect静态文件中间件的效率的两倍。但是在缓存中间件的协助下，可以弥补性能损失。<BR>
+事实上，这个中间件在生产环境下并不推荐被使用，而且它将在Connect 
+3.0版本中被移除。但是它的实现中有值得玩味的地方，这有助于我们认识Node.js模型的优缺点。<BR><CODE>staticCache</CODE>中间件有两个主要的选项：<CODE>maxObjects</CODE>和<CODE>maxLength</CODE>。代表的是能存储多少个文件和单个文件的最大尺寸，其默认值为128和256kb。为何会有这两个选项的设定，原因在于V8有内存限制的原因，作为缓存，如果没有良好的过期策略，缓存将会无限增加，直到内存溢出。设置存储数量和单个文件大小后，可以有效抑制缓存区的大小。<BR>
+事实上，该缓存还存在的缺陷是单机情况下，通常为了有效利用CPU，Node.js实例并不只有一个，多个实例进程之间将会存在冗余的缓存占用，这对于内存使用而言是浪费的。<BR>
+除此之外，V8的垃圾回收机制是暂停JavaScript线程执行，通过扫描的方式决定是否回收对象。如果缓存对象过大，键太多，则扫描的时间会增加，会引起JavaScript响应业务逻辑的速度变慢。<BR>
+但是这个模块并非没有存在的意义，上述提及的缺陷大多都是V8内存限制和Node.js单线程的原因。解决该问题的方式则变得明了。<BR><STRONG><EM>风险转移</EM></STRONG>是Node.js中常用于解决资源不足问题的方式，尤其是内存方面的问题。将缓存点，从Node.js实例进程中转移到第三方成熟的缓存中去即可。这可以保证：</P>
+<OL>
+  <LI>缓存内容不冗余。</LI>
+  <LI>集中式缓存，减少不一致性的发生。</LI>
+  <LI>缓存的算法更优秀以保持较高的命中率。</LI>
+  <LI>让Node.js保持轻量，以解决它更擅长的问题。</LI></OL>
+<P>Connect推荐服务器端缓存采用<CODE>varnish</CODE>这样的成熟缓存代理。而笔者目前的项目则是通过<CODE>Redis</CODE>来完成后端缓存的任务。</P>
+<H1>参考内容</H1>
+<UL>
+  <LI><A 
+  href="https://www.varnish-cache.org/releases">https://www.varnish-cache.org/releases</A></LI>
+  <LI><A 
+  href="http://www.senchalabs.org/connect/static.html">http://www.senchalabs.org/connect/static.html</A></LI>
+  <LI><A 
+  href="http://www.senchalabs.org/connect/staticCache.html">http://www.senchalabs.org/connect/staticCache.html</A></LI></UL>
+<H2 style="margin: 0px; padding: 4px 160px 4px 0px; letter-spacing: -1px; font-family: arial, sans-serif; font-size: 19px; background-image: none;">关于作者</H2>
+<P style='line-height: 19px; font-family: Lucida, "Lucida Grande", Tahoma, sans-serif; font-size: 13px;'>田永强，新浪微博<A 
+style="color: rgb(11, 89, 178);" href="http://weibo.com/shyvo" 
+target="_blank">@朴灵</A>，前端工程师，曾就职于SAP，<WBR>现就职于淘宝，花名朴灵，致力于NodeJS和Mobile Web 
+App方面的研发工作。双修前后端JavaScript，<WBR>寄望将NodeJS引荐给更多的工程师。兴趣：读万卷书，<WBR>行万里路。个人Github地址：<A 
+style="color: rgb(11, 89, 178);" href="http://github.com/JacksonTian" target="_blank">http://github.<WBR>com/JacksonTian</A>。&nbsp;</P>
+<HR>
+
+<P>给InfoQ中文站投稿或者参与内容翻译工作，请邮件至<A 
+href="mailto:editors@cn.infoq.com">editors@cn.infoq.com</A>。也欢迎大家通过新浪微博（<A href="http://www.weibo.com/infoqchina">@InfoQ</A>）或者腾讯微博（<A 
+href="http://t.qq.com/infoqchina">@InfoQ</A>）关注我们，并与我们的编辑和其他读者朋友交流。</P>
+<DIV class="clear"></DIV>
+<DIV class="random_links">
+<UL>
+  <LI><A><SPAN class="gray_color">领域</SPAN></A></LI>				 
+  <LI><A name="development" class="f_taxonomy" id="6,820" href="http://www.infoq.com/cn/development"><B>语言 
+  &amp; 开发</B></A></LI>	 
+  <LI><A><SPAN class="gray_color">专栏</SPAN></A></LI>					 
+  <LI><A name="nodejs" class="f_taxonomy" id="6,757" href="http://www.infoq.com/cn/nodejs">Node.js</A></LI>					
+  <LI><A name="master-nodejs" class="f_taxonomy" id="6,978" href="http://www.infoq.com/cn/master-nodejs">深入浅出Node.js</A></LI>					
+  <LI><A name="special-column" class="f_taxonomy" id="6,303" href="http://www.infoq.com/cn/special-column">专栏</A></LI>
+  			 </UL></DIV>
+<DIV class="related_sponsors relEdRelRes">
+<DIV class="gray_section_related only1 fullWidth">
+<DIV class="related_editorial recommended only1">
+<P class="title">相关内容</P>
+<DIV class="links" id="editorial_links">
+<DIV class="clear"></DIV></DIV></DIV></DIV>
+<DIV class="clear"></DIV>
+<DIV class="related_research"></DIV></DIV>
+<SCRIPT type="text/javascript">
+    $.ajax({
+        url: "/api/recommendationlinks.action",
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        type: 'POST',
+        data: {"topicIds": "2559,2112,2007,-1000,-1000", "title": "深入浅出Node.js（八）：Connect模块解析（之二）静态文件中间件  ", "contentPath": "/articles/nodejs-8-connect-module-part-2", "language": "zh"},
+        success: displayRelatedEditorial,
+        async: false
+    });
+    
+    function displayRelatedEditorial(data) {
+        var trackingCode = "?utm_source=infoq&utm_medium=related_content_link&utm_campaign=relatedContent_articles_clk";
+        if (data.length > 0) {
+            for (var i = 0; i < data.length; i++) {
+                if (i === 5) {
+                    break;
+                }
+                var link = $('<h3 title="" class="' + data[i].contentType + '">\n\
+                                    <a title="" href="' + data[i].url + trackingCode +
+                        '">' + data[i].title + '</a></h3>');
+                $('#editorial_links').append(link);
+            }
+            $('.gray_section_related > .related_editorial.recommended').css('display', 'block');
+        }
+    }
+</SCRIPT>
+ 
+<SCRIPT type="text/javascript">
+    $.ajax({
+        type: "POST",
+        url: '/widgets/researchHorizontalWidget.action',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        data: {
+            "path": 'nodejs-8-connect-module-part-2',
+            "uriMapping": 'articles'
+        },
+        success: displayRelatedResearch,
+        error: function() {
+            // fail silently
+        },
+        async: false
+    });
+    
+    function displayRelatedResearch(data) {
+        if (InfoQConstants.language != 'en') {
+            return;
+        }
+        if (data.matchedList && data.matchedList.length > 0) {
+            $('.related_research').append('<p class="title">相关调查</p>')
+            for (var i = 0; i < data.matchedList.length; i++) {
+                var link = $('<a class="rel_results" title="" href="' + data.matchedList[i][0] +
+                        '?utm_source=infoqresearch&utm_campaign=rr-content">' +
+                        '<img border="0" alt="" src="' + data.matchedList[i][2] + '">' +
+                        data.matchedList[i][1] +
+                        '</a>');
+                $('.related_research').append(link);
+            }
+            if (data.latestList) {
+                for (var i = 0; i < data.latestList.length; i++) {
+                    var link = $('<a class="rel_results" title="" href="' + data.latestList[i][0] +
+                            '?utm_source=infoqresearch&utm_campaign=rr-content">' +
+                            '<img border="0" alt="" src="' + data.latestList[i][2] + '">' +
+                            data.latestList[i][1] +
+                            '</a>');
+                    $('.related_research').append(link);
+                }
+            }
+            $('.related_research').show();
+        }
+    }
+</SCRIPT>
+	
+<SCRIPT type="text/javascript">
+    
+        $(function() {
+        	var grayBox = $('.gray_section_related');
+            var recommendedColumn = $('.gray_section_related > .related_editorial.recommended');
+            var recommendedExists = $(recommendedColumn).css('display') === 'block';
+            var researchRow = $('.related_research');
+            var researchExists = $(researchRow).css('display') === 'block';
+
+            if (recommendedExists || researchExists) {
+                $('.related_sponsors.relEdRelRes').show(); // show the big related box
+            }
+
+            // in case all three available, leave now
+            if (recommendedExists) {
+            	$(grayBox).show(); // show the gray box for vcr and recommendations
+                return;
+            }
+        });
+</SCRIPT>
+ 
+<DIV class="clear"></DIV>
+<DIV class="clear"></DIV>
+<SCRIPT type="text/javascript">
+
+    var JSi18n = JSi18n || {}; // define only if not already defined
+    JSi18n.re='Re:';
+    JSi18n.errorSubject='Please enter a subject.';
+    JSi18n.errorBody='You can not post a blank message. Please type your message and try again.';
+    JSi18n.errorInvalidLinks='您的回复中包含无效的链接，请检查后重试';
+    JSi18n.stopWatchText='Stop Watching Thread';
+    JSi18n.startWatchText='Watch Thread';
+    JSi18n.timeExpiredMessage='已超出允许的5分钟编辑时长，我们为给您带来的不便深表抱歉。';
+    JSi18n.repostButtonFormat='重新发送 ($m 剩余)';
+    JSi18n.timeExpiredButton='超时';
+    JSi18n.sessionExpiredMessage='您的会话已超时，请登录后重新提交';
+    JSi18n.editLinkFormat='编辑 ($m 分钟剩余)';
+    JSi18n.enter_subject='请输入主题';
+    JSi18n.enter_message='信息';
+    JSi18n.content_datetime_format='MMMM dd, yyyy';
+
+var forumID=1;
+var threadID=25350;
+var ctxPath= '';
+var postAddress= ctxPath + '/forum/post!post.action?language=' + 'zh';
+var repostAddress= ctxPath + '/forum/repost.action?language=' + 'zh';
+var postAddWatches= ctxPath + '/forum/watches!add.action';
+var postRemoveWatches= ctxPath + '/forum/watches!remove.action';
+var loggedIn=false;
+var threadWatched=false;
+
+
+var forumNotificationDefault=false;
+
+var commentEditPeriod=5;
+</SCRIPT>
+ 
+<SCRIPT src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/ForumNotifications.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/jquery.autosize.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/date.js" type="text/javascript"></SCRIPT>
+     
+<DIV class="comment_here">
+<DIV id="postFormDeck">
+<DIV id="deckText">
+<H2>您好，朋友！</H2>                您需要 <A 
+href="http://www.infoq.com/reginit.action">注册一个InfoQ账号</A> 或者                 <A 
+class="login" href="javascript:;">登录</A> 才能进行评论。在您完成注册后还需要进行一些设置。<BR>
+<DIV id="getMost">
+<H2>获得来自InfoQ的更多体验。</H2></DIV></DIV></DIV><A id="theCommentsSection"></A>        
+ 
+<H3>告诉我们您的想法</H3>
+<FORM onsubmit="return false;" action="" enctype="multipart/form-data" method="post" 
+target="">
+<DIV class="area" name="comments"><INPUT id="subject" type="text">               
+  <TEXTAREA id="body"></TEXTAREA>             </DIV>
+<DIV class="clear"></DIV>
+<P class="allowed">允许的HTML标签: a,b,br,blockquote,i,li,pre,u,ul,p</P><INPUT name="emailMe" 
+class="checkReply emailMe" type="checkbox">             <SPAN 
+class="tocheck">当有人回复此评论时请E-mail通知我</SPAN>             
+<DIV 
+class="clear"></DIV><INPUT class="submit" id="subButton" type="button" value="发送信息"> 
+        </FORM>
+<DIV class="clear"></DIV></DIV>
+<DIV class="comments">
+<DIV class="comments_title">社区评论                  <SPAN id="watch"><A class="watch_thread" 
+href="javascript:void(0)"></A>                 </SPAN>             </DIV>
+<DIV class="clear"></DIV>
+<DIV class="comment_title lvl0" id="com89042"><A title="" href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#anch89042"><STRONG>staticCache原理</STRONG> 
+                        <SPAN>by                            xdy snoopy           
+                 Posted                             <SPAN class="treeRelativeTime"></SPAN> 
+                        </SPAN>                     </A></DIV>
+<DIV class="comment_title lvl1" id="com89075"><A title="" href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#anch89075"><STRONG>Re: 
+staticCache原理</STRONG>                         <SPAN>by                          
+   雷 宗民                             Posted                             <SPAN 
+class="treeRelativeTime"></SPAN>                         </SPAN>                 
+    </A></DIV>
+<DIV class="comment_title lvl1" id="com89105"><A title="" href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#anch89105"><STRONG>Re: 
+staticCache原理</STRONG>                         <SPAN>by                          
+  Tian Jackson                            Posted                             
+<SPAN class="treeRelativeTime"></SPAN>                         </SPAN>           
+          </A></DIV></DIV>
+<DIV class="all_comments">
+<DIV class="answers" id="ans89042"><A name="anch89042"></A>                      
+                   
+<P><B class="title">staticCache原理</B>                         <SPAN><SPAN class="bodyRelativeTime"></SPAN> 
+                            by                             <Q>xdy snoopy</Q>     
+                    </SPAN></P>
+<DIV 
+class="flat_comment_body">难道是把一些常用的小文件直接放在内存里？这样会占用很多内存，而且冷热和大小处理不好可能频繁交换，反而影响性能。<BR>我在rrestjs框架里也加上了这么个东西，但是只是用来记录某一文件修改时间，减少一次I/O，判断客户端缓存是否过期。 
+                    </DIV>
+<DIV class="clear"></DIV>
+<UL class="help_links">
+  <LI><A title="" class="reply_flat" href="javascript:;">回复</A></LI>             
+                                      
+  <LI><A title="" class="backtop" href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#">回到顶部</A></LI> 
+                      </UL>
+<DIV class="clear"></DIV><INPUT name="tmstmp" type="hidden" value="1343713928740"> 
+                    <INPUT name="createdOn" type="hidden" value="七月 31, 2012">   
+                  <INPUT name="isNotificationOn" type="hidden" value="false">    
+             </DIV>
+<DIV class="answers" id="ans89075"><A name="anch89075"></A>                      
+                   
+<P><B class="title">Re: staticCache原理</B>                         <SPAN><SPAN 
+class="bodyRelativeTime"></SPAN>                             by                  
+           <Q>雷 宗民</Q>                         </SPAN></P>
+<DIV class="flat_comment_body">                        这个方法值得参考                  
+   </DIV>
+<DIV class="clear"></DIV>
+<UL class="help_links">
+  <LI><A title="" class="reply_flat" href="javascript:;">回复</A></LI>             
+                                      
+  <LI><A title="" class="backtop" href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#">回到顶部</A></LI> 
+                      </UL>
+<DIV class="clear"></DIV><INPUT name="tmstmp" type="hidden" value="1343788390288"> 
+                    <INPUT name="createdOn" type="hidden" value="七月 31, 2012">   
+                  <INPUT name="isNotificationOn" type="hidden" value="true">     
+            </DIV>
+<DIV class="answers" id="ans89105"><A name="anch89105"></A>                      
+                   
+<P><B class="title">Re: staticCache原理</B>                         <SPAN><SPAN 
+class="bodyRelativeTime"></SPAN>                             by                  
+           <Q>Tian Jackson</Q>                         </SPAN></P>
+<DIV 
+class="flat_comment_body">嗯，staticCache就是这样的，其实现跟我的Limitablemap一样。小站点可以用，大站点还是走CDN的好。 
+                    </DIV>
+<DIV class="clear"></DIV>
+<UL class="help_links">
+  <LI><A title="" class="reply_flat" href="javascript:;">回复</A></LI>             
+                                      
+  <LI><A title="" class="backtop" href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#">回到顶部</A></LI> 
+                      </UL>
+<DIV class="clear"></DIV><INPUT name="tmstmp" type="hidden" value="1343887650704"> 
+                    <INPUT name="createdOn" type="hidden" value="八月 02, 2012">   
+                  <INPUT name="isNotificationOn" type="hidden" value="false">    
+             </DIV></DIV><!-- overlay -->     
+<DIV id="overlay_comments"><A title="" class="close_comment" 
+href="javascript:;">关闭</A>
+<H4><STRONG></STRONG> by <SPAN id="author"></SPAN> <SPAN 
+id="timepast"></SPAN></H4>
+<P id="body">
+<DIV class="alt"><SPAN>发布于 <SPAN id="timestamp"></SPAN></SPAN></DIV>
+<DIV class="clear"></DIV>
+<UL class="help_links">
+  <LI><A title="" class="view">查看</A></LI>             
+  <LI><A title="" class="reply" href="javascript:;">回复</A></LI>             
+  <LI><A title="" class="backtop" href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#">回到顶部</A></LI> 
+          </UL>
+<DIV class="clear"></DIV></DIV><!-- reply box -->     
+<DIV class="popupLoginComments" id="replyPopup"><A title="" class="close_login_popup" 
+href="javascript:;">关闭</A>
+<FORM name="tpopup-reply" onsubmit="return false;" action="" method="post" 
+target=""><LABEL class="label_login">主题</LABEL><INPUT name="subject" class="login_text subject" 
+type="text"><LABEL class="label_login">您的回复            	 <A style="color: grey; font-weight: normal; text-decoration: underline; float: right;" 
+onclick="CommentsHandler.quoteOriginalMessage();return false;" href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#"> 
+           		引用原消息            	 </A>             </LABEL><TEXTAREA name="commentsReply" class="commentsReply"></TEXTAREA>
+<DIV class="clear"></DIV>
+<P class="error allowed"></P>
+<DIV class="clear"></DIV>
+<P class="allowed">允许的HTML标签: a,b,br,blockquote,i,li,pre,u,ul,p</P><INPUT name="emailMe" 
+class="checkReply emailMe" type="checkbox">             <SPAN 
+class="tocheck">当有人回复此评论时请E-mail通知我</SPAN>
+<DIV class="clear"></DIV><INPUT name="submit-reply" id="submit-reply" type="button" value="发送信息"><INPUT name="reset-reply" class="reset-reply" type="reset" value="取消"></FORM></DIV><!-- edit comment box --> 
+    
+<DIV class="popupLoginComments" id="editCommentPopup"><A title="" class="close_login_popup" 
+href="javascript:;">关闭</A>
+<FORM name="tpopup-reply" onsubmit="return false;" action="" method="post" 
+target=""><LABEL class="label_login">主题</LABEL><INPUT name="subject" class="login_text subject" 
+type="text"><LABEL class="label_login">您的回复</LABEL><TEXTAREA name="commentsReply" class="commentsReply"></TEXTAREA>
+<DIV class="clear"></DIV>
+<P class="error allowed"></P>
+<DIV class="clear"></DIV>
+<P class="allowed">允许的HTML标签: a,b,br,blockquote,i,li,pre,u,ul,p</P><INPUT name="emailMe" 
+class="checkReply emailMe" type="checkbox">             <SPAN 
+class="tocheck">当有人回复此评论时请E-mail通知我</SPAN>
+<DIV class="clear"></DIV>
+<P class="time_expired allowed"></P><INPUT name="submit-reply" id="resubmit-reply" type="button"><INPUT name="reset-reply" class="reset-reply" type="reset" value="取消"></FORM></DIV><!-- notification popup --> 
+    
+<DIV class="popupLoginComments" id="messagePopup"><A title="" class="close_login_popup" 
+href="javascript:;">关闭</A>
+<DIV class="clear"></DIV>
+<P class="allowed"></P>
+<DIV class="clear"></DIV><INPUT name="reset-reply" class="reset-reply" type="reset" value="OK"></DIV>
+<DIV id="responseContent"></DIV><A title="" class="comments_like" id="noOfComments" 
+href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#theCommentsSection"><SPAN 
+class="comments_counts"><SPAN class="nr">	        		3	        	 </SPAN></SPAN>
+			 讨论	    	    	 </A>	 </DIV>
+<DIV class="clear"></DIV></DIV><!--	#######		left side end	#########	 --> <!--	#######		right side START	#########	 --> 
+<DIV class="article_page_right">
+<DIV class="news_in_tabs" id="mostPopularSection"><!-- the tabs -->	 
+<UL class="tabs">
+  <LI>
+  <DIV class="tab_title">热点内容</DIV></LI>			 
+  <LI><A class="current" href="javascript:;">本周</A></LI>			 
+  <LI><A href="javascript:;">本月</A></LI>			 
+  <LI><A href="javascript:;">近6个月</A></LI>					 </UL><!-- tab "panes" -->	 
+<DIV class="panes"></DIV>
+<DIV class="clear"></DIV></DIV>
+<DIV class="banner_type3" id="id_300x250_banner_top">
+<SCRIPT type="text/javascript">
+            googletag.cmd.push(function() { googletag.display('id_300x250_banner_top'); });
+        </SCRIPT>
+     </DIV>
+<DIV class="clear"></DIV>
+<H2 title="深度内容">深度内容</H2><!-- the tabs -->     
+<UL class="tabs">
+  <LI id="ALL_EXCEPT_NEWS"><A onclick="ContentSummary.switchTab('ALL_EXCEPT_NEWS');return false;" 
+  href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#">全部</A></LI> 
+          
+  <LI id="ARTICLE"><A onclick="ContentSummary.switchTab('ARTICLE');return false;" 
+  href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#">文章</A></LI> 
+          
+  <LI id="PRESENTATION"><A onclick="ContentSummary.switchTab('PRESENTATION');return false;" 
+  href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#">演讲</A></LI> 
+          
+  <LI id="INTERVIEW"><A onclick="ContentSummary.switchTab('INTERVIEW');return false;" 
+  href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#">访谈</A></LI> 
+          
+  <LI id="MINIBOOK"><A onclick="ContentSummary.switchTab('MINIBOOK');return false;" 
+  href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#">迷你书</A></LI> 
+              </UL><!-- tab "panes" -->     
+<DIV class="panes">
+<DIV id="rightbarcontentbox">
+<FORM id="tabstateform" onsubmit="customOnsubmit(); return true;" action="">
+<DIV id="tabstateformelements"><INPUT name="startIndex" id="startIndex" type="hidden" 
+value="0">		 <INPUT name="selectedTab" id="selectedTab" type="hidden" value="ALL_EXCEPT_NEWS">
+		 <INPUT name="language" id="rightBarLanguage" type="hidden" value="zh">
+	 </DIV>
+<TABLE class="wwFormTable"></TABLE></FORM>
+<SCRIPT>
+	function customOnsubmit() {
+		
+	}
+</SCRIPT>
+					     
+<DIV class="tab_article">
+<DIV class="txxt">
+<H2 class="articles"><A title="可视化Java垃圾回收" href="http://www.infoq.com/cn/articles/Visualizing-Java-Garbage-Collection">可视化Java垃圾回收
+				 </A>			 </H2>
+<DIV class="clear"></DIV>
+<P><A title="Ben Evans" class="editorlink" href="http://www.infoq.com/cn/author/Ben-Evans">Ben 
+Evans</A>				 二月 26, 2014			 </P></DIV>
+<DIV class="immg"><A title="可视化Java垃圾回收" href="http://www.infoq.com/cn/articles/Visualizing-Java-Garbage-Collection"><IMG 
+alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/logo.jpg" border="0">
+			 </A>		 </DIV>
+<DIV class="clear"></DIV></DIV>
+<DIV class="tab_article">
+<DIV class="txxt">
+<H2 class="interviews"><A title="Stoyan Stefanov 谈JavaScript性能" href="http://www.infoq.com/cn/interviews/javascript-performance-stoyan-stefanov">
+					Stoyan Stefanov 谈JavaScript性能				 </A>			 </H2>
+<DIV class="clear"></DIV>
+<P><A title="Stoyan Stefanov" class="editorlink" href="http://www.infoq.com/cn/author/Stoyan-Stefanov">Stoyan 
+Stefanov</A>				 二月 26, 2014			 </P></DIV>
+<DIV class="immg"><A title="Stoyan Stefanov 谈JavaScript性能" href="http://www.infoq.com/cn/interviews/javascript-performance-stoyan-stefanov"><IMG 
+alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/StoyanStefanov100.jpg" 
+border="0">			 </A>		 </DIV>
+<DIV class="clear"></DIV></DIV>
+<DIV class="banner_type3" id="id_300x250_banner_top">
+<SCRIPT type="text/javascript">
+				googletag.cmd.push(function() { googletag.display('id_300x250_banner_top'); });
+			</SCRIPT>
+		 </DIV>
+<DIV class="clear"></DIV>
+<DIV class="tab_article">
+<DIV class="txxt">
+<H2 class="presentations"><A title="sofa-像搭积木一样构建系统" href="http://www.infoq.com/cn/presentations/sofa-system-construction">
+					sofa-像搭积木一样构建系统				 </A>			 </H2>
+<DIV class="clear"></DIV>
+<P><A title="蒋锦鹏" class="editorlink" href="http://www.infoq.com/cn/author/%E8%92%8B%E9%94%A6%E9%B9%8F">
+蒋锦鹏</A>				二月 26, 2014			 </P></DIV>
+<DIV class="immg"><A title="sofa-像搭积木一样构建系统" href="http://www.infoq.com/cn/presentations/sofa-system-construction"><IMG 
+alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/jiangjinpeng_100.png" 
+border="0">			 </A>		 </DIV>
+<DIV class="clear"></DIV></DIV>
+<DIV class="tab_article">
+<DIV class="txxt">
+<H2 class="presentations"><A title="58统一监管平台系统分析与设计" href="http://www.infoq.com/cn/presentations/58-monitoring-platform-system-analysis-design">
+					58统一监管平台系统分析与设计				 </A>			 </H2>
+<DIV class="clear"></DIV>
+<P><A title="姜中明" class="editorlink" href="http://www.infoq.com/cn/author/%E5%A7%9C%E4%B8%AD%E6%98%8E">姜中明</A>
+				二月 26, 2014			 </P></DIV>
+<DIV class="immg"><A title="58统一监管平台系统分析与设计" href="http://www.infoq.com/cn/presentations/58-monitoring-platform-system-analysis-design"><IMG 
+alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/jiangzhongming_100.png" 
+border="0">			 </A>		 </DIV>
+<DIV class="clear"></DIV></DIV>
+<DIV class="tab_article">
+<DIV class="txxt">
+<H2 class="presentations"><A title="易到用车LBS数据处理的实践和探索" href="http://www.infoq.com/cn/presentations/practices-and-explore-of-yidaoyongche-lbs-data-processing">易到用车LBS数据处理的实践和探索
+				 </A>			 </H2>
+<DIV class="clear"></DIV>
+<P><A title="王柏" class="editorlink" href="http://www.infoq.com/cn/author/%E7%8E%8B%E6%9F%8F">
+王柏</A>				二月 25, 2014			 </P></DIV>
+<DIV class="immg"><A title="易到用车LBS数据处理的实践和探索" href="http://www.infoq.com/cn/presentations/practices-and-explore-of-yidaoyongche-lbs-data-processing"><IMG 
+alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/qconsh-20131102pm-tangpeng_100.png" 
+border="0">			 </A>		 </DIV>
+<DIV class="clear"></DIV></DIV>
+<DIV class="tab_article">
+<DIV class="txxt">
+<H2 class="articles"><A title="在实践中实施看板" href="http://www.infoq.com/cn/articles/Implementing_Kanban">在实践中实施看板
+				 </A>			 </H2>
+<DIV class="clear"></DIV>
+<P><A title="Vikram Gupta" class="editorlink" href="http://www.infoq.com/cn/author/Vikram-Gupta">Vikram 
+Gupta</A>				 二月 25, 2014			 </P></DIV>
+<DIV class="immg"><A title="在实践中实施看板" href="http://www.infoq.com/cn/articles/Implementing_Kanban"><IMG 
+alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/logo-kanban2.jpg" 
+border="0">			 </A>		 </DIV>
+<DIV class="clear"></DIV></DIV>
+<DIV class="banner_type3" id="id_300x250_banner_bottom">
+<SCRIPT type="text/javascript">
+				googletag.cmd.push(function() { googletag.display('id_300x250_banner_bottom'); });
+			</SCRIPT>
+		 </DIV>
+<DIV class="clear"></DIV>
+<UL class="newsnav link-col" id="paginationRightbar">
+  <LI><A class="right" onclick="ContentSummary.setStartIndex('6');return false;" 
+  href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#"><SPAN>更早的 
+  &gt;</SPAN></A>             </LI></UL><!-- rightbarInfoQrightbar -->         
+</DIV></DIV>
+<DIV class="clear"></DIV>
+<DIV class="sponsored_links_section_i18n">
+<DIV class="sp_title">赞助商链接</DIV>
+<DIV id="id_ad_textlink1">
+<SCRIPT type="text/javascript">
+		 			googletag.cmd.push(function() { googletag.display('id_ad_textlink1'); });
+		 		</SCRIPT>
+		 	 </DIV>
+<DIV id="id_ad_textlink2">
+<SCRIPT type="text/javascript">
+		 			googletag.cmd.push(function() { googletag.display('id_ad_textlink2'); });
+		 		</SCRIPT>
+		 	 </DIV>
+<DIV id="id_ad_textlink3">
+<SCRIPT type="text/javascript">
+		 			googletag.cmd.push(function() { googletag.display('id_ad_textlink3'); });
+		 		</SCRIPT>
+		 	 </DIV></DIV>
+<SCRIPT type="text/javascript">
+    	$($('.banner_type3').get(1)).css('display','none');
+    </SCRIPT>
+ </DIV>
+<DIV class="newsletter ">
+<H3>InfoQ每周精要</H3>
+<P>		通过个性化定制的新闻邮件、RSS Feeds和InfoQ业界邮件通知，保持您对感兴趣的社区内容的时刻关注。		 <SPAN id="floatingNewsletterEmailSuccess" 
+style="color: green;"></SPAN>		 <SPAN id="floatingNewsletterEmailError" style="color: red;"></SPAN>
+	 </P>
+<DIV class="click2view"><A href="http://www.infoq.com/cn/newsletter_sample.html" 
+target="_blank"><IMG alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/click2view_zh.png" 
+border="0">		 </A>	 </DIV>
+<DIV class="clear"></DIV>
+<FORM name="floatingNewsletterForm" id="floatingNewsletteForm" onsubmit="floatingNewsletter.saveSubscription(); return false;" 
+action="#">
+<FIELDSET><INPUT name="floatingNewsletterEmail" class="input_text" id="floatingNewsletterEmail" 
+onclick="floatingNewsletter.clearEmailText();" onblur="floatingNewsletter.resetEmailText();" 
+type="text" value="您的邮箱">
+			 <INPUT name="sbs" class="input_submit" id="sbs" onclick="return floatingNewsletter.validateEmail('无效的邮件地址');" type="submit" value="Subscribe"></FIELDSET></FORM>
+<DIV class="clear"></DIV></DIV>
+<SCRIPT type="text/javascript">
+	var floatingNewsletter = new Newsletter('您的邮箱', 'floatingNewsletterEmail', 'floatingNewsletterForm', 'floatingNewsletterEmailError', 'floatingNewsletterEmailSuccess');
+</SCRIPT>
+ <!--	#######		right side end	#########	 -->		 
+<SCRIPT id="bdshare_js" type="text/javascript" data="type=tools&amp;uid=3970668"></SCRIPT>
+	 
+<SCRIPT id="bdshell_js" type="text/javascript"></SCRIPT>
+	 
+<SCRIPT type="text/javascript">
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+    </SCRIPT>
+     
+<SCRIPT type="text/javascript">
+        $(function repositionBackgrounds() {
+            var str = $('#bdshare > [class^=bds_]').first().css('background-position').split(' ')[1],
+                num;
+            if (str.indexOf('px', str.length - 2) === -1) {
+                    setTimeout(repositionBackgrounds, 1000);
+                    return;
+            }    
+            $('#bdshare > [class^=bds_]').each(function () {
+                str = $(this).css('background-position').split(' ')[1];
+                num = parseInt(str.substr(0, str.length - 2), 10) - 5;
+                $(this).attr('style', 'background-position: 0px ' + num + 'px !important');
+            });
+        });
+	</SCRIPT>
+    	     
+<SCRIPT src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/infoqcn.js" charset="utf-8"></SCRIPT>
+ 
+<SCRIPT type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="https://js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrf2","beacon-1.newrelic.com","bfafe6a5f6",410411,"YAFWMEEAW0RUVk1cCllLfjdjTlRFQVxaWQBES0cMXBYbXUZF",0,35,new Date().getTime()])</SCRIPT>
+		 </DIV><!--	#######		CONTENT END	#########	 -->				 
+<DIV class="clear"></DIV></DIV><!--	#######		SITE END	#########	 -->	 <!--	#######		FOOTER START	#########	 --> 
+<DIV id="footer">
+<DIV class="footer_bg">
+<DIV class="footer_class" id="latestContent"></DIV>
+<DIV class="clear"></DIV></DIV>
+<DIV class="footer">
+<UL class="footerMenu">
+  <LI class="l1"><A title="首页" class="active" 
+  href="http://www.infoq.com/cn/">首页</A></LI>		  	 
+  <LI class="l2"><A title="全部话题" class="active" href="http://www.infoq.com/cn/topics">全部话题</A></LI>
+  			 
+  <LI class="l3"><A title="QCon全球软件开发大会" href="http://www.qconferences.com/" 
+  target="_blank">QCon全球软件开发大会</A></LI>	        											 
+  <LI class="l7"><A title="关于我们" 
+  href="http://www.infoq.com/cn/aboutus">关于我们</A></LI>		    	 
+  <LI class="l7"><A title="让大家在InfoQ上听见你的声音" href="http://www.infoq.com/cn/contribute">让大家在InfoQ上听见你的声音</A></LI>
+  					  								 
+  <LI class="l5"><A title="创建账号" 
+  href="http://www.infoq.com/cn/reginit.action">创建账号</A></LI>				 
+  <LI class="l6"><A title="登录" class="login_btn_footer" onclick="return false;" 
+  href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#">登录</A></LI>
+  					 </UL>
+<UL class="footerTxt1">
+  <LI><STRONG>全球QCon</STRONG></LI>	 
+  <LI><IMG class="qconflag cn"><A title="全球软件开发大会（北京站）2014，4月25—27日" href="http://qconbeijing.com/">全球软件开发大会（北京站）2014，4月25—27日</A></LI> 
+</UL>
+<DIV class="ftxt3">
+<DIV class="newsletter">
+<DIV class="txtNews">
+<H3>InfoQ每周精要</H3>
+<P>通过个性化定制的新闻邮件、RSS Feeds和InfoQ业界邮件通知，保持您对感兴趣的社区内容的时刻关注。</P><SPAN id="footerNewsletterEmailSuccess" 
+style="color: green;"></SPAN>			 <SPAN id="footerNewsletterEmailError" style="color: red;"></SPAN>
+		 </DIV>
+<DIV class="click2view"><A href="http://www.infoq.com/cn/newsletter_sample.html" 
+target="_blank"><IMG alt="" src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/click2view2_zh.jpg" 
+border="0">			 </A>		 </DIV>
+<DIV class="clear"></DIV>
+<FORM name="footerNewsletterForm" id="footerNewsletteForm" onsubmit="footerNewsletter.saveSubscription(); return false;" 
+action="#">
+<FIELDSET><INPUT name="footerNewsletterEmail" class="input_text" id="footerNewsletterEmail" 
+onclick="footerNewsletter.clearEmailText();" onblur="footerNewsletter.resetEmailText();" 
+type="text" value="您的邮箱">                 
+<INPUT name="sbs" class="input_submit" id="sbs" onclick="return footerNewsletter.validateEmail('无效的邮件地址');" type="submit" value="Subscribe"></FIELDSET></FORM>
+<DIV class="clear"></DIV></DIV>
+<UL class="footerTxt3">
+  <LI><A class="rss" id="footerNewsletterRssLink" href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#">属于您的个性化RSS</A></LI>
+  	    			 
+  <LI><A class="weibo" href="http://weibo.com/infoqchina" 
+  target="_blank">新浪微博</A></LI>	    	    		 
+  <LI><A class="fb" href="http://www.facebook.com/InfoQ" 
+  target="_blank">社区新闻和热点</A></LI>	 </UL></DIV>
+<SCRIPT type="text/javascript">
+	var footerNewsletter = new Newsletter('您的邮箱', 'footerNewsletterEmail', 'footerNewsletterForm', 'footerNewsletterEmailError', 'footerNewsletterEmailSuccess');
+</SCRIPT>
+								 
+<DIV class="our_events">
+<P class="title">特别专题</P>
+<UL style="font-family: Lucida Grande, Lucida Sans Unicode, sans-serif; font-size: 12px; font-weight: bold;">
+  <LI><A 
+  href="http://www.infoq.com/cn/chinaitevents"><STRONG>技术社区活动日历</STRONG></A></LI>
+  <LI><A 
+  href="http://www.infoq.com/cn/zones/baidu-salon/"><STRONG>百度技术沙龙</STRONG></A></LI>
+  <LI><A href="http://www.infoq.com/cn/scrum/"><STRONG>Scrum开发</STRONG></A></LI>
+  <LI><A 
+  href="http://www.infoq.com/cn/architect/"><STRONG>月刊：《架构师》</STRONG></A></LI>
+  <LI><A href="http://qclubchina.org/" 
+  target="_blank"><STRONG>线下活动：QClub</STRONG></A></LI>
+  <LI><A href="http://www.infoq.com/cn/lbs/"><STRONG>LBS专区</STRONG></A></LI></UL>
+<DIV class="communities">
+<P>定制您感兴趣的技术领域</P><BR><BR><BR>
+<FIELDSET>
+<UL>
+  <FIELDSET>
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0">
+    <TBODY>
+    <TR>
+      <TD valign="middle"><INPUT name="development" class="chb" id="persona6820" 
+        onclick="includeExcludeCommunity(this, false);" type="checkbox" checked="checked" 
+        value="true">					 <SPAN>语言 &amp; 开发</SPAN>				 </TD></TR>
+    <TR>
+      <TD valign="middle"><INPUT name="architecture-design" class="chb" id="persona6821" 
+        onclick="includeExcludeCommunity(this, false);" type="checkbox" checked="checked" 
+        value="true">					 <SPAN>架构 &amp; 设计</SPAN>				 </TD></TR>
+    <TR>
+      <TD valign="middle"><INPUT name="process-practices" class="chb" id="persona6822" 
+        onclick="includeExcludeCommunity(this, false);" type="checkbox" checked="checked" 
+        value="true">					 <SPAN>过程 &amp; 实践</SPAN>				 </TD></TR>
+    <TR>
+      <TD valign="middle"><INPUT name="operations-infrastructure" class="chb" 
+        id="persona6823" onclick="includeExcludeCommunity(this, false);" type="checkbox" 
+        checked="checked" value="true">					 <SPAN>运维 &amp; 基础架构</SPAN>
+    				 </TD></TR>
+    <TR>
+      <TD valign="middle"><INPUT name="enterprise-architect" class="chb" id="persona6824" 
+        onclick="includeExcludeCommunity(this, false);" type="checkbox" checked="checked" 
+        value="true">					 <SPAN>企业架构</SPAN>
+				 </TD></TR></TBODY></TABLE></FIELDSET></UL></FIELDSET></DIV></DIV>
+<DIV class="clear"></DIV></DIV>
+<DIV class="clear"></DIV></DIV><!--	#######		FOOTER END	#########	 --> 
+<DIV class="bottomContent">
+<TABLE width="100%" class="last_content" border="0" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV>提供反馈</DIV>
+      <DIV><A 
+    href="mailto:feedback@cn.infoq.com">feedback@cn.infoq.com</A></DIV></TD>			 
+    <TD>
+      <DIV>错误报告</DIV>
+      <DIV><A href="mailto:bugs@cn.infoq.com">bugs@cn.infoq.com</A></DIV></TD>			 
+    <TD>
+      <DIV>商务合作</DIV>
+      <DIV><A href="mailto:sales@cn.infoq.com">sales@cn.infoq.com</A></DIV></TD>
+			 
+    <TD>
+      <DIV>内容合作</DIV>
+      <DIV><A 
+    href="mailto:editors@cn.infoq.com">editors@cn.infoq.com</A></DIV></TD>			 
+    <TD class="text"><SPAN>InfoQ.com及所有内容，版权所有 © 2006-2013 C4Media Inc. 
+      InfoQ.com 服务器由 <A href="http://www.contegix.com/">Contegix</A>提供, 
+      我们最信赖的ISP合作伙伴。<BR><A href="http://www.infoq.com/cn/privacypolicy" target="_blank">隐私政策</A></SPAN>
+      			 </TD>		 </TR></TBODY></TABLE></DIV>
+<DIV class="intbt"><A title="bt" href="http://www.infoq.com/int/bt">BT</A>
+		 </DIV>
+<DIV id="id_geo_banner" style="left: 0px; width: 100%; bottom: 0px; display: none; position: fixed; z-index: 100000;">
+<DIV id="id_geo_banner_ad" style="display: none;">
+<SCRIPT type="text/javascript">
+		if(CookieManager.readCookie("igabgt") == null) {
+			// use the jquery.watch method to see when GAM changes the display css attribute of id_geo_banner_ad
+			// whenever an ad is placed there GAM will chnage the display which is init as none. This is the safest way to determine when an ad is fetched by GAM!
+			$("#id_geo_banner_ad").watch('display',showAd,1000);		
+			googletag.cmd.push(function() { googletag.display('id_geo_banner_ad');});
+		}
+		function showAd() {
+			try {
+				$('#id_geo_banner iframe:first').attr('width', '100%');
+				$('#id_geo_banner iframe:first').attr('height', '100%');
+				$('#id_geo_banner iframe:first').css('min-width', '1024px');
+			}catch(err){}
+			$('#id_geo_banner').show('slow');
+			setTimeout("$('#id_geo_banner').hide('slow');", 30000);
+		}
+		</SCRIPT>
+	 </DIV></DIV>
+<SCRIPT src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/engine.js" type="text/javascript"></SCRIPT>
+	 
+<SCRIPT src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/UserCategoryUtil.js" type="text/javascript"></SCRIPT>
+	 
+<SCRIPT src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/DWRRewriteAction.js" type="text/javascript"></SCRIPT>
+	 <IFRAME name="loginFrame" id="loginFrame" src="about:blank" style="border: 0px currentColor; width: 0px; height: 0px;"></IFRAME> 
+<DIV class="login_overlay" id="loginWidget" style="display: none;"><!--	html for login box	-->
+	 <INPUT id="loginWidgetOrigin" type="hidden">	 
+<DIV id="popupLogin"><A title="" class="close_login_flat" onclick="UserActions_Login.hideLoginWidget();return false;" 
+href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#">Close</A>
+<FORM id="login_formLogin" onsubmit="UserActions_Login.showMessage(JSi18n.login_sendingRequest);" 
+action="https://www.infoq.com/cn/login.action" method="post" 
+target="loginFrame"><LABEL class="label_login">E-mail</LABEL><INPUT name="username" 
+class="login_text" id="login_username" type="text"><LABEL 
+class="label_login">密码</LABEL><INPUT name="password" class="login_text" id="login_password" 
+type="password"><INPUT name="submit-login" class="submit-login" type="submit">
+<DIV id="socialLogin"><A title="使用Google账号登录" class="social-idp google" onclick="return addOrigin(this);" 
+href="http://www.infoq.com/cn/social/googleLogin.action?fl=login">使用Google账号登录</A>
+	        		 
+<DIV class="clearer" style="height: 0px;"></DIV><A title="使用Microsoft账号登录" 
+class="social-idp microsoft" onclick="return addOrigin(this);" href="http://www.infoq.com/cn/social/liveLogin.action?fl=login">使用Microsoft账号登录</A>
+	        		 
+<DIV class="clearer" style="height: 0px;"></DIV></DIV>
+<DIV class="more_links">
+<P><A style="text-decoration: none;" onclick="UserActions_Login.showForgotPasswordForm();return false;" 
+href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#">
+						忘记密码？					 </A>					 <BR><BR></P></DIV></FORM>
+<FORM id="login_formPasswordReset" style="display: none;" onsubmit="UserActions_Login.showMessage(JSi18n.login_sendingRequest);" 
+action="/cn/resetpasswordinit.action" method="post" target="loginFrame"><LABEL 
+class="label_login">InfoQ账号使用的E-mail</LABEL><INPUT name="email" class="login_text" 
+id="login_email" type="text"><BUTTON name="submit-login" style="padding: 8px 5px; border: 1px solid rgb(204, 204, 204); width: 100%;" 
+type="submit" on="">发送邮件</BUTTON>			 
+<DIV class="more_links">
+<P><A style="text-decoration: none;" onclick="UserActions_Login.showLoginForm();return false;" 
+href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#">重新登录
+					 </A>					 <BR><BR></P></DIV></FORM>
+<FORM id="login_formEmailVerification" style="display: none;" onsubmit="UserActions_Login.showMessage(JSi18n.login_sendingRequest);" 
+action="/cn/reactivate.action" method="post" target="loginFrame"><LABEL class="label_login">重新发送激活信息</LABEL><INPUT 
+name="email" class="login_text" id="login_emailVerification" type="text"><BUTTON 
+name="submit-login" style="padding: 8px 5px; border: 1px solid rgb(204, 204, 204); width: 100%;" 
+type="submit" on="">重新发送</BUTTON>			 
+<DIV class="more_links">
+<P><A style="text-decoration: none;" onclick="UserActions_Login.showLoginForm();return false;" 
+href="http://www.infoq.com/cn/articles/nodejs-8-connect-module-part-2#">重新登录
+					 </A>					 <BR><BR></P></DIV></FORM>
+<DIV class="more_links">
+<P><A title="" onclick="return addOrigin(this);" href="http://www.infoq.com/reginit.action?">没有用户名？</A></P>
+<P><A title="" onclick="return addOrigin(this);" href="http://www.infoq.com/reginit.action?">点击注册</A></P>
+<DIV id="loginPopupMessage" style="background: rgb(235, 240, 243); padding: 5px; margin-top: 45px; display: none;"></DIV></DIV></DIV><!--	html for login box 	--> 
+</DIV>
+<SCRIPT type="text/javascript">
+	var includeName = 'content.inline_personalization.include.label';
+	var excludeName = 'content.inline_personalization.exclude.label';
+	var includeHint = 'content.inline_personalization.include.hint';
+	var excludeHint = 'content.inline_personalization.exclude.hint';
+	var excludeCategoryMessage = 'content.inline_personalization.exclude.message';
+	var viewallCategoryMessage = 'content.inline_personalization.view_all.hint';
+	var busyMessage = 'content.inline_personalization.busy.message';
+	var contextPath = '' + '/';
+	var viewallCategoryPath= '';
+	var includeExcludeLink= true;
+</SCRIPT>
+	 
+<SCRIPT type="text/javascript">
+  var gaProfile="UA-6608133-2";
+  
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', gaProfile]);
+  _gaq.push(['_setLocalGifPath', 'http://www.infoq.com/styles/i/__utm.gif']);
+  _gaq.push(['_setLocalRemoteServerMode']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</SCRIPT>
+ 
+<SCRIPT src="深入浅出Node_js（八）：Connect模块解析（之二）静态文件中间件_files/tracker.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT type="text/javascript">
+Tracker.safeExec(function() {
+	
+    
+    _gaq.push(["_trackEvent", "userregistered", "false"]);
+    	
+});
+Tracker.safeExec(function() {_gaq.push(["_trackEvent", "userprefs", "0"]);});
+Tracker.safeExec(Tracker.doTrackVcrImpressions);
+Tracker.safeExec(Tracker.doTrackPresentationDefaultDisplay);
+Tracker.safeExec(Tracker.doTrackTaxonomyImpressions);
+Tracker.safeExec(Tracker.doTrackAuthorImpressions);
+</SCRIPT>
+	 
+<SCRIPT type="text/javascript">
+	var newsletterSubscriptionURL ='/cn/newsletter/subscribe.action';
+	DynamicLinks.updateRssLinks('q0qb8AJuOGZz1tkJiFVoSB375LR4PcyN');
+	ContentTools.updateLatestContentSection();
+	ContentTools.updatePersonaDropdowns();
+	
+	// only get the most popular links if they are used in the current page
+	//(so far they are used on homepage, inteview and presentation pages)
+	if($('#mostPopularSection').length){
+		ContentTools.updateMostPopular();
+	}
+
+	ContentSummary.setSelectedTab('zh');
+	//when user enters the main content area show default topics in the topics bar
+	$("#content-wrapper").mouseenter(function() {	
+	        showDefaultTopics();
+	});
+	
+	
+	Bookmarks.contentTitle = "深入浅出Node.js（八）：Connect模块解析（之二）静态文件中间件  ";
+	Bookmarks.apiUrl = '/widgets/bookmark.action';
+</SCRIPT>
+ 
+<SCRIPT type="text/javascript"> 
+var $buoop = {vs:{i:6,f:1,o:10.1,s:1}} 
+$buoop.ol = window.onload; 
+$(document).ready(function() {
+	 try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
+	 var e = document.createElement("script"); 
+	 e.setAttribute("type", "text/javascript");
+     e.setAttribute("src", "http://infoqstatic.com/scripts/lib/browser-update-org/update.js"); 
+	 document.body.appendChild(e); 
+});
+</SCRIPT>
+ </DIV></BODY></HTML>
