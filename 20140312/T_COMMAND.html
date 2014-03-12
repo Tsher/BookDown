@@ -1,0 +1,4280 @@
+<html>
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=UTF-8">
+</head>
+<body bgcolor="#FFFFFF">
+<table border="1">
+<tr>
+  <td>CNAME</td>
+  <td>CPROGRAM</td>
+  <td>CFUNCTION</td>
+  <td>CSIMILAR</td>
+  <td>CPOWER</td>
+  <td>CTYPE</td>
+  <td>CNO</td>
+  <td>CSUMMARY</td>
+</tr>
+<tr>
+  <td>adduser</td>
+  <td>adduser&nbsp;[必要参数][选择性参数]用户名</td>
+  <td>根据参数给系统添加用户，它的配置信息保存在/etc/adduser.conf文件中。如果调用时没有指定”--system”或”--group”参数，adduser指令在默认的情况下将添加一个一般用户；如果要添加一个系统用户，可以用”--system”参数；如果要添加一个用户组，可以用”--group”参数</td>
+  <td>deluser&nbsp;groupadd&nbsp;usermod&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>1</td>
+  <td>增加加一个系统用户</td>
+</tr>
+<tr>
+  <td>apm</td>
+  <td>apm[参数]</td>
+  <td>apm命令用语高级电源管理。当不输入参数直接输入apm指令时,系统将以用户可读的方式直接输出/proc/apm文件的内容</td>
+  <td>whatis&nbsp;man&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>2</td>
+  <td>高级电源管理</td>
+</tr>
+<tr>
+  <td>apmsleep</td>
+  <td>apmsleep[必要选项][选择选项]时间</td>
+  <td>如笔记本使用RTC从低功耗的休眠状态进入DRAM模式。apmsleep命令用语RTC中设置警告时间,并进入休眠模式或备用模式，默认进入休眠模式</td>
+  <td>apmd&nbsp;apm&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>3</td>
+  <td>APM&nbsp;进入备用或者修复状态</td>
+</tr>
+<tr>
+  <td>apropos</td>
+  <td>apropos[必要选项][选择选项]关键字</td>
+  <td>每个命令的使用手册都有一个简短的描述，通过这条指令可以查找相关的关键字描述</td>
+  <td>uname&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>4</td>
+  <td>查找使用手册的名字和相关描述</td>
+</tr>
+<tr>
+  <td>arch</td>
+  <td>arch</td>
+  <td>arch命令等同于指令&nbsp;name&nbsp;-m&nbsp;在当前的Linux系统下,arch指令输出结果有:i386、i486、i586、alpha、sparc、arm、m68k、mips、ppc、i686等</td>
+  <td>uname&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>5</td>
+  <td>输出主机的体系结构</td>
+</tr>
+<tr>
+  <td>batch</td>
+  <td>batch[必要参数][选择参数]</td>
+  <td>batch指令用来进行批处理</td>
+  <td>cron&nbsp;nice&nbsp;sh&nbsp;umask&nbsp;atd&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>6</td>
+  <td>执行批处理命令</td>
+</tr>
+<tr>
+  <td>bg</td>
+  <td>bg[要运行的程序]</td>
+  <td>bg&nbsp;指令用来将程序放在后台执行</td>
+  <td>&amp;&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>7</td>
+  <td>将程序放在后台执行</td>
+</tr>
+<tr>
+  <td>cal</td>
+  <td>cal[选择参数][月份][年份]</td>
+  <td>cal命令：用于查看日历等时间信息，如只有一个参数，则表示年份(1-9999)，如有两个参数，则表示月份和年份</td>
+  <td>date&nbsp;timeconfig&nbsp;rdate&nbsp;clock&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>8</td>
+  <td>查看日历</td>
+</tr>
+<tr>
+  <td>cd</td>
+  <td>cd[目录]</td>
+  <td>cd&nbsp;指令cd&nbsp;指令改变当前目录到指定目录。变量HOME是默认路径</td>
+  <td>pwd&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>9</td>
+  <td>切换目录</td>
+</tr>
+<tr>
+  <td>chfn</td>
+  <td>chfn[选择参数][账号名称]</td>
+  <td>chfn&nbsp;指令用语改变finger信息。finger信息保存在/etc/passwd&nbsp;文件中,并将被finger程序显示。linux系统提供的finger命令显示的4中信息为、姓名、工作地址、帮工电话和家庭电话，它们可以被chfn命令改变</td>
+  <td>finger&nbsp;passwd&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>10</td>
+  <td>设置finger信息,账号信息</td>
+</tr>
+<tr>
+  <td>chsh</td>
+  <td>chsh[必要参数][选择参数][用户名称]</td>
+  <td>chsh&nbsp;指令用来改变用户登录时的shell。如果指令行没有一个shell，那么chsh将提示设定一个shell</td>
+  <td>ogin&nbsp;passwd&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>11</td>
+  <td>改变登录系统时的shell</td>
+</tr>
+<tr>
+  <td>clear</td>
+  <td>clear</td>
+  <td>clear&nbsp;指令用来清楚终端屏幕，在终端中通过快捷键&nbsp;Ctrl+L&nbsp;清楚屏幕</td>
+  <td>tput&nbsp;terminfo&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>12</td>
+  <td>清楚终端屏幕，清屏</td>
+</tr>
+<tr>
+  <td>date</td>
+  <td>date[必要参数][选择参数]</td>
+  <td>date&nbsp;指令根据给定的格式显示当前的时间或设置系统时间</td>
+  <td>cal&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>13</td>
+  <td>显示或设置系统时间</td>
+</tr>
+<tr>
+  <td>dpkg</td>
+  <td>dpkg[必要参数][选择参数][deb包]</td>
+  <td>dpkg用于：管理系统的里deb包,可以对其安装、卸载、deb打包、deb解压等操作，与之相关apt-get工具可以在线下载&nbsp;deb包&nbsp;安装</td>
+  <td>apt-get&nbsp;rpm&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>14</td>
+  <td>Debian的包管理工具</td>
+</tr>
+<tr>
+  <td>dumpkeys</td>
+  <td>dumpkey[选择参数]</td>
+  <td>dumpkey&nbsp;命令：用于显示键盘映射表，输出的内容可以被loadkeys命令识别,改变映射关系</td>
+  <td>loadkeys&nbsp;locale&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>15</td>
+  <td>显示键盘映射</td>
+</tr>
+<tr>
+  <td>echo</td>
+  <td>echo[必要参数][选择参数][字符串]</td>
+  <td>echo&nbsp;指令输出文本行，shell不同echo指令的使用方法可能有所差异</td>
+  <td>echo&nbsp;more&nbsp;cat&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>16</td>
+  <td>显示/输出文本行</td>
+</tr>
+<tr>
+  <td>exec</td>
+  <td>exec[命令]</td>
+  <td>exec&nbsp;命令用来执行完指定的命令后交出控制权</td>
+  <td>echo&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>17</td>
+  <td>执行完命令后，交出控制权</td>
+</tr>
+<tr>
+  <td>exit</td>
+  <td>exit</td>
+  <td>exit&nbsp;命令用来退出当前shell</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>18</td>
+  <td>shell退出</td>
+</tr>
+<tr>
+  <td>fc</td>
+  <td>fc[必要参数][选择参数]</td>
+  <td>fc&nbsp;命令可以编辑曾今执行过的命令，并以批处理的形式让这些命令重新执行</td>
+  <td>history&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>19</td>
+  <td>修改或执行命令</td>
+</tr>
+<tr>
+  <td>fg</td>
+  <td>fg[必要参数]</td>
+  <td>fg&nbsp;命令可以把后台执行的任务拉到前台执行</td>
+  <td>bg&nbsp;jobs&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>20</td>
+  <td>将后台任务拉到前台执行</td>
+</tr>
+<tr>
+  <td>fgconsole</td>
+  <td>fgconsole</td>
+  <td>fgconsole&nbsp;命令用来输出虚拟终端的的数目</td>
+  <td>chvt&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>21</td>
+  <td>打印虚拟机终端数目</td>
+</tr>
+<tr>
+  <td>finger</td>
+  <td>finger[必要参数][账号名称]</td>
+  <td>finger&nbsp;命令显示系统用户的相关信息</td>
+  <td>chfn&nbsp;passwd&nbsp;w&nbsp;who&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>22</td>
+  <td>查找并显示用户信息</td>
+</tr>
+<tr>
+  <td>free</td>
+  <td>free[必要参数][选择参数]</td>
+  <td>free&nbsp;命令显示系统使用和空闲的内存情况，包括物理内存、交互区内存(swap)和内核缓冲区内存。共享内存将被忽略</td>
+  <td>ps&nbsp;slabtop&nbsp;vmstat&nbsp;top&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>23</td>
+  <td>显示内存信息</td>
+</tr>
+<tr>
+  <td>fuser</td>
+  <td>fuser[必要参数][选择参数][程序]</td>
+  <td>fuser&nbsp;命令用指定的文件或者文件系统显示进程进程号，默认情况下每一个文件名后会跟着一个字母来表示类型</td>
+  <td>kill&nbsp;killall&nbsp;lsof&nbsp;ps&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>24</td>
+  <td>用文件或套接口表示进程</td>
+</tr>
+<tr>
+  <td>fwhois</td>
+  <td>fwhois[用户名]</td>
+  <td>fwhois&nbsp;命令用来显示用户的信息</td>
+  <td>whois&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>25</td>
+  <td>显示用户信息</td>
+</tr>
+<tr>
+  <td>gcov</td>
+  <td>gcov[必要参数][选择参数]</td>
+  <td>gcov&nbsp;命令是一个coverage测试工具</td>
+  <td>gcc&nbsp;arm-linux-gcc&nbsp;gdb&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>26</td>
+  <td>coverage&nbsp;测试工具</td>
+</tr>
+<tr>
+  <td>gedit</td>
+  <td>vi&brvbar;vim&brvbar;ed</td>
+  <td>gedit&nbsp;命令：用来编辑文本文件</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>27</td>
+  <td>Gnome的文本编辑器</td>
+</tr>
+<tr>
+  <td>gitps</td>
+  <td>gitps[必要参数][选择参数][终端][用户]</td>
+  <td>gitps&nbsp;命令用来显示进程状况，具有可视化界面，更有利于操作</td>
+  <td>ps&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>28</td>
+  <td>显示程序情况</td>
+</tr>
+<tr>
+  <td>grep</td>
+  <td>&nbsp;grep[关键词][选择参数][文件]</td>
+  <td>grep&nbsp;命令：用于过滤/搜索的特定字符。可使用正则表达式能多种命令配合使用，使用上十分灵活</td>
+  <td>egrep&nbsp;fgrep&nbsp;grep&nbsp;ps&nbsp;cat&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>29</td>
+  <td>文本搜索</td>
+</tr>
+<tr>
+  <td>groupadd</td>
+  <td>groupadd[必要参数][选择参数]&nbsp;[群组]</td>
+  <td>groupadd&nbsp;命令用来创建一个新的群组</td>
+  <td>adduser&nbsp;groupdel&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>30</td>
+  <td>创建一个新的群组</td>
+</tr>
+<tr>
+  <td>groupdel</td>
+  <td>groupdel[群组]</td>
+  <td>groupdel&nbsp;命令用来改变系统的账户文件，删除指定用户的入口。指定的群组必须存在</td>
+  <td>groupadd&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>31</td>
+  <td>删除一个群组</td>
+</tr>
+<tr>
+  <td>halt</td>
+  <td>halt[必要参数]</td>
+  <td>halt&nbsp;命令用来关闭系统，然后通知内核停止、重启还是关闭电源</td>
+  <td>poweroff&nbsp;shutdown&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>32</td>
+  <td>关闭系统</td>
+</tr>
+<tr>
+  <td>history</td>
+  <td>history[必要参数][选择参数][文件名]</td>
+  <td>history&nbsp;命令可以用来显示曾执行过的命令，也可以根据显示的治疗来重新执行需要的命令</td>
+  <td>!&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>33</td>
+  <td>显示历史命令</td>
+</tr>
+<tr>
+  <td>htpasswd</td>
+  <td>htpasswd[必要参数][选择参数][密码文件][用户名]</td>
+  <td>htpasswd&nbsp;命令用来创建和更新保存HTTP用户的用户名和密码文件，如果htpasswd不能读取输出的文件，他将返回错误信息。</td>
+  <td>apachectl&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>34</td>
+  <td>创建和更新用户的认证文件</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>id[必要参数][选择参数][用户名]</td>
+  <td>id&nbsp;命令用来显示指定用户的信息或者当前用户名的信息</td>
+  <td>hostname&nbsp;uname&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>35</td>
+  <td>显示用的ID以及所属群组的ID</td>
+</tr>
+<tr>
+  <td>ifconfig</td>
+  <td>ifconfig[网络设备][必要参数][选择参数]</td>
+  <td>ifconfig&nbsp;命令：用来查看和配置网络设备。当网络环境发生改变时可通过此命令对网络进行相应的配置</td>
+  <td>route&nbsp;netstat&nbsp;arp&nbsp;ping&nbsp;netconfig&nbsp;iwconfig&nbsp;host&nbsp;nslookup&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>36</td>
+  <td>显示和配置网络设备</td>
+</tr>
+<tr>
+  <td>info</td>
+  <td>info[必要参数][选择参数]</td>
+  <td>info&nbsp;命令将以info的格式读取文档</td>
+  <td>man&nbsp;help&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>37</td>
+  <td>读取目录信息</td>
+</tr>
+<tr>
+  <td>init</td>
+  <td>init[必要参数][选择参数]</td>
+  <td>init&nbsp;命令init是所有进程的父进程，它的主要任务是更具存储在/etc/inittab文件中的脚步创建进程</td>
+  <td>getty&nbsp;login&nbsp;sh&nbsp;runlevel&nbsp;kill&nbsp;inittab&nbsp;reboot&nbsp;iniscript&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>38</td>
+  <td>开关机设置</td>
+</tr>
+<tr>
+  <td>iostat</td>
+  <td>iostat[选择参数][时间][次数]</td>
+  <td>iostat&nbsp;命令：通过iostat方便查看CPU、网卡、tty设备、磁盘、CD-ROM&nbsp;等等设备的活动情况,负载信息。而iostat的数据主要来源&nbsp;对应的文件是&nbsp;/proc/partitions&nbsp;而Linux&nbsp;内核为&nbsp;2&nbsp;6对应的文件是/proc/diskstats或/sys/block/[块设备名]/stat</td>
+  <td>swatch&nbsp;mev&nbsp;lsof&nbsp;uptime&nbsp;tload&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>39</td>
+  <td>输入输出负载监控</td>
+</tr>
+<tr>
+  <td>ipcrm</td>
+  <td>ipcrm[选择参数]</td>
+  <td>ipcrm&nbsp;命令：用来删除消息列队、旗语设置或者共享内存段。需要删除的进程号将用参数设定</td>
+  <td>ipcs&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>40</td>
+  <td>删除消息列队、旗语设置或共享内存ID</td>
+</tr>
+<tr>
+  <td>ipcs</td>
+  <td>ipcs[源参数][输出参数]</td>
+  <td>ipcs&nbsp;命令：将对进程通讯进行描述。如果不能指定参数，那么输出是当前系统中活跃的消息列队、共享内存段和标志信息设置</td>
+  <td>ipcrm&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>41</td>
+  <td>显示进程通讯的信息</td>
+</tr>
+<tr>
+  <td>jobs</td>
+  <td>jobs[必要参数][任务]</td>
+  <td>jobs&nbsp;命令：显示当前正在后台执行的任务，得到相关的信息之后，可以对任务进行一步操作，如果用fg命令调用前台程序运行，或者使用kill命令结束任务</td>
+  <td>kill&nbsp;fg&nbsp;bg&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>42</td>
+  <td>列出所有后台程序</td>
+</tr>
+<tr>
+  <td>kill</td>
+  <td>kill[必要参数][选择参数][进程号]</td>
+  <td>kill&nbsp;命令：发送指定的型号到相应进程。不指定型号将发送SIGTERM（15）终止指定进程。诺任无法终止该程序可用“-KILL”&nbsp;参数，其发送的信号为SIGKILL(9)&nbsp;，将强制结束进程，使用ps命令或者jobs&nbsp;命令可以查看进程号。root用户将影响用户的进程，非root用户只能影响自己的进程</td>
+  <td>signal&nbsp;killall&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>43</td>
+  <td>杀死执行的中的进程/结束进程</td>
+</tr>
+<tr>
+  <td>killall</td>
+  <td>killall[必要参数][选择参数][命令名]</td>
+  <td>killall&nbsp;命令：用来结束同名的的所有进程</td>
+  <td>kill&nbsp;ps&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>44</td>
+  <td>杀死同名的所有进程</td>
+</tr>
+<tr>
+  <td>last</td>
+  <td>last[必要参数]</td>
+  <td>last&nbsp;命令：查找/var/log/wtmp&nbsp;文件，并且显示在此文件创建后的所有登陆用户。可以指定数字或者时间来显示用户的登录情况</td>
+  <td>shutdown&nbsp;halt&nbsp;login&nbsp;init&nbsp;exit&nbsp;reboot&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>45</td>
+  <td>列出目前与过去登陆系统的用户相关信息</td>
+</tr>
+<tr>
+  <td>lastb</td>
+  <td>lastb[必要参数]</td>
+  <td>lastb&nbsp;命令：与last命令类似，lastb命令查找、var/log/btmp&nbsp;文件，此文件列出了所有登录系统失败的用户的信息</td>
+  <td>last&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>46</td>
+  <td>列出登陆系统失败的用户相关信息</td>
+</tr>
+<tr>
+  <td>let</td>
+  <td>let[计算表达式]</td>
+  <td>let&nbsp;命令：是&nbsp;BASH中用于计算的工具,提供常用运算符还提供了方幂“**”运算符。在变量的房屋计算中不需要加上$来表示变量,如果表达式的值是非0，那么返回的状态值是0；否则，返回的状态值是1</td>
+  <td>wc&nbsp;bc&nbsp;dc&nbsp;expr&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>47</td>
+  <td>简单的计算器</td>
+</tr>
+<tr>
+  <td>loadkeys</td>
+  <td>loadkeys[必要参数]</td>
+  <td>loadkeys&nbsp;命令：用于键盘映射的值，可用dumpkey&nbsp;显示当前键盘映射</td>
+  <td>dumpkeys&nbsp;locale&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>48</td>
+  <td>设置键盘映射</td>
+</tr>
+<tr>
+  <td>login</td>
+  <td>login</td>
+  <td>login&nbsp;命令：使用户放弃现在的使用的身份，重新登录系统。也可以在后面加入用户，在直接输入密码，登录系统</td>
+  <td>logout&nbsp;exit&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>49</td>
+  <td>登录系统</td>
+</tr>
+<tr>
+  <td>logname</td>
+  <td>logname[选择参数]</td>
+  <td>logname&nbsp;命令：用来显示登录账号信息</td>
+  <td>login&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>50</td>
+  <td>显示登录账号的信息</td>
+</tr>
+<tr>
+  <td>logout</td>
+  <td>logout</td>
+  <td>logout&nbsp;命令：是用户退出系统，其功能和login命令对应。</td>
+  <td>login&nbsp;exit&nbsp;su&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>51</td>
+  <td>退出系统</td>
+</tr>
+<tr>
+  <td>logrotate</td>
+  <td>logrotate[必要参数][选择参数][文件]</td>
+  <td>logrotate&nbsp;命令：用来管理系统的log文件</td>
+  <td>gzip&nbsp;more，cat&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>52</td>
+  <td>处理log文件</td>
+</tr>
+<tr>
+  <td>lsb_release</td>
+  <td>lsb_release[必要参数][选择参数]数</td>
+  <td>lsb_release:用于查看当前系统发行版的相关信息。LSB&nbsp;是&nbsp;Linux&nbsp;Standard&nbsp;Base的缩写.包括查看系统版本、发行代号、系统描述等</td>
+  <td>uname&nbsp;hostname&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>53</td>
+  <td>查看发行版信息</td>
+</tr>
+<tr>
+  <td>lsmod</td>
+  <td>lsmod</td>
+  <td>lsmod&nbsp;命令：是一个小程序，用来显示文件、proc/modules的信息，也就是显示当前内核模块装载的模块</td>
+  <td>modprobe&nbsp;kudzu&nbsp;start&nbsp;hostname&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>54</td>
+  <td>显示linux内核的模块信息</td>
+</tr>
+<tr>
+  <td>lsof</td>
+  <td>lsof[选择参数][文件]</td>
+  <td>lsof&nbsp;命令：用于查看你进程开打的文件，打开文件的进程，进程打开的端口(TCP、UDP)。找回/恢复删除的文件。是十分方便的系统监视工具，因为&nbsp;lsof&nbsp;需要访问核心内存和各种文件，所以需要root用户执行</td>
+  <td>uname&nbsp;top&nbsp;ps&nbsp;swatch&nbsp;</td>
+  <td>超级用户</td>
+  <td>系统管理</td>
+  <td>55</td>
+  <td>查看系统/进程所占资源</td>
+</tr>
+<tr>
+  <td>man</td>
+  <td>man[必要参数][选择参数]</td>
+  <td>man&nbsp;命令：如果指定章节，那么man命令将在指定的章节查找指定帮助信息。一般将指定一个手册页的名字作为man命令的选择参数，然后将显示这个手册页。可以通过参数指定和、etc/main&nbsp;config&nbsp;配置文件指定man命令的搜索路径</td>
+  <td>apropos&nbsp;whatis&nbsp;less&nbsp;griff&nbsp;man.conf&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>56</td>
+  <td>格式化和显示在线手册</td>
+</tr>
+<tr>
+  <td>manpath</td>
+  <td>manpath[必要参数][选择参数]</td>
+  <td>manpath&nbsp;命令：用来设置man命令查找时的路径</td>
+  <td>man&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>57</td>
+  <td>设置man手册的查询路径</td>
+</tr>
+<tr>
+  <td>mkfontdir</td>
+  <td>mkfontdir[必要参数][选择参数]</td>
+  <td>mkfontdir&nbsp;命令：对每一个指定的目录，搜索所有的字体，生成文件&nbsp;fonts&nbsp;dir，供X服务器和字体服务器使用，以找到对应的字体文件。fonts&nbsp;dir&nbsp;也将被放置在指定的目录中</td>
+  <td>X&nbsp;Xserver&nbsp;xfs&nbsp;xset&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>58</td>
+  <td>创建字体文件目录</td>
+</tr>
+<tr>
+  <td>msgcat</td>
+  <td>msgcat[必要参数][选择参数][输入文件]</td>
+  <td>msgcat&nbsp;命令：连接合并指定的PO（可跨平台对象）文件。两个或多个指定的PO文件中找出共同的翻译消息。利用“--more-than”参数，可以使消息在不同文件出现的次数较多时才打印，使用“--less-than”参数则会使消息在不同文件出现次数较少时才打印</td>
+  <td>msgcomm&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>59</td>
+  <td>合并消息目录</td>
+</tr>
+<tr>
+  <td>msgcomm</td>
+  <td>msgcomm[必要参数][选择参数][输入文件]</td>
+  <td>msgcomm&nbsp;命令：在两个或多个命令PO文件中查找共同的翻译信息。利用“--more-than”，可以使消息在不同文件出现的次数较多时才会打印；使用“--less-than”参数则会使消息在不同文件出现的次数较少时才打印</td>
+  <td>msgcat&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>60</td>
+  <td>匹配两个消息目录</td>
+</tr>
+<tr>
+  <td>msgen</td>
+  <td>msgen[必要参数][选择参数][输入文件]</td>
+  <td>msgen&nbsp;命令：创建一个英文翻译库。输入文件名是最近创建英语的PO文件或者POT文件（通常由xgettext创建）。未翻译的条目会填上和msgid一样的字符串，并标记为模糊</td>
+  <td>msginit&nbsp;msgcomm&nbsp;</td>
+  <td>超级用户</td>
+  <td>系统管理</td>
+  <td>61</td>
+  <td>创建英语消息目录</td>
+</tr>
+<tr>
+  <td>msginit</td>
+  <td>msginit[必要参数][选择参数]</td>
+  <td>msginit&nbsp;命令：创建新的PO文件，即根据用户环境变量取值初始化头文件</td>
+  <td>msgen&nbsp;msgcomm&nbsp;</td>
+  <td>超级用户</td>
+  <td>系统管理</td>
+  <td>62</td>
+  <td>初始化消息目录</td>
+</tr>
+<tr>
+  <td>netconfig</td>
+  <td>setup&brvbar;ifconfig&brvbar;route</td>
+  <td>netconfig&nbsp;命令：提供图形化的网络环境设置,一些发行版中并未集成此命令</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>63</td>
+  <td>图形化设置网络/IP/DNS/网关</td>
+</tr>
+<tr>
+  <td>newgrp</td>
+  <td>newgrp[群组名称]</td>
+  <td>newgrp&nbsp;命令：可以使得用户以相同的用户名、不同的群组重新登陆系统，但是用户名必须同时输入这两个群组</td>
+  <td>login&nbsp;su&nbsp;sudo&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>64</td>
+  <td>登陆另一个群组</td>
+</tr>
+<tr>
+  <td>nohup</td>
+  <td>nohup[选择参数][命令]</td>
+  <td>nohup&nbsp;命令：可以忽略挂断信号，继续执行命令。</td>
+  <td>ps&nbsp;top&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>65</td>
+  <td>退出系统继续执行命令</td>
+</tr>
+<tr>
+  <td>ntsysv</td>
+  <td>ntsysv[必要参数][选择参数]</td>
+  <td>ntsysv&nbsp;命令：用来设置系统的各种服务，执行命令后进入图形化界面，与chkconfig功能类似，单后者不提供图像界面</td>
+  <td>chkconfig&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>66</td>
+  <td>设置系统的各种服务</td>
+</tr>
+<tr>
+  <td>open</td>
+  <td>open[必要参数][选择参数][--][命令]</td>
+  <td>open&nbsp;命令：用来开启虚拟终端，然后执行指定的命令，指定的命令可以包含参数</td>
+  <td>login&nbsp;doshell&nbsp;switchto&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>67</td>
+  <td>开启虚拟终端</td>
+</tr>
+<tr>
+  <td>pgrep</td>
+  <td>pgrep[必要参数][选择参数][程序]</td>
+  <td>pgrep&nbsp;命令：可以依照进程ID来浏览程序</td>
+  <td>ps&nbsp;kill&nbsp;grep&nbsp;killall&nbsp;less&nbsp;top&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>68</td>
+  <td>基于名字/属性的查找或信号处理/终端进程</td>
+</tr>
+<tr>
+  <td>pidof</td>
+  <td>pidof[必要参数][选择参数][程序]</td>
+  <td>pidof&nbsp;命令：可以显示正在运行的进程ID</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>69</td>
+  <td>查找运行程序的进程ID/通过进程名查看进程ID</td>
+</tr>
+<tr>
+  <td>pkill</td>
+  <td>pkill[必要参数][选择参数][字符串]</td>
+  <td>pkill&nbsp;命令：是ps命令和kill命令的结合,用来杀死指定进程</td>
+  <td>kill&nbsp;killall&nbsp;pgrep&nbsp;grep&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>70</td>
+  <td>杀死指定进程</td>
+</tr>
+<tr>
+  <td>pmap</td>
+  <td>pmap[必要参数][选择参数][程序]</td>
+  <td>pmap&nbsp;命令：用来显示指定程序的内存信息</td>
+  <td>pgrep&nbsp;kill&nbsp;free&nbsp;top&nbsp;du&nbsp;df&nbsp;ls&nbsp;procinfo&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>71</td>
+  <td>显示指定程序的内存信息/链接库信息</td>
+</tr>
+<tr>
+  <td>procinfo</td>
+  <td>procinfo[必要参数][选择参数]</td>
+  <td>procinfo&nbsp;命令：用来显示系统的参数，并将结果输出到标准输出</td>
+  <td>ps&nbsp;fdisk&nbsp;free&nbsp;lsmod&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>72</td>
+  <td>显示系统状态</td>
+</tr>
+<tr>
+  <td>ps</td>
+  <td>ps[必要参数][选择参数]</td>
+  <td>ps&nbsp;命令：用来显示当前进程的状态</td>
+  <td>top&nbsp;kill&nbsp;pgrep&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>73</td>
+  <td>报考程序状况</td>
+</tr>
+<tr>
+  <td>pstree</td>
+  <td>pstree[必要参数][选择参数][程序]</td>
+  <td>pstree&nbsp;命令：用来显示程序间的关系</td>
+  <td>ps&nbsp;top&nbsp;pgrep&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>74</td>
+  <td>以树状图显示程序</td>
+</tr>
+<tr>
+  <td>pwck</td>
+  <td>pwck[必要参数][文件]</td>
+  <td>pwck&nbsp;命令：可以检测密码文件的正确性</td>
+  <td>group&nbsp;passwd&nbsp;shadow&nbsp;usermod&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>75</td>
+  <td>检查密码文件</td>
+</tr>
+<tr>
+  <td>pwd</td>
+  <td>pwd[选择参数]</td>
+  <td>pwd&nbsp;命令：可以使用户获取当前路径的信息</td>
+  <td>ls&nbsp;cd&nbsp;df&nbsp;du&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>76</td>
+  <td>显示工作目录</td>
+</tr>
+<tr>
+  <td>reboot</td>
+  <td>reboot[必要参数][选择参数]</td>
+  <td>reboot&nbsp;命令：用来重新启动计算机</td>
+  <td>init&nbsp;shutdown&nbsp;halt&nbsp;exit&nbsp;logou&nbsp;</td>
+  <td>超级用户</td>
+  <td>系统管理</td>
+  <td>77</td>
+  <td>重新启动</td>
+</tr>
+<tr>
+  <td>rencie</td>
+  <td>rencie[优先级][选择参数]</td>
+  <td>rencie&nbsp;命令：用来重新设置优先级，优先级数值设置为-20~19&nbsp;有管理员才可以设置</td>
+  <td>nice&nbsp;</td>
+  <td>超级用户</td>
+  <td>系统管理</td>
+  <td>78</td>
+  <td>调整优先级</td>
+</tr>
+<tr>
+  <td>rlogin</td>
+  <td>rlogin[远端主机][必要参数][选择参数]</td>
+  <td>rlogin&nbsp;命令：用来连接当前本地主机系统到远端的主机系统</td>
+  <td>rsh&nbsp;kerberos&nbsp;ssh&nbsp;telnet&nbsp;klogind&nbsp;login&nbsp;krb_realmofhost&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>79</td>
+  <td>远程登录</td>
+</tr>
+<tr>
+  <td>rmmod</td>
+  <td>rmmod[必要参数][选择参数][模块]</td>
+  <td>rmmod&nbsp;命令：从运行的内核中卸载克安装的模块</td>
+  <td>lsmod&nbsp;insmod&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>80</td>
+  <td>删除模块</td>
+</tr>
+<tr>
+  <td>route</td>
+  <td>route[必要参数][选择参数]</td>
+  <td>route&nbsp;命令：显示和设置路由，可以通过&nbsp;add&brvbar;del参数改变路由表</td>
+  <td>ifconfig&nbsp;netstat&nbsp;netconfig&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>81</td>
+  <td>路由/网关设置</td>
+</tr>
+<tr>
+  <td>rsh</td>
+  <td>rsh[必要参数][选择参数][主机][命令]</td>
+  <td>rsh&nbsp;命令：复制标准输入到远程主机命令行，远程主机的输出被输出到本地主机的标准输出，远端输出的错误输出到本地主机的标准输出</td>
+  <td>rlogin&nbsp;ssh&nbsp;telnet&nbsp;kshd&nbsp;krb_sendauth&nbsp;krb_realmofhost&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>82</td>
+  <td>远程登录shell</td>
+</tr>
+<tr>
+  <td>rwho</td>
+  <td>rwho[必要参数]</td>
+  <td>rwho&nbsp;命令：显示局域网中的主机用户信息</td>
+  <td>finger&nbsp;rup&nbsp;ruptime&nbsp;rusers&nbsp;who&nbsp;rwhod&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>83</td>
+  <td>查看系统用户</td>
+</tr>
+<tr>
+  <td>screen</td>
+  <td>screen[必要参数][选择参数]</td>
+  <td>screen&nbsp;命令：当通过&nbsp;SSH/Telnet&nbsp;远程登陆系统再通过screen命令再建一个虚拟终端的终端，关闭/退出终端后，在虚拟中的终端执行的任务不会被随之关闭。下一次&nbsp;远程登录&nbsp;系统通过screen命令就可继续操作上次的执行的任务</td>
+  <td>resize&nbsp;setconsole&nbsp;vlock&nbsp;wall&nbsp;open&nbsp;fgconsole&nbsp;clear&nbsp;bg&nbsp;fg&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>84</td>
+  <td>创建虚拟终端的终端</td>
+</tr>
+<tr>
+  <td>shutdown</td>
+  <td>shutdown[必要参数][选择参数][时间][警告信息]</td>
+  <td>shutdown&nbsp;命令：可以进行关机或者重新启动</td>
+  <td>reboot&nbsp;halt&nbsp;init&nbsp;poweroff&nbsp;sleep&nbsp;</td>
+  <td>超级用户</td>
+  <td>系统管理</td>
+  <td>85</td>
+  <td>系统关机</td>
+</tr>
+<tr>
+  <td>sleep</td>
+  <td>sleep[选择参数][时间]</td>
+  <td>sleep&nbsp;命令：可以使系统进入休眠状态</td>
+  <td>init&nbsp;reboot&nbsp;halt&nbsp;shutdown&nbsp;watch&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>86</td>
+  <td>休眠</td>
+</tr>
+<tr>
+  <td>sliplogin</td>
+  <td>sliplogin[必要参数][选择参数]</td>
+  <td>sliplogin&nbsp;命令：将终端机之间的连接变为sliplogin连接。</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>87</td>
+  <td>将终端机之间的连接变为sliplogin连接</td>
+</tr>
+<tr>
+  <td>stty</td>
+  <td>&nbsp;stty[必要参数][选择参数]</td>
+  <td>stty命令：用于显示和设置终端（串口通讯）参数，达到自己所需目的</td>
+  <td>tty&nbsp;setconsole&nbsp;vlock&nbsp;screen&nbsp;resize&nbsp;getty&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>88</td>
+  <td>设置终端</td>
+</tr>
+<tr>
+  <td>su</td>
+  <td>su[必要参数][选择参数][用户名]</td>
+  <td>su&nbsp;命令：可以切换系统的用户账号&nbsp;不输入用户名时，默认用户为root用户</td>
+  <td>passwd&nbsp;adduser&nbsp;sudo&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>89</td>
+  <td>变更用户身份</td>
+</tr>
+<tr>
+  <td>sudo</td>
+  <td>sudo[必要参数][选择参数]数</td>
+  <td>sudo&nbsp;命令：可以以系统的其他用户的身份执行指定命令，又称透权执行命令</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>90</td>
+  <td>以其他身份来执行命令</td>
+</tr>
+<tr>
+  <td>suspend</td>
+  <td>suspend[必要参数]</td>
+  <td>suspend&nbsp;命令：可以暂停shell的执行</td>
+  <td>kill&nbsp;killall&nbsp;pkill&nbsp;ps&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>91</td>
+  <td>暂停执行shell</td>
+</tr>
+<tr>
+  <td>swatch</td>
+  <td>swatch[选择参数]</td>
+  <td>swatch&nbsp;命令：可以用来监控syslog文件。</td>
+  <td>syslogd&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>92</td>
+  <td>系统监控程序</td>
+</tr>
+<tr>
+  <td>symlinks</td>
+  <td>symlinks[必要参数][目录]</td>
+  <td>symlinks&nbsp;命令：检查目录中的符号链接情况</td>
+  <td>ld&nbsp;ln&nbsp;cp&nbsp;lndir&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>93</td>
+  <td>维护符号链接的工具</td>
+</tr>
+<tr>
+  <td>tload</td>
+  <td>tload[选择参数][终端]</td>
+  <td>tload&nbsp;命令：用于文本的方式显示系统的负载信息</td>
+  <td>ps&nbsp;top&nbsp;uptime&nbsp;w&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>94</td>
+  <td>显示系统负载</td>
+</tr>
+<tr>
+  <td>top</td>
+  <td>top[必要参数][选择参数]</td>
+  <td>top&nbsp;命令：可以显示当前系统正在执行的进程的相关信息，包括进程ID、内存占用率、CPU占用率等</td>
+  <td>free&nbsp;ps&nbsp;uptime&nbsp;atop&nbsp;slabtop&nbsp;vmstat&nbsp;w-b&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>95</td>
+  <td>显示进程信息</td>
+</tr>
+<tr>
+  <td>uname</td>
+  <td>uname[必要参数][选择参数]</td>
+  <td>uname&nbsp;命令：用来显示系统的相关信息</td>
+  <td>make&nbsp;patch&nbsp;ls&nbsp;hostname&nbsp;modprobe&nbsp;kudzu&nbsp;date&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>96</td>
+  <td>显示系统信息/查看内核版本</td>
+</tr>
+<tr>
+  <td>uptime</td>
+  <td>uptime[选择参数]</td>
+  <td>uptime&nbsp;命令：用来查询系统负载，时间等信息。与之有相同功能的还有iostat能获得更多的系统信息。</td>
+  <td>free&nbsp;iostat&nbsp;top&nbsp;tload&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>97</td>
+  <td>显示系统负载信息</td>
+</tr>
+<tr>
+  <td>useradd</td>
+  <td>useradd[必要参数][选择参数]</td>
+  <td>useradd2命令：useradd可用来建立用户账号，他和adduser命令是相同的。账号建好之后，再用passwd设定账号的密码。使用useradd命令所建立的账号，实际上是保存在/etc/passwd文本文件中。</td>
+  <td>deluser&nbsp;groupadd&nbsp;usermod&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>98</td>
+  <td>建立用户账号</td>
+</tr>
+<tr>
+  <td>userconf</td>
+  <td>userconf[选择参数]</td>
+  <td>userconf&nbsp;命令：用来设置用户设置，当不输入任何参数时，将进入图像界面进行设置</td>
+  <td>useradd&nbsp;adduser&nbsp;usermod&nbsp;</td>
+  <td>超级用户</td>
+  <td>系统管理</td>
+  <td>99</td>
+  <td>用户账号设置</td>
+</tr>
+<tr>
+  <td>userdel</td>
+  <td>userdel[必要参数][用户]</td>
+  <td>userdel&nbsp;命令：用来删除用户账号。还可以通过加入参数，删除与指定用户相关文件。</td>
+  <td>adduser&nbsp;useradd&nbsp;usermod&nbsp;userconf&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>100</td>
+  <td>删除用户账号</td>
+</tr>
+<tr>
+  <td>usermod</td>
+  <td>usermod[必要参数][选择参数][用户账户]</td>
+  <td>usermod&nbsp;命令：用来修改用户账号的设置</td>
+  <td>adduser&nbsp;useradd&nbsp;userdel&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>101</td>
+  <td>修改用户账号/修改账号信息</td>
+</tr>
+<tr>
+  <td>users</td>
+  <td>users[必要参数][选择参数]</td>
+  <td>users&nbsp;命令：用来删除用户。通过配置参数可以删除用户相关文件</td>
+  <td>useradd&nbsp;userdel&nbsp;userconf&nbsp;userconf&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>102</td>
+  <td>显示用户/所有用户</td>
+</tr>
+<tr>
+  <td>vi</td>
+  <td>vi[必要参数][选择参数][文件]</td>
+  <td>vi&nbsp;命令：Linux默认的文字编辑器，在命令行界面下编辑文字</td>
+  <td>vim&nbsp;ed&nbsp;nano&nbsp;vimdiff&nbsp;ctags&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>103</td>
+  <td>文字编辑器</td>
+</tr>
+<tr>
+  <td>vim</td>
+  <td>vim[必要参数][选择参数]</td>
+  <td>vim&nbsp;命令：是vi编辑器的增强版</td>
+  <td>vi&nbsp;nano&nbsp;view&nbsp;vimdiff&nbsp;ctags&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>104</td>
+  <td>增强型vi编辑器</td>
+</tr>
+<tr>
+  <td>vlock</td>
+  <td>vlock[必要参数][选择参数]</td>
+  <td>vlock&nbsp;命令：用来锁定虚拟终端</td>
+  <td>exit&nbsp;logout&nbsp;shutdown&nbsp;halt&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>105</td>
+  <td>锁定终端</td>
+</tr>
+<tr>
+  <td>w</td>
+  <td>w[必要参数][选择参数]</td>
+  <td>w&nbsp;命令：用来显示当前登录到系统的用户信息</td>
+  <td>free&nbsp;ps&nbsp;top&nbsp;uptime&nbsp;utmp&nbsp;who&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>106</td>
+  <td>显示登录系统的用户信息</td>
+</tr>
+<tr>
+  <td>wait</td>
+  <td>wait[程序]</td>
+  <td>wait&nbsp;命令：用来等待指定程序返回状态</td>
+  <td>ps&nbsp;top&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>107</td>
+  <td>等待程序返回状态</td>
+</tr>
+<tr>
+  <td>watch</td>
+  <td>watch[必要参数][选择参数][命令]</td>
+  <td>watch&nbsp;命令：可以将命令的输出结果输出到标准输出设备，多用于周期性执行命令/定时执行命令</td>
+  <td>cat&nbsp;more&nbsp;tail&nbsp;sleep&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>108</td>
+  <td>将结果输出到标准输出设备</td>
+</tr>
+<tr>
+  <td>whereis</td>
+  <td>whereis[必要参数][选择参数][文件]</td>
+  <td>whereis&nbsp;命令：用来查找符合条件的文件，并将结果输出到标准输出</td>
+  <td>find&nbsp;locate&nbsp;which&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>109</td>
+  <td>查找文件/查看命令路径</td>
+</tr>
+<tr>
+  <td>which</td>
+  <td>which[文件]</td>
+  <td>which&nbsp;命令：用来查找文件，它的查找范围由环境变量“$PATH”设置</td>
+  <td>whereis&nbsp;locate&nbsp;find&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>110</td>
+  <td>查找文件/查看命令路径</td>
+</tr>
+<tr>
+  <td>who</td>
+  <td>who[必要参数][选择参数][记录文件]</td>
+  <td>who&nbsp;命令：命令用来显示当前登录系统的用户的信息</td>
+  <td>user&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>111</td>
+  <td>显示系统用户信息/当前登录用户</td>
+</tr>
+<tr>
+  <td>whoami</td>
+  <td>whoami[选择参数]</td>
+  <td>whoami&nbsp;命令：命令用来显示当前用户名</td>
+  <td>who&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>112</td>
+  <td>显示用户名</td>
+</tr>
+<tr>
+  <td>whois</td>
+  <td>whois[选择参数][必要参数]</td>
+  <td>whois&nbsp;命令：用来查找并显示指定用户账号、域名相关信息，包括域名注册时间、拥有者、邮箱等</td>
+  <td>tracepath&nbsp;host&nbsp;nslookup&nbsp;who&nbsp;pwd&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>113</td>
+  <td>查询指定账户/域名信息</td>
+</tr>
+<tr>
+  <td>yum</td>
+  <td>yum[选择参数][RPM包]</td>
+  <td>yum&nbsp;命令：用于添加/删除/更新RPM包,自动解决包的依赖问题以及系统更新升级</td>
+  <td>apt&nbsp;rpm&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统管理</td>
+  <td>114</td>
+  <td>管理RPM包</td>
+</tr>
+<tr>
+  <td>apmd</td>
+  <td>apmd[必要参数][选择参数]</td>
+  <td>apmd&nbsp;命令：是高级电源管理子系统的守护进程，apmd子系统主要由电源</td>
+  <td>apm&nbsp;apmsleep&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>115</td>
+  <td>高级电源管理</td>
+</tr>
+<tr>
+  <td>apt-get</td>
+  <td>apt-get[必要参数][包][选择参数]</td>
+  <td>apt-get&nbsp;命令：Advanced&nbsp;Packaging&nbsp;Tools,简称：APT是Debian及其派生发行版的软件包管理器。APT可以自动下载，配置，安装二进制或者源代码格式的软件包，因此简化了Unix系统上管理软件的过程。APT最早被设计成dpkg的前端，用来处理deb格式的软件包。现在经过APT-RPM组织修改，APT已经可以安装在支持RPM的系统管理RPM包</td>
+  <td>apt-cache&nbsp;apt-file&nbsp;rpm&nbsp;yum&nbsp;</td>
+  <td>超级用户</td>
+  <td>系统设置</td>
+  <td>116</td>
+  <td>高级包装工具</td>
+</tr>
+<tr>
+  <td>at</td>
+  <td>at[必要参数][选择参数][时间]</td>
+  <td>at&nbsp;命令：和batch命令从标准输入或者指定文件读取命令，这些命令将在一段时间之后执行</td>
+  <td>batch&nbsp;atq&nbsp;atrm&nbsp;cron&nbsp;nice&nbsp;sh&nbsp;umaskatd&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>117</td>
+  <td>系统将执行的任务排队、定时执行</td>
+</tr>
+<tr>
+  <td>atd</td>
+  <td>atd[必要参数][选择参数]</td>
+  <td>atd&nbsp;命令：执行被at命令排队的任务</td>
+  <td>at&nbsp;atrun&nbsp;cron&nbsp;crontab&nbsp;syslog&nbsp;at.deny&nbsp;at.allow&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>118</td>
+  <td>执行已经排队的任务</td>
+</tr>
+<tr>
+  <td>atq</td>
+  <td>atq[选择参数]</td>
+  <td>atq&nbsp;命令：列出用户已设置排队的任务。如果用户是超级用户，那么所有的任务将被列出，标准输出的格式为：任务号，天数，小时数，工作类型</td>
+  <td>at&nbsp;atd&nbsp;atrm&nbsp;atrun&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>119</td>
+  <td>检查排队的任务</td>
+</tr>
+<tr>
+  <td>atrm</td>
+  <td>atrm[选择参数][任务]</td>
+  <td>atrm&nbsp;命令：用来删除已经排队的任务，任务将以任务号为标识</td>
+  <td>at&nbsp;atq&nbsp;atrun&nbsp;atd&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>120</td>
+  <td>删除已经排队的任务</td>
+</tr>
+<tr>
+  <td>atrun</td>
+  <td>atrun[选择参数]</td>
+  <td>atrun&nbsp;命令：运行at命令设置任务。他是一个shell脚步，调用/usr/sbin/atd&nbsp;命令使用“-s”参数的情况。它向后兼容老版本的命令</td>
+  <td>at&nbsp;atd&nbsp;atrm&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>121</td>
+  <td>执行已排队的任务</td>
+</tr>
+<tr>
+  <td>aumix</td>
+  <td>aumix[必要参数][选择参数]</td>
+  <td>aumix&nbsp;命令：用来调整音频设备的设置。它可以应用在命令行、脚步，可以与键盘或者鼠标进行互交</td>
+  <td>gpm&nbsp;moused&nbsp;sb&nbsp;xaumix&nbsp;</td>
+  <td>超级用户</td>
+  <td>系统设置</td>
+  <td>122</td>
+  <td>设置音效设备</td>
+</tr>
+<tr>
+  <td>authconfig</td>
+  <td>authconfig[必要参数][选择参数]</td>
+  <td>authconfig&nbsp;命令：提供了一个简单的方法设置/etc/sysconfig/network来处理NIS、/etc/passwd&nbsp;和/etc/shadow</td>
+  <td>passwd&nbsp;shadow&nbsp;pwconv&nbsp;domainname&nbsp;ypbind&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>123</td>
+  <td>配置系统的认证信息</td>
+</tr>
+<tr>
+  <td>bind</td>
+  <td>bind[必要参数][选择参数]</td>
+  <td>bind&nbsp;命令：可以显示按键组合代表，也可以设置使得某些按键组合代表某些的功能特殊的功能</td>
+  <td>ls&nbsp;cd&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>124</td>
+  <td>显示或者设置按键组合</td>
+</tr>
+<tr>
+  <td>cat</td>
+  <td>cat[必要参数][选择参数]</td>
+  <td>cat&nbsp;命令：用于连接文件到标准输出。</td>
+  <td>vi&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>125</td>
+  <td>输出/合并文件内容</td>
+</tr>
+<tr>
+  <td>chkconfig</td>
+  <td>chkconfig[必要参数][选择参数]</td>
+  <td>chkconfig&nbsp;命令：提供了一个维护/etc/rc[0~6]&nbsp;d&nbsp;文件夹的命令行工具，它减轻了系统直接管理这些文件夹中的符号连接的负担。chkconfig主要包括5个原始功能：为系统管理增加新的服务、为系统管理移除服务、列出单签服务的启动信息、改变服务的启动信息和检查特殊服务的启动状态。当单独运行chkconfig命令而不加任何参数时，他将显示服务的使用信息。</td>
+  <td>init&nbsp;ntsvsy&nbsp;serviceconf&nbsp;</td>
+  <td>超级用户</td>
+  <td>系统设置</td>
+  <td>126</td>
+  <td>设置系统的应用程序</td>
+</tr>
+<tr>
+  <td>chroot</td>
+  <td>chroot[必要参数][选择参数]</td>
+  <td>chroot&nbsp;命令：用来改变根目录信息。执行chroot命令能增加系统的安全性，限制登录用户所做的事情。</td>
+  <td>chmod&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>127</td>
+  <td>改变根目录</td>
+</tr>
+<tr>
+  <td>clock</td>
+  <td>clock[必要参数][选择参数]</td>
+  <td>clock&nbsp;命令：返回处理器时间的近似值</td>
+  <td>getrusage&nbsp;times&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>128</td>
+  <td>系统RTC时间设置</td>
+</tr>
+<tr>
+  <td>crontab</td>
+  <td>crontab[必要参数][选择参数]数</td>
+  <td>crontab&nbsp;命令：用来安装、卸载或者列出驱动cron陈旭的表。每一个用户拥有自己的crontab，配置文件存在/var下面，不能被直接编辑。</td>
+  <td>export&nbsp;watch&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>129</td>
+  <td>设置计时器</td>
+</tr>
+<tr>
+  <td>declare</td>
+  <td>declare[选择参数]</td>
+  <td>declare&nbsp;命令：与set命令功能一样，对shell环境变量进行显示、设置</td>
+  <td>export&nbsp;set&nbsp;setenv&nbsp;which&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>130</td>
+  <td>声明shell变量</td>
+</tr>
+<tr>
+  <td>depmod</td>
+  <td>depmod[必要参数][选择参数]</td>
+  <td>depmod&nbsp;命令：用来显示模块间的关系</td>
+  <td>lsmod&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>131</td>
+  <td>模块关系</td>
+</tr>
+<tr>
+  <td>dircolors</td>
+  <td>dircolors[必要参数][选择参数]</td>
+  <td>dircolors&nbsp;命令：用来设置ls命令对应的显示颜色</td>
+  <td>dir&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>132</td>
+  <td>ls命令对应的显示颜色设置</td>
+</tr>
+<tr>
+  <td>dmesg</td>
+  <td>dmesg[必要参数][选择参数]</td>
+  <td>dmesg&nbsp;命令：用该检测和控制内核ring缓冲区，它帮助用户输出开机信息</td>
+  <td>syslogd&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>133</td>
+  <td>显示开机信息</td>
+</tr>
+<tr>
+  <td>enable</td>
+  <td>enable[必要参数][选择参数]</td>
+  <td>enable&nbsp;命令：用来开启或者关闭shell所内置的命令。</td>
+  <td>exec&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>134</td>
+  <td>可用的shell内置命令</td>
+</tr>
+<tr>
+  <td>eval</td>
+  <td>eval[必要参数][选择参数]</td>
+  <td>eval&nbsp;命令：用来连接多个命令，连接的多个命令将同时执行。</td>
+  <td>enable&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>135</td>
+  <td>连接多个命令</td>
+</tr>
+<tr>
+  <td>export</td>
+  <td>export[必要参数][选择参数]</td>
+  <td>export&nbsp;命令：通过export命令可用设置环境变量值</td>
+  <td>dc&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>136</td>
+  <td>设置或者显示环境变量</td>
+</tr>
+<tr>
+  <td>false</td>
+  <td>false[必要参数][选择参数]</td>
+  <td>false&nbsp;命令：将以一个状态码结束，状态码表示失败。</td>
+  <td>true&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>137</td>
+  <td>不做任何事情，表示失败</td>
+</tr>
+<tr>
+  <td>fbset</td>
+  <td>fbset[必要参数][选择参数]</td>
+  <td>fbset&nbsp;命令：是一个系统工具，用来显示或者更改帧缓冲设备的设置。帧缓冲设备提供一个简单和惟一的接口，来实现不同种类的图像显示。</td>
+  <td>fbdev&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>138</td>
+  <td>设置帧缓冲区</td>
+</tr>
+<tr>
+  <td>hase</td>
+  <td>hase[必要参数][选择参数]</td>
+  <td>hase&nbsp;命令：用来显示和清除哈希表，执行命令的时候，系统将先查询哈希表。</td>
+  <td>alias&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>139</td>
+  <td>显示和清除哈希表</td>
+</tr>
+<tr>
+  <td>hostid</td>
+  <td>hostid[必要参数][选择参数]</td>
+  <td>hostid&nbsp;命令：用来打印当前主机的数字化标识</td>
+  <td>host&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>140</td>
+  <td>打印出当前主机的标识</td>
+</tr>
+<tr>
+  <td>hostname</td>
+  <td>hostname[必要参数][选择参数]</td>
+  <td>hostname&nbsp;命令：用来显示或者设置当前系统的主机名，主机名被许多网络程序使用，来标识主机。</td>
+  <td>host&nbsp;uname&nbsp;ifconfig&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>141</td>
+  <td>显示或者设置当前系统的主机名</td>
+</tr>
+<tr>
+  <td>hwclock</td>
+  <td>hwclock[必要参数][选择参数]</td>
+  <td>hwclock&nbsp;命令：是一个管理硬件时钟的工具，可以显示当前的系统时间，可以设定指定时间到硬件时钟。</td>
+  <td>date&nbsp;time&nbsp;adtimex&nbsp;crontab&nbsp;tzset&nbsp;gettimeofday&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>142</td>
+  <td>显示与设定硬件时钟（rtc）</td>
+</tr>
+<tr>
+  <td>insmod</td>
+  <td>insmod[必要参数][选择参数]</td>
+  <td>insmod&nbsp;命令：用来向内核中添加模块。大部分用户可能会使用modprobe命令，它使用起来更方便一些。</td>
+  <td>modprobe&nbsp;</td>
+  <td>超级用户</td>
+  <td>系统设置</td>
+  <td>143</td>
+  <td>载入模块</td>
+</tr>
+<tr>
+  <td>isosize</td>
+  <td>isosize[必要参数][选择参数]</td>
+  <td>isosize&nbsp;命令：isosize命令输出iso9660文件系统中的文件的大小，文件可能是正常的文件或者是一个块装置，如/dev/hdd或者/dev/sr0。</td>
+  <td>du&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>144</td>
+  <td>显示iso9660文件系统信息</td>
+</tr>
+<tr>
+  <td>kbdconfig</td>
+  <td>kbdconfig[必要参数][选择参数]</td>
+  <td>kbdconfig&nbsp;命令：命令进行相应的键盘设置，提供图形化得操作界面。</td>
+  <td>timeconfig&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>145</td>
+  <td>设置键盘类型</td>
+</tr>
+<tr>
+  <td>ldconfig</td>
+  <td>ldconfig[必要参数][选择参数]</td>
+  <td>ldconfig&nbsp;命令：根据在命令行中指定的文件库，产生与其相对应的链接，包含在/etc/ld&nbsp;so&nbsp;conf中。当要确定链接的版本号时，ldconfig命令将验证存在于函数库中的头文件。查找函数库时，ldconfig忽略符号连接。</td>
+  <td>liloconfig&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>146</td>
+  <td>配置动态链接绑定</td>
+</tr>
+<tr>
+  <td>ldd</td>
+  <td>ldd[选择参数][文件]</td>
+  <td>ldd&nbsp;命令：打印命令行的程序或库文件所使用的共享库</td>
+  <td>ldconfig&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>147</td>
+  <td>查看库文件/依赖文件关系</td>
+</tr>
+<tr>
+  <td>lilo</td>
+  <td>lilo[必要参数][选择参数]</td>
+  <td>lilo&nbsp;命令：安装一个启动装在程序，在下次启动时会运行，单独执行会根据/etc目录下的lilo&nbsp;conf配置文件安装lilo。</td>
+  <td>liloconfig&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>148</td>
+  <td>引导安装程序</td>
+</tr>
+<tr>
+  <td>liloconfig</td>
+  <td>liloconfig[必要参数][选择参数]</td>
+  <td>liloconfig&nbsp;命令：是Slareware发行版用来调整lilo设置的程序。用户通过互动的界面，轻松的操作lilo的安装和设置，不需要编写繁琐的配置文件。</td>
+  <td>lilo&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>149</td>
+  <td>设置程序的载入</td>
+</tr>
+<tr>
+  <td>losetup</td>
+  <td>losetup[必要参数][选择参数]</td>
+  <td>losetup&nbsp;命令：用来设置循环设备。</td>
+  <td>mmod&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>150</td>
+  <td>设置循环</td>
+</tr>
+<tr>
+  <td>mev</td>
+  <td>mev[必要参数][选择参数]</td>
+  <td>mev&nbsp;命令：gpm包的一部分，将鼠标控制口德事件打印到标准控制台上。</td>
+  <td>gpm&nbsp;gpm-root&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>151</td>
+  <td>监视鼠标情况</td>
+</tr>
+<tr>
+  <td>minfo</td>
+  <td>minfo[必要参数][选择参数]</td>
+  <td>minfo&nbsp;命令：显示MS-DOS文件系统的各项参数</td>
+  <td>mattrib&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>152</td>
+  <td>显示MS-DOS文件系统的各项参数</td>
+</tr>
+<tr>
+  <td>mkkickstart</td>
+  <td>mkkickstart[必要参数][选择参数]</td>
+  <td>mkkickstart&nbsp;命令：根据目前系统的设置来建立组态文件。这个文件可以供其他电脑在安装时使用。</td>
+  <td>mkdir&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>153</td>
+  <td>建立安装的组态文件</td>
+</tr>
+<tr>
+  <td>mknod</td>
+  <td>mknod[必要参数][选择参数][主设备号][次设备号]</td>
+  <td>mknod&nbsp;命令：建立一个目录项和一个特殊文件的对应索引节点&nbsp;建立的文件有三张&nbsp;b：块设备&nbsp;c：字符设备&nbsp;p：管道文件</td>
+  <td>mkdir&nbsp;mount&nbsp;mkcramfs&nbsp;</td>
+  <td>超级用户</td>
+  <td>系统设置</td>
+  <td>154</td>
+  <td>创建特殊文件</td>
+</tr>
+<tr>
+  <td>mkraid</td>
+  <td>mkraid[必要参数][选择参数]</td>
+  <td>mkraid&nbsp;命令：可以将一组块设备设置为一个RAID设备阵列。注意初始化RAID设备阵列时将毁坏所有原有数据。</td>
+  <td>raidtab&nbsp;raidstart&nbsp;raid0run&nbsp;raidstop&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>155</td>
+  <td>初始化/升级RAID设置阵列</td>
+</tr>
+<tr>
+  <td>modinfo</td>
+  <td>modinfo[必要参数][选择参数]</td>
+  <td>modinfo&nbsp;命令：用来显示内核信息</td>
+  <td>modprobe&nbsp;modinfo.old&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>156</td>
+  <td>显示内核信息</td>
+</tr>
+<tr>
+  <td>modprobe</td>
+  <td>modprobe[必要参数][选择参数]</td>
+  <td>modprobe&nbsp;命令：更具模块内部的依赖关系自动安装所有依赖的模块，如果发生错误将卸载所有相关的模块。这都是更具模块声称的依赖关系来决定的。modprobe本身对模块不产生任何影响</td>
+  <td>modprobe.conf&nbsp;lsmod&nbsp;modprobe&nbsp;lod&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>157</td>
+  <td>自动处理可载入模块</td>
+</tr>
+<tr>
+  <td>mouseconfig</td>
+  <td>mouseconfig[必要参数][选择参数]</td>
+  <td>mouseconfig&nbsp;命令：Red&nbsp;Hat&nbsp;Linux鼠标配置工具。有两种模式，一种交互式，一种自动设置</td>
+  <td>system-config-mouse&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>158</td>
+  <td>设置鼠标相关参数</td>
+</tr>
+<tr>
+  <td>nice</td>
+  <td>nice[必要参数][选择参数][命令]</td>
+  <td>nice&nbsp;命令：用来设置优先级，优先级的数值为-20~19，-20的优先级最高，19的优先级最低</td>
+  <td>ps&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>159</td>
+  <td>设置优先权</td>
+</tr>
+<tr>
+  <td>passwd</td>
+  <td>passwd[必要参数][选择参数][用户名称]</td>
+  <td>passwd&nbsp;命令：用来设置用户的密码，超级用户可以设置所有普通用户的密码</td>
+  <td>adduser&nbsp;useradd&nbsp;addgroup&nbsp;groupadd&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>160</td>
+  <td>设置密码</td>
+</tr>
+<tr>
+  <td>pwconv</td>
+  <td>pwconv</td>
+  <td>pwconv&nbsp;命令：Linux系统里的用户和群组密码，分别存放在名称为passwd和group的文件中，　这两个文件位于/etc目录下。因系统运作所需，任何人都得以读取它们，造成安全上的破绽。投影密码将文件内的密码改存在/etc目录下的shadow和gshadow文件内，只允许系统管理者读取，同时把原密码置换为&nbsp;x&nbsp;字符，有效的强化了系统的安全性。</td>
+  <td>pwunconv&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>161</td>
+  <td>开启用户的投影密码</td>
+</tr>
+<tr>
+  <td>pwunconv</td>
+  <td>pwunconv</td>
+  <td>pwunconv&nbsp;命令：关闭用户投影密码</td>
+  <td>pwconv&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>162</td>
+  <td>关闭用户投影密码</td>
+</tr>
+<tr>
+  <td>resize</td>
+  <td>resize[必要参数][选择参数]</td>
+  <td>resize&nbsp;命令：用来设置虚拟终端的显示大小</td>
+  <td>csh&nbsp;tset&nbsp;xterm&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>163</td>
+  <td>设置终端窗口大小</td>
+</tr>
+<tr>
+  <td>rpm</td>
+  <td>rpm[必要参数][选择参数]</td>
+  <td>rpm&nbsp;命令：遵循GPL协议且功能强大的包管理，它可以建立、安装、请求、确认、和卸载软件包。间接的提升了Linux&nbsp;的易用性</td>
+  <td>dpkg&nbsp;popt&nbsp;rpm2cpio&nbsp;rpmbuild&nbsp;tar&nbsp;yum&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>164</td>
+  <td>rmp包管理</td>
+</tr>
+<tr>
+  <td>runlevel</td>
+  <td>runlevel</td>
+  <td>runlevel&nbsp;命令：读取系统的utmp文件夹定位系统的运行级别记录，然后显示当前系统的执行等级</td>
+  <td>init&nbsp;utmp&nbsp;telinit&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>165</td>
+  <td>显示执行等级</td>
+</tr>
+<tr>
+  <td>set</td>
+  <td>set[必要参数][选择参数][命令]</td>
+  <td>set&nbsp;命令：设置shell的执行方式，同时也可以使用set设置环境变量</td>
+  <td>unset&nbsp;setconsole&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>166</td>
+  <td>设置shell</td>
+</tr>
+<tr>
+  <td>setconsole</td>
+  <td>setconsole[必要参数]</td>
+  <td>setconsole&nbsp;命令：用来设置终端</td>
+  <td>set&nbsp;source&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>167</td>
+  <td>设置终端</td>
+</tr>
+<tr>
+  <td>setenv</td>
+  <td>setenv[必要参数][选择参数]</td>
+  <td>setenv&nbsp;命令：用于显示和设置环境变量</td>
+  <td>set&nbsp;setconsole&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>168</td>
+  <td>显示环境变量</td>
+</tr>
+<tr>
+  <td>setup</td>
+  <td>setup[必要参数][选择参数]</td>
+  <td>setup&nbsp;命令：用来配置X，打印设置，时区设置，系统服务，网络配置，配置，防火墙配置，验证配置，鼠标配置</td>
+  <td>set&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>169</td>
+  <td>图形设置系统</td>
+</tr>
+<tr>
+  <td>source</td>
+  <td>export&brvbar;env&brvbar;export&brvbar;set&brvbar;unalias</td>
+  <td>source&nbsp;命令：常用于重新执行刚修改的初始化文件。如/etc/profile&nbsp;，&nbsp;bash_profile，&nbsp;bashrc?通过&nbsp;source命令&nbsp;在不重启的情况下生效。source命又称：“点命令”是一个点符号。如：&nbsp;abc&nbsp;env?来执行脚本</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>170</td>
+  <td>设置系统环境变量</td>
+</tr>
+<tr>
+  <td>swapoff</td>
+  <td>swapoff[必要参数][选择参数]</td>
+  <td>swapoff&nbsp;命令：可以关闭交换分区，swapon命令可以打开交换分区。</td>
+  <td>swapon&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>171</td>
+  <td>关闭系统交换分区</td>
+</tr>
+<tr>
+  <td>sysctl</td>
+  <td>sysctl[必要参数][选择参数][变量]</td>
+  <td>sysctl&nbsp;命令：用来设置系统的核心参数</td>
+  <td>set&nbsp;setup&nbsp;</td>
+  <td>超级用户</td>
+  <td>系统设置</td>
+  <td>172</td>
+  <td>设置系统核心参数</td>
+</tr>
+<tr>
+  <td>telinit</td>
+  <td>telinit[必要参数][选择参数]</td>
+  <td>telinit&nbsp;命令：可以设置当前系统的运行等级</td>
+  <td>runleve&nbsp;ulimit&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>173</td>
+  <td>设置系统的运行等级</td>
+</tr>
+<tr>
+  <td>timeconfig</td>
+  <td>timeconfig[必要参数][选择参数]</td>
+  <td>timeconfig&nbsp;命令：用来设置系统时间所属的时区。</td>
+  <td>date&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>174</td>
+  <td>设置时区</td>
+</tr>
+<tr>
+  <td>ulimit</td>
+  <td>ulimit[必要参数][选择参数]</td>
+  <td>ulimit&nbsp;命令：可用来控制shell运行程序的资源</td>
+  <td>sysctl&nbsp;</td>
+  <td>超级用户</td>
+  <td>系统设置</td>
+  <td>175</td>
+  <td>控制shell程序资源</td>
+</tr>
+<tr>
+  <td>unalias</td>
+  <td>unalias[必要参数][别名]</td>
+  <td>unalias&nbsp;命令：为shell内建命令，可删除别名设置</td>
+  <td>alias&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>176</td>
+  <td>删除别名</td>
+</tr>
+<tr>
+  <td>unset</td>
+  <td>unset[必要参数][名称]</td>
+  <td>unset&nbsp;命令：用来删除指定的变量或者函数</td>
+  <td>set&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>177</td>
+  <td>删除变量或函数</td>
+</tr>
+<tr>
+  <td>up2date</td>
+  <td>up2date[必要参数][选择参数]</td>
+  <td>up2date&nbsp;命令：更新Linux系统</td>
+  <td>rpm&nbsp;</td>
+  <td>超级用户</td>
+  <td>系统设置</td>
+  <td>178</td>
+  <td>更新系统</td>
+</tr>
+<tr>
+  <td>vmstat</td>
+  <td>vmstat[必要参数][选择参数]</td>
+  <td>vmstat&nbsp;命令：用来显示虚拟内存的信息</td>
+  <td>ps&nbsp;top&nbsp;free&nbsp;df&nbsp;du&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>179</td>
+  <td>显示虚拟内存信息</td>
+</tr>
+<tr>
+  <td>yes</td>
+  <td>yes[选择参数][字符串]</td>
+  <td>yes&nbsp;命令：循环输出给定的字符串，每行显示一个字符串</td>
+  <td>grep&nbsp;echo&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统设置</td>
+  <td>180</td>
+  <td>循环输出</td>
+</tr>
+<tr>
+  <td>awk</td>
+  <td>awk[必要参数][选择参数]数</td>
+  <td>awk&nbsp;命令：是一种模式匹配语言，它针对正则表达式对文件进行相应的操作，比如将文件中符合某种规则的信息输出。</td>
+  <td>gawk&nbsp;gedit&nbsp;vi&nbsp;cat&nbsp;more&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>181</td>
+  <td>模式匹配语言</td>
+</tr>
+<tr>
+  <td>col</td>
+  <td>col[必要参数][选择参数]</td>
+  <td>col&nbsp;命令：过滤解析输出的正确格式，可能的情况下它将用tab代替空格符，这对nroff和tbl的输出可能是有用的</td>
+  <td>expand&nbsp;nroff&nbsp;tbl&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>182</td>
+  <td>过滤控制字符</td>
+</tr>
+<tr>
+  <td>colrm</td>
+  <td>colrm[开始列][结束列]</td>
+  <td>colrm&nbsp;命令：从指定文件中过滤掉选择的列。若只指定一列，那么将删除指定列之后的所有列；若指定两列数值，将删除两个值之间的所有列。输入为标准输入，输出被被发送到标准输出</td>
+  <td>awk&nbsp;column&nbsp;expend&nbsp;paste&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>183</td>
+  <td>删除指定的列</td>
+</tr>
+<tr>
+  <td>comm</td>
+  <td>comm[必要参数][选择参数][文件1][文件2]</td>
+  <td>comm&nbsp;命令：逐行比较的文件，如果不指定参数，将输出第三部分的内容。第一部分是文件，1单独含有行，第二部分是文件2单独含有行,第三部分是两个文件的共有行</td>
+  <td>diff&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>184</td>
+  <td>比较排序文件</td>
+</tr>
+<tr>
+  <td>csplit</td>
+  <td>csplit[必要参数][选择参数][文件][模式]</td>
+  <td>csplit&nbsp;命令：文件的输出将按模式进行分割，结果输出到标准输出</td>
+  <td>cat&nbsp;cmp&nbsp;split&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>185</td>
+  <td>分割/切割文件</td>
+</tr>
+<tr>
+  <td>ctags</td>
+  <td>ctags[必要参数][选择参数]</td>
+  <td>ctags&nbsp;命令：ctags支持多款文本编辑器的辅助程序，用于扫描源码目录，找出语法相关的内容进，将其记录下并保存为文件。常用于语法高亮</td>
+  <td>vi&nbsp;vim&nbsp;emacs&nbsp;find&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>186</td>
+  <td>创建索引文件</td>
+</tr>
+<tr>
+  <td>ed</td>
+  <td>ed[必要参数][选择参数][文件]</td>
+  <td>ed&nbsp;命令：用来编辑文本，它是一个比较简单的文本编辑器</td>
+  <td>vi&nbsp;vim&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>187</td>
+  <td>文本编辑器</td>
+</tr>
+<tr>
+  <td>egrep</td>
+  <td>egrep[必要参数][选择参数][文件]</td>
+  <td>egrep&nbsp;命令：使用方法和效果同“grep&nbsp;-e”，使用方法见grep的使用方法</td>
+  <td>grep&nbsp;ps&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>188</td>
+  <td>输出匹配某种模式的行</td>
+</tr>
+<tr>
+  <td>ext2ed</td>
+  <td>ext2ed</td>
+  <td>ext2ed&nbsp;命令：用来处理硬盘分区上的数据</td>
+  <td>e2fsck&nbsp;fdisk&nbsp;mount&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>189</td>
+  <td>ext2文件系统编辑</td>
+</tr>
+<tr>
+  <td>fgrep</td>
+  <td>fgrep[必要参数][选择参数][样式][文件或目录]</td>
+  <td>fgrep&nbsp;命令：在文件中查找符合条件的字符串，相当于“grep&nbsp;-f”</td>
+  <td>grep&nbsp;pgrep&nbsp;egrep&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>190</td>
+  <td>匹配字符串</td>
+</tr>
+<tr>
+  <td>fmt</td>
+  <td>fmt[必要参数][选择参数][文件]</td>
+  <td>fmt&nbsp;命令：重排指定文件的每一段落，并输出到标准输出，如果不指定文件将被从标准输入进行输入</td>
+  <td>fold&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>191</td>
+  <td>编排文本文件</td>
+</tr>
+<tr>
+  <td>head</td>
+  <td>head[必要参数][选择参数][文件名]</td>
+  <td>head&nbsp;命令：将打印文件的前10行道标准输出，如果不指定文件，将从标准输入中输入</td>
+  <td>tail<br>&nbsp;cat&nbsp;more&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>192</td>
+  <td>输出头文件开头的部分信息</td>
+</tr>
+<tr>
+  <td>ispell</td>
+  <td>ispell[必要参数][选择参数][文件]</td>
+  <td>ispell&nbsp;命令：将使用预设字典检查指定的文件</td>
+  <td>spell&nbsp;egrep&nbsp;look&nbsp;join&nbsp;sort&nbsp;sq&nbsp;tib&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>193</td>
+  <td>拼字检查程序</td>
+</tr>
+<tr>
+  <td>jed</td>
+  <td>jed[必要参数][选择参数][文件]</td>
+  <td>jed&nbsp;命令：用来编辑文本文件</td>
+  <td>vi&nbsp;gedit&nbsp;ed&nbsp;vim&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>194</td>
+  <td>编辑文本文件</td>
+</tr>
+<tr>
+  <td>join</td>
+  <td>join[必要参数][选择参数][文件1][文件2]</td>
+  <td>join&nbsp;命令：用于两节两个指定的文件</td>
+  <td>cat&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>195</td>
+  <td>将两个文件中与指定栏位内容相同的行连接起来</td>
+</tr>
+<tr>
+  <td>less</td>
+  <td>less[必要参数][文件名]</td>
+  <td>less&nbsp;命令：与more命令类似，但可以通过翻页键查看上下页的内容</td>
+  <td>more&nbsp;tail&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>196</td>
+  <td>一次显示一页文本</td>
+</tr>
+<tr>
+  <td>more</td>
+  <td>more[必要参数][选择参数]</td>
+  <td>more&nbsp;命令：按屏幕输出指定文件的内容。More命令类似于cat，但比cat功能强。按空格下翻一页，按b上翻一页</td>
+  <td>vi&nbsp;vim&nbsp;less&nbsp;tail&nbsp;cat&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>197</td>
+  <td>显示文件信息</td>
+</tr>
+<tr>
+  <td>nano</td>
+  <td>nano[必要参数][选择参数][文件]</td>
+  <td>nano&nbsp;命令：是一个取代pico命令为目标的小的，免费的，用户有好的编辑器，不只是复制pico命令的界面，nano命令同时执行一些在pico中没有的功能，例如查找，替换，和跳转到指定行数的功能</td>
+  <td>vi&nbsp;vim&nbsp;gedit&nbsp;ed&nbsp;pico&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>198</td>
+  <td>文本编辑</td>
+</tr>
+<tr>
+  <td>pg</td>
+  <td>pg[必要参数][选择参数][文件]</td>
+  <td>pg&nbsp;命令：用来显示文件内容</td>
+  <td>more&nbsp;cat&nbsp;less&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>199</td>
+  <td>浏览文件</td>
+</tr>
+<tr>
+  <td>pico</td>
+  <td>pico[必要参数][选择参数][文件]</td>
+  <td>pico&nbsp;命令：是一个编辑文字文件的工具，它提供互动式的操作界面，比较方便</td>
+  <td>vi&nbsp;vim&nbsp;nano&nbsp;ed&nbsp;gedit&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>200</td>
+  <td>编辑文字文件</td>
+</tr>
+<tr>
+  <td>sed</td>
+  <td>sed[必要参数][选择参数][文本文件]</td>
+  <td>sed&nbsp;命令：可以利用scrpipt命令批处理文本文件</td>
+  <td>awk&nbsp;ed&nbsp;grep&nbsp;tr&nbsp;perlre&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>201</td>
+  <td>利用scrpipt命令批处理文本文件</td>
+</tr>
+<tr>
+  <td>sort</td>
+  <td>sort[必要参数][选择参数][文件]</td>
+  <td>sort&nbsp;命令：可以对文本文件，输出结果进行进行排序</td>
+  <td>sed&nbsp;cat&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>202</td>
+  <td>将文本文件内容加以排序</td>
+</tr>
+<tr>
+  <td>spell</td>
+  <td>spell</td>
+  <td>spell&nbsp;命令：检查输入的字符串是否出错</td>
+  <td>cat&nbsp;sort&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>203</td>
+  <td>拼字检查程序</td>
+</tr>
+<tr>
+  <td>tr</td>
+  <td>tr[必要参数][选择参数][字符串][字符串2]</td>
+  <td>tr&nbsp;命令：tr命令将标准输入输入的字符串转换为指定的字符串，然后输出到标准输出</td>
+  <td>awk&nbsp;sed&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>204</td>
+  <td>转换文件中的字符</td>
+</tr>
+<tr>
+  <td>uniq</td>
+  <td>uniq[必要参数][选择参数][文件]</td>
+  <td>uniq&nbsp;命令：用来检查文件中重复出现的行列。并将重复的部分删除</td>
+  <td>sort&nbsp;tr&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>205</td>
+  <td>检查文件中重复出现的行</td>
+</tr>
+<tr>
+  <td>view</td>
+  <td>view[必要参数][选择参数][文件]</td>
+  <td>view&nbsp;命令：用来编辑文字文件，它连接vi命令</td>
+  <td>vi&nbsp;vim&nbsp;nano&nbsp;vimdiff&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>206</td>
+  <td>文字编辑器</td>
+</tr>
+<tr>
+  <td>vimdiff</td>
+  <td>vimdiff[选择参数][文件]</td>
+  <td>vimdiff&nbsp;命令：是vim的diff模式，在diff命令基础上的提供了更高级的功能，用于文本比较与合并&nbsp;vimdiff的使用依赖,vim和diff命令</td>
+  <td>vi&nbsp;vim&nbsp;view&nbsp;cat&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>207</td>
+  <td>文本比较/合并</td>
+</tr>
+<tr>
+  <td>wc</td>
+  <td>wc[必要参数][选择参数][文件]</td>
+  <td>wc&nbsp;命令：用来计算机指定文件的字数，可以以不同的形式显示</td>
+  <td>cat&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文本编辑</td>
+  <td>208</td>
+  <td>计算字数</td>
+</tr>
+<tr>
+  <td>attr</td>
+  <td>attr[必要参数][属性名称][选择参数][路径名]</td>
+  <td>attr&nbsp;命令：用来设置XFS文件系统的扩展属性</td>
+  <td>getfattr&nbsp;setfattr&nbsp;xfsdump&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>209</td>
+  <td>XFS文件系统对象的扩展属性</td>
+</tr>
+<tr>
+  <td>basename</td>
+  <td>basename[选择参数][路径]</td>
+  <td>basename&nbsp;命令：用语打印目录或者文件的基本名称。它将删除目录或者文件的路径的前缀以及文件的后缀信息</td>
+  <td>uname&nbsp;ls&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>210</td>
+  <td>显示文件或者目录的基本名称</td>
+</tr>
+<tr>
+  <td>bye</td>
+  <td>bye</td>
+  <td>bye&nbsp;命令：在FTP连接使用bye命令将直接终止FTP连接从FTP中正常退出，返回到Liux的命令行界面</td>
+  <td>exit&nbsp;logout&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>211</td>
+  <td>中断Ftp连接</td>
+</tr>
+<tr>
+  <td>chattr</td>
+  <td>chattr[必要参数][选择参数][+/-/=][文件或者目录]</td>
+  <td>chattr&nbsp;命令：改变Linux第二个扩展文件系统的属性</td>
+  <td>lsattr&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>212</td>
+  <td>改变文件的属性</td>
+</tr>
+<tr>
+  <td>chgrp</td>
+  <td>chgrp[必要参数][选择参数][群组][文件或者目录]</td>
+  <td>chgrp&nbsp;命令：用来改变文件或者目录的所属群组</td>
+  <td>chmod&nbsp;chroot&nbsp;chown&nbsp;umask&nbsp;</td>
+  <td>超级用户</td>
+  <td>文件管理</td>
+  <td>213</td>
+  <td>改变文件或者目录所属的群组</td>
+</tr>
+<tr>
+  <td>chmod</td>
+  <td>chmod[必要参数][选择参数][+/-/=][文件或目录]</td>
+  <td>chmod&nbsp;命令：依据权限设置给定文件的权限。权限既可以是一个符号，也可以是一个代表性的数。符号的模式可以是[ugoa&nbsp;&nbsp;&nbsp;][+-=][rwxXstugo&nbsp;&nbsp;&nbsp;]，可以给定多个符号，它们之间逗号隔开</td>
+  <td>chown&nbsp;chgrp&nbsp;umask&nbsp;</td>
+  <td>超级用户</td>
+  <td>文件管理</td>
+  <td>214</td>
+  <td>设置文件或者目录的权限</td>
+</tr>
+<tr>
+  <td>chown</td>
+  <td>chown[必要参数][选择参数][用户名或者群组]</td>
+  <td>chown&nbsp;命令：Lunx/Unix&nbsp;是多用户操作系统，每一个文件都有其拥有者和群组，可通过chown改变文件的拥有者和群组。普通用户不能将自己的文件改变成其他的拥有者。其操作权限一般为管理员</td>
+  <td>chmod&nbsp;chgrp&nbsp;chroot&nbsp;</td>
+  <td>超级用户</td>
+  <td>文件管理</td>
+  <td>215</td>
+  <td>改变文件拥有者/群组</td>
+</tr>
+<tr>
+  <td>cksum</td>
+  <td>cksum[必要参数][选择参数]</td>
+  <td>cksum&nbsp;命令：CRC是一种排错检查方式，该演算法的标准由CCITT所指定，至少可检测到99&nbsp;998%的已知错误。指定文件交由cksum演算，它会回报计算结果，供用户核对文件是否正确无误。若不指定任何文件名称或是所给予的文件名为&nbsp;-&nbsp;，则cksum命令会从标准输入设备读取数据。</td>
+  <td>ckeygen&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>216</td>
+  <td>CRC文件校验</td>
+</tr>
+<tr>
+  <td>cmp</td>
+  <td>cmp[必要参数][选择参数]</td>
+  <td>cmp&nbsp;命令：比较任意两个类型的文件，且吧结果输出到标准输出，默认文件相同不输出，不同的文件输出差异</td>
+  <td>diff&nbsp;diif3&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>217</td>
+  <td>比较文件差异</td>
+</tr>
+<tr>
+  <td>cp</td>
+  <td>cp[必要参数][选择参数][源目录或者文件][目标文件或目录]</td>
+  <td>cp&nbsp;命令：复制/链接文件或目录</td>
+  <td>mv&nbsp;ld&nbsp;ln&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>218</td>
+  <td>复制/备份</td>
+</tr>
+<tr>
+  <td>diff</td>
+  <td>diff[必要参数][选择参数][文件1或目录1][文件2或目录2]</td>
+  <td>diff&nbsp;命令：以逐行的方式，比较文本文件的异同处。所是指定要比较目录，则diff会比较目录中相同文件名的文件，但不会比较其中子目录</td>
+  <td>cmp&nbsp;com&nbsp;diff3&nbsp;ed&nbsp;patch&nbsp;pr&nbsp;sdiff&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>219</td>
+  <td>比较文件的差异</td>
+</tr>
+<tr>
+  <td>diffstat</td>
+  <td>diffstat[必要参数][选择参数]</td>
+  <td>diffstat&nbsp;命令：用于读取diff的输出结果，然后统计各文件的插入，删除，修改等差异计量</td>
+  <td>diff&nbsp;cmp&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>220</td>
+  <td>diff结果统计信息</td>
+</tr>
+<tr>
+  <td>dirname</td>
+  <td>dirname[选择参数][路径]</td>
+  <td>dirname&nbsp;命令：显示指定路径处了文件名之外的路径前缀</td>
+  <td>dir&nbsp;rmdir&nbsp;mkdir&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>221</td>
+  <td>显示路径名</td>
+</tr>
+<tr>
+  <td>file</td>
+  <td>file[必要参数][选择参数][文件或者目录]</td>
+  <td>file&nbsp;命令：用于查看文件类型，有三种类型设定：文件系统类型、魔法数字类型、和语言测试。</td>
+  <td>magic&nbsp;strings&nbsp;od&nbsp;hexdump&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>222</td>
+  <td>识别文件类型</td>
+</tr>
+<tr>
+  <td>filterdiff</td>
+  <td>filterdiff[必要参数][选择参数][文件]</td>
+  <td>filterdiff&nbsp;命令：用来提取diff文件的不同</td>
+  <td>lsdiff&nbsp;grepdiff&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>223</td>
+  <td>从diff文件中提取不同文件</td>
+</tr>
+<tr>
+  <td>find</td>
+  <td>find[必要参数][选择参数]</td>
+  <td>find&nbsp;命令：用于在文件树种查找文件，并作出相应的处理</td>
+  <td>locate&nbsp;ls&nbsp;locatetedb&nbsp;xargs&nbsp;regex&nbsp;stat&nbsp;lstat&nbsp;printf&nbsp;file&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>224</td>
+  <td>查找目录或者文件</td>
+</tr>
+<tr>
+  <td>findfs</td>
+  <td>findfs[LABEL=卷标][UUID=uuid][选择参数]</td>
+  <td>findfs&nbsp;命令：通过卷标或者uuid查找文件系统，找到的设备将输出到标准输出</td>
+  <td>find&nbsp;fsck&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>225</td>
+  <td>查找对应的文件系统</td>
+</tr>
+<tr>
+  <td>fold</td>
+  <td>fold[必要参数][选择参数][文件]</td>
+  <td>fold&nbsp;命令：用来调整文件的每一行的宽度，写到标准输出</td>
+  <td>fmt&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>226</td>
+  <td>限制文件列宽/文件宽度</td>
+</tr>
+<tr>
+  <td>ftp</td>
+  <td>ftp[必要参数][选择参数][主机名称或者IP地址][端口]</td>
+  <td>ftp&nbsp;命令：是ARPANET标准文件传输协议的用户接口，程序允许用户从远端网络站点下载文件或者传输文件到元代网络站点</td>
+  <td>ftfp&nbsp;ssh&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>227</td>
+  <td>文件传输协议</td>
+</tr>
+<tr>
+  <td>ftpcount</td>
+  <td>ftpcount[必要参数][选择参数]</td>
+  <td>ftpcount&nbsp;命令：显示本地ftp的用户数、支持的用户上限</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>228</td>
+  <td>显示ftp登录用户数</td>
+</tr>
+<tr>
+  <td>ftpshut</td>
+  <td>ftpshut[选择参数][时间][字符串]</td>
+  <td>ftpshut&nbsp;命令：用来在指定的时间关闭ftp服务器，并可以设置关闭前的字符串</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>229</td>
+  <td>定时关闭ftp&nbsp;服务器</td>
+</tr>
+<tr>
+  <td>ftpwho</td>
+  <td>ftpwho</td>
+  <td>ftpwho&nbsp;命令：用来显示ftp登录的用户信息</td>
+  <td>ftp&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>230</td>
+  <td>显示ftp登录用户信息</td>
+</tr>
+<tr>
+  <td>git</td>
+  <td>git</td>
+  <td>git&nbsp;命令：用来管理文件，类似于DOS的Norton&nbsp;Commander</td>
+  <td>dir&nbsp;ls&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>231</td>
+  <td>文本模式管理文件</td>
+</tr>
+<tr>
+  <td>indent</td>
+  <td>indent[必要参数][选择参数][源文件][-o&nbsp;目标文件]</td>
+  <td>indent&nbsp;命令：用于格式化C语言代码，方便阅读</td>
+  <td>fmt&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>232</td>
+  <td>调整C原始代码文件的格式</td>
+</tr>
+<tr>
+  <td>ln</td>
+  <td>ln[必要参数][选择参数][源文件或目录][目标文件或目录]</td>
+  <td>ln&nbsp;命令：用来链接文件或目录。当同时指定多个文件或目录时，目的目录必须存在，若不存在则出错，若存在，指定多个文件和目录将被复制的目录下。当不指定参数默认创建硬链接。创建的链接分为两种：硬链接和软链接；硬链接相当于创建副本；软链接只是单纯的链接</td>
+  <td>cp&nbsp;lndir&nbsp;readlink&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>233</td>
+  <td>链接文件或目录</td>
+</tr>
+<tr>
+  <td>lndir</td>
+  <td>lndir[选择参数][源目录][目标目录]</td>
+  <td>lndir&nbsp;命令：把源目录下的文件和子目录都建立对于德符号链接到目标目录中去，如没有目标目录，则在当前目录建立符号链接</td>
+  <td>cp&nbsp;ln&nbsp;readlink&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>234</td>
+  <td>链接目录内容</td>
+</tr>
+<tr>
+  <td>locate</td>
+  <td>locate[选择参数][样式]</td>
+  <td>locate&nbsp;命令：用来查找符合样式的文件或目录，样式可以用正则表达式。locate名查找速度要比find快得多，其方法是先建立一个包括系统内所有的文件、路径的数据库。在数据库中查找，不需要实际进入文件系统超找文件。locate在搜索中，无法感知新增和删除的文件</td>
+  <td>find&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>235</td>
+  <td>查找文件</td>
+</tr>
+<tr>
+  <td>ls</td>
+  <td>ls[选择参数]</td>
+  <td>ls&nbsp;命令：用来显示目录的内容。是Linux最常用的命令之一，其中很多功能都很有用</td>
+  <td>ll&nbsp;dir&nbsp;git&nbsp;mc&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>236</td>
+  <td>显示目录内容</td>
+</tr>
+<tr>
+  <td>lsattr</td>
+  <td>lsattr[必要参数][选择参数]</td>
+  <td>lsattr&nbsp;命令：用来显示文件的属性</td>
+  <td>chattr&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>237</td>
+  <td>显示文件属性</td>
+</tr>
+<tr>
+  <td>mc</td>
+  <td>mc[必要参数][选择参数]</td>
+  <td>mc&nbsp;命令：提供一个交互式的文件管理程序，具有图形化界面</td>
+  <td>git&nbsp;nautilus&nbsp;ls&nbsp;ll&nbsp;pwd&nbsp;mkdir&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>238</td>
+  <td>交互式文件管理</td>
+</tr>
+<tr>
+  <td>mcopy</td>
+  <td>mcopy[必要参数][选择参数][源文件][目标文件]</td>
+  <td>mcopy&nbsp;命令：用与在DOS与UNIX系统之间复制文件</td>
+  <td>mtype&nbsp;cp&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>239</td>
+  <td>兼容DOS的复制</td>
+</tr>
+<tr>
+  <td>md5sum</td>
+  <td>md5sum[必要参数][选择参数][文件]</td>
+  <td>md5sum&nbsp;命令：计算文件的md5值</td>
+  <td>sum&nbsp;cksum&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>240</td>
+  <td>校验文件md5</td>
+</tr>
+<tr>
+  <td>mdel</td>
+  <td>mdel[文件]</td>
+  <td>mdel&nbsp;命令：用来删除DOS文件</td>
+  <td>mcopy&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>241</td>
+  <td>删除DOS文件</td>
+</tr>
+<tr>
+  <td>mkdir</td>
+  <td>mkdir[必要参数][选择参数]</td>
+  <td>mkdir&nbsp;命令：用于建立目录</td>
+  <td>info&nbsp;coreutils&nbsp;chmod&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>242</td>
+  <td>建立目录/文件夹</td>
+</tr>
+<tr>
+  <td>mktemp</td>
+  <td>mktemp[选择参数]</td>
+  <td>mktemp&nbsp;命令：用于建立暂存文件，提供给shell脚本安全的使用临时文件</td>
+  <td>mkdtemp&nbsp;mkstemp&nbsp;mkdir&nbsp;tmpwatch&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>243</td>
+  <td>建立暂存/临时文件</td>
+</tr>
+<tr>
+  <td>mmove</td>
+  <td>mmove[源文件][目标文件]</td>
+  <td>mmove&nbsp;命令：用来移动DOS文件或DOS文件重命名</td>
+  <td>mcopy&nbsp;mdir&nbsp;mdel&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>244</td>
+  <td>移动DOS文件</td>
+</tr>
+<tr>
+  <td>mtoolstest</td>
+  <td>mtoolstest[必要参数][选择参数]</td>
+  <td>mtoolstest&nbsp;命令：测试并显示mtools相关设置</td>
+  <td>mtools&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>245</td>
+  <td>测试并显示mtools相关设置</td>
+</tr>
+<tr>
+  <td>mv</td>
+  <td>mv[必要参数][选择参数]</td>
+  <td>mv&nbsp;命令：移动或重命名指定文件</td>
+  <td>info&nbsp;cp&nbsp;coreutils&nbsp;rm&nbsp;mmove&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>246</td>
+  <td>移动或更名/重命名文件</td>
+</tr>
+<tr>
+  <td>nautilus</td>
+  <td>nautilus[选择参数][文件路径]</td>
+  <td>nautilus：是一个多功能的软件，可以利用它来配置桌面、访问网络。但起最主要的功能是进行文件管理。</td>
+  <td>clexls&nbsp;xfe&nbsp;konqueror&nbsp;nao&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>247</td>
+  <td>Gnome文件管理器</td>
+</tr>
+<tr>
+  <td>ncftpget</td>
+  <td>ncftpget[必要参数][选择参数][远程主机名][本地存储路径][远端文件]</td>
+  <td>ncftpget&nbsp;命令：用来直接获取远端ftp服务器上的文件，是ncftp的公用程序，可以更方便地下载文件</td>
+  <td>ftp&nbsp;ncftp&nbsp;ncftppu&nbsp;wget&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>248</td>
+  <td>下载文件</td>
+</tr>
+<tr>
+  <td>ncftpls</td>
+  <td>ncftpls[必要参数][选择参数][远程主机URL]</td>
+  <td>ncftpls&nbsp;命令：用来显示远程主机的文件列表</td>
+  <td>ncftp&nbsp;ncftpget&nbsp;ncftpput&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>249</td>
+  <td>显示文件目录</td>
+</tr>
+<tr>
+  <td>ncftpput</td>
+  <td>ncftpput[必要参数][选择参数][远端目录][本文件]</td>
+  <td>ncftpput&nbsp;命令：命令用来直接上传到远程ftp服务器，是ncftp的公用程序，可以方便的上传文件</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>250</td>
+  <td>上传文件</td>
+</tr>
+<tr>
+  <td>od</td>
+  <td>od[必要参数][选择参数][文件]</td>
+  <td>od&nbsp;命令：令会读取所给予的文件的内容，并根据给定的参数输出内容，默认为八进制</td>
+  <td>cat&nbsp;less&nbsp;more&nbsp;tail&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>251</td>
+  <td>输出文件内容/按进制输出</td>
+</tr>
+<tr>
+  <td>paste</td>
+  <td>paste[必要参数][选择参数][文件]</td>
+  <td>paste&nbsp;命令：会把每个文件以列对列的方式，一列列地加以合并</td>
+  <td>cat&nbsp;diff&nbsp;diffstat&nbsp;filterdiff&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>252</td>
+  <td>合并文件的列</td>
+</tr>
+<tr>
+  <td>mtools</td>
+  <td>mtools[选择参数]</td>
+  <td>mtools&nbsp;命令：用与模拟多个DOS命令，mtools所显示的命令，都是mtools的软连接</td>
+  <td>mtooltest&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>253</td>
+  <td>测试并显示mtools相关设置</td>
+</tr>
+<tr>
+  <td>patch</td>
+  <td>patch[必要参数][选择参数][文件]</td>
+  <td>patch&nbsp;命令：用于为文件打补丁，如一次给大批文件打补丁。这是给Linux系统内核升级的方法之一</td>
+  <td>diff&nbsp;diffstat&nbsp;filterdiff&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>254</td>
+  <td>修补的文件</td>
+</tr>
+<tr>
+  <td>rcp</td>
+  <td>rcp[必要参数][源文件][目标文件]</td>
+  <td>rcp&nbsp;命令：rcp命令用在远端复制文件或目录，如同时指定两个以上的文件或目录，且最后的目的地是一个已经存在的目录，则它灰把前面指定的所有文件或目录复制到该目录中</td>
+  <td>rsh&nbsp;cp&nbsp;mv&nbsp;ftp&nbsp;wget&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>255</td>
+  <td>复制远程主机的文件或目录</td>
+</tr>
+<tr>
+  <td>rename</td>
+  <td>rename[选择性参数][正则表达式][目标文件]</td>
+  <td>rename命令：用于&nbsp;对文件进行命名管理，可进行批量命名并支持正则表达式，&nbsp;rename命令存在两个版本用法上有所区别&nbsp;一个是&nbsp;C语言版本支持通配符，另一个是&nbsp;Perl版本.支持正则表达式</td>
+  <td>mv&nbsp;ls&nbsp;cp&nbsp;ln&nbsp;rm&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>256</td>
+  <td>重命名文件</td>
+</tr>
+<tr>
+  <td>rhmask</td>
+  <td>rhmask[必要参数][加密文件][源文件][目标文件]</td>
+  <td>rhmask&nbsp;命令：对文件进行加密</td>
+  <td>passwd&nbsp;md5sum&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>257</td>
+  <td>生成加密文件</td>
+</tr>
+<tr>
+  <td>rm</td>
+  <td>rm[必要参数][选择参数][目标文件或目录]</td>
+  <td>rm&nbsp;命令：删除不需要的文件。该命令的功能为删除一个目录中的一个或多个文件或目录，它也可以将某个目录及其下的所有文件及子目录均删除。对于链接文件，只是断开了链接，原文件保持不变</td>
+  <td>chattr&nbsp;shred&nbsp;mv&nbsp;cp&nbsp;rmdir&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>258</td>
+  <td>删除文件或目录</td>
+</tr>
+<tr>
+  <td>rmdir</td>
+  <td>rmdir[必要参数][选择参数][目录]</td>
+  <td>rmdir&nbsp;命令：删除空目录，非空目录出现错误</td>
+  <td>rm&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>259</td>
+  <td>删除目录/文件夹</td>
+</tr>
+<tr>
+  <td>slocate</td>
+  <td>slocate[必要参数][选择参数][文件]</td>
+  <td>slocate&nbsp;命令：用来查找文件，它可以自己建立一个数据库，在自己的数据库进行查找比find的查找速度要快的多</td>
+  <td>find&nbsp;locate&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>260</td>
+  <td>查找文件或目录</td>
+</tr>
+<tr>
+  <td>split</td>
+  <td>split[必要参数][选择参数][要切割的文件]</td>
+  <td>split&nbsp;命令：将指定的文件切割小的文件</td>
+  <td>cut&nbsp;csplit&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>261</td>
+  <td>分割/切割文件</td>
+</tr>
+<tr>
+  <td>stat</td>
+  <td>stat[必要参数][选择参数][文件]</td>
+  <td>stat&nbsp;命令：用来显示文件的详细信息</td>
+  <td>ls&nbsp;ll&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>262</td>
+  <td>显示inode内容</td>
+</tr>
+<tr>
+  <td>sum</td>
+  <td>sum[必要参数][选择参数][文件]</td>
+  <td>sum&nbsp;命令：用来计算文件的校验码，同时显示块数</td>
+  <td>cksum&nbsp;md5sum&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>263</td>
+  <td>计算文件校验码</td>
+</tr>
+<tr>
+  <td>tee</td>
+  <td>tee[必要参数][选择参数][文件]</td>
+  <td>tee&nbsp;命令：用来将标准输入的内容输出到标准书并可以保存为文件</td>
+  <td>cat&nbsp;echo&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>264</td>
+  <td>标准输入到标准输出,输出文件</td>
+</tr>
+<tr>
+  <td>tftp</td>
+  <td>tftp[必要参数][选择参数][主机]</td>
+  <td>tftp&nbsp;命令：在简单的文字模式FTP命令，常在嵌入开发中下载文件</td>
+  <td>ftp&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>265</td>
+  <td>传输文件</td>
+</tr>
+<tr>
+  <td>tmpwatch</td>
+  <td>tmpwatch[必要参数][超时时间][目录]</td>
+  <td>tmpwatch&nbsp;命令：用来删除指定时间内没有使用过的文件</td>
+  <td>cron&nbsp;ls&nbsp;rm&nbsp;fuser&nbsp;mktemp&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>266</td>
+  <td>删除临时文件</td>
+</tr>
+<tr>
+  <td>touch</td>
+  <td>touch[必要参数][选择参数]</td>
+  <td>touch&nbsp;命令：用来更新文件或目录的时间，文件不存在则创建该文件</td>
+  <td>ls&nbsp;mkdir&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>267</td>
+  <td>更新文件或目录</td>
+</tr>
+<tr>
+  <td>tree</td>
+  <td>tree[必要参数][选择参数][目录]</td>
+  <td>tree&nbsp;命令：显示指定目录夏下的所有文件，包括子目录的所有文件</td>
+  <td>ls&nbsp;ll&nbsp;find&nbsp;dir&nbsp;mc&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>268</td>
+  <td>是树状结构显示目录内容</td>
+</tr>
+<tr>
+  <td>umask</td>
+  <td>chmod&brvbar;chroot</td>
+  <td>umask&nbsp;命令：用来显示和设置权限掩码</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>269</td>
+  <td>权限掩码</td>
+</tr>
+<tr>
+  <td>uucico</td>
+  <td>uucico[必要参数][选择参数]</td>
+  <td>uucico&nbsp;命令：用来处理uucp的文件传输</td>
+  <td>uucp&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>270</td>
+  <td>uucp文件传输</td>
+</tr>
+<tr>
+  <td>uucp</td>
+  <td>uucp[必要参数][选择参数][目的]</td>
+  <td>uucp&nbsp;命令：用来在unix系统之间传送文件</td>
+  <td>uucico&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>271</td>
+  <td>在UNIX系统之间传输传送文件</td>
+</tr>
+<tr>
+  <td>uupick</td>
+  <td>uupick[必要参数][选择参数]</td>
+  <td>uupick&nbsp;命令：用来处理uucp传送来的文件</td>
+  <td>uucp&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>272</td>
+  <td>处理文件</td>
+</tr>
+<tr>
+  <td>uuto</td>
+  <td>uuto[必要参数][选择参数][文件][主机]</td>
+  <td>uuto&nbsp;命令：是一个script命令，它传送文件到远端的uucp主机</td>
+  <td>uucp&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>文件管理</td>
+  <td>273</td>
+  <td>文件传送到远程主机</td>
+</tr>
+<tr>
+  <td>ar</td>
+  <td>ar[-][必要参数][选择参数][成员文件</td>
+  <td>ar&nbsp;命令：将多个文件打包到一个文件中，也可以从打包的文件中提取文件，且打包的文件保留原来的属性</td>
+  <td>nm&nbsp;tar&nbsp;zip&nbsp;ranlib&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>274</td>
+  <td>建立、修改或从档案文件中提取文件</td>
+</tr>
+<tr>
+  <td>bunzip2</td>
+  <td>bunzip2[必要参数][选择参数][文件]</td>
+  <td>bunzip2&nbsp;命令：相当于&nbsp;bzip2&nbsp;-d&nbsp;是bzip2&nbsp;的符号链接。</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>275</td>
+  <td>解压.bz2类型的文件</td>
+</tr>
+<tr>
+  <td>bzip2</td>
+  <td>bzip2[必要参数][选择参数]</td>
+  <td>bzip2&nbsp;命令：bzip2采用新的压缩演算法，压缩效果比传统的LZ77/LZ78压缩演算法来得好。若没有加上任何参数，bzip2压缩完文件后会产生&nbsp;bz2的压缩文件，并删除原始的文件</td>
+  <td>bunzip2&nbsp;tar&nbsp;zcat&nbsp;7zip&nbsp;zip&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>276</td>
+  <td>解压.bz2文件</td>
+</tr>
+<tr>
+  <td>bzip2recover</td>
+  <td>bzip2recover[.bz2文件]</td>
+  <td>bzip2recover&nbsp;命令：用于修复损坏的&nbsp;bz2文件的数据</td>
+  <td>bzip2&nbsp;bunzip2&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>277</td>
+  <td>修复损坏的.bz2文件</td>
+</tr>
+<tr>
+  <td>compress</td>
+  <td>compress[必要参数][选择参数][目录或者文件]</td>
+  <td>compress&nbsp;命令：compress&nbsp;是一个相当古老的&nbsp;unix&nbsp;档案压缩命令，压缩后的档案会加上一个&nbsp;&nbsp;Z&nbsp;延伸档名以区别未压缩的档案，压缩后的档案可以以&nbsp;uncompress&nbsp;解压。若要将数个档案压成一个压缩档，必须先将档案&nbsp;tar&nbsp;起来再压缩。由于&nbsp;gzip&nbsp;可以产生更理想的压缩比例，一般人多已改用&nbsp;gzip&nbsp;为档案压缩工具</td>
+  <td>pack&nbsp;compact&nbsp;bzip2&nbsp;zip&nbsp;tar&nbsp;7zip&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>278</td>
+  <td>压缩解压文件</td>
+</tr>
+<tr>
+  <td>cpio</td>
+  <td>cpio[必要参数][选择参数]</td>
+  <td>cpio&nbsp;命令：用来创建或者提取文档，或者讲一个文件从一个地方复制到另一个地方，它同时可以处理tar文件</td>
+  <td>cp&nbsp;tar&nbsp;zip&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>279</td>
+  <td>备份文件</td>
+</tr>
+<tr>
+  <td>dump</td>
+  <td>dump[必要参数][选择参数][目录或者文件系统]</td>
+  <td>dump&nbsp;命令：检测ext2/3文件系统的文件，决定哪些文件需要备份。这些文件被复制到给定的硬盘、磁带或者别的存储介质。如果输入的部分比存储的媒体的容量大，那么输出部分将被分出多个块。在大多数存储介质上，大小是有写入决定的，知道存储介质返回一个终止符之后，就不能再写入了</td>
+  <td>fstab&nbsp;restore&nbsp;rmt&nbsp;</td>
+  <td>超级用户</td>
+  <td>备份压缩</td>
+  <td>280</td>
+  <td>文件系统备份</td>
+</tr>
+<tr>
+  <td>fsck</td>
+  <td>fsck[必要参数][选择参数][文件系统]</td>
+  <td>fsck&nbsp;命令：用于检测并修复出错的文件系统，修复对象可以使设备名，列入/dev/hda;可以使挂载点，例如&nbsp;/media&nbsp;/mnt；可以是&nbsp;ext2&nbsp;label，例如&nbsp;LABEL=/root;还可以是UUID，例如&nbsp;UUID=8985afwr6-66y8-6b8wa6ss</td>
+  <td>fstab&nbsp;mkfs&nbsp;cramfsck&nbsp;reiserfsck&nbsp;fdisk&nbsp;</td>
+  <td>超级用户</td>
+  <td>备份压缩</td>
+  <td>281</td>
+  <td>检查文件系统并尝试修复错误</td>
+</tr>
+<tr>
+  <td>fsck.ext2</td>
+  <td>fsck.ext2[必要参数][选择参数][设备代号]</td>
+  <td>fsck.ext2&nbsp;命令：针对ext2型文件系统进行检测</td>
+  <td>fstab&nbsp;mkfs&nbsp;fsck&nbsp;e2fsck&nbsp;cramfsck&nbsp;fsck.ext3&nbsp;fsck.xiaofs&nbsp;</td>
+  <td>超级用户</td>
+  <td>备份压缩</td>
+  <td>282</td>
+  <td>检查ext2文件系统</td>
+</tr>
+<tr>
+  <td>fsck.ext3</td>
+  <td>fsck.ext3[必要参数][选择参数][设备代号]</td>
+  <td>fsck.ext3&nbsp;命令：针对ext3型文件系统进行检测</td>
+  <td>fstab&nbsp;mkfs&nbsp;fsck&nbsp;e2fsck&nbsp;cramfsck&nbsp;fsck.ext2&nbsp;fsck.xiaofs&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>283</td>
+  <td>检查ext3文件系统</td>
+</tr>
+<tr>
+  <td>fsck.minix</td>
+  <td>fsck.minix[必要参数][选择参数][设备代号]</td>
+  <td>fsck.minix&nbsp;命令：针对minix文件系统进行磁盘检测</td>
+  <td>fstab&nbsp;mkfs&nbsp;fsck&nbsp;e2fsck&nbsp;cramfsck&nbsp;fsck.ext3&nbsp;fsck.xiaofs&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>284</td>
+  <td>检查文件系统并尝试修复错误</td>
+</tr>
+<tr>
+  <td>gunzip</td>
+  <td>gunzip[必要参数][选择参数][文件]</td>
+  <td>gunzip&nbsp;命令：用来解压文件，是通过gzip命令来完成的，是gzip&nbsp;的硬链接</td>
+  <td>gzip&nbsp;tar&nbsp;zip&nbsp;7zip&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>285</td>
+  <td>解压文件</td>
+</tr>
+<tr>
+  <td>gzexe</td>
+  <td>gzexe[必要参数][选择参数][可执行文件……]</td>
+  <td>gzexe&nbsp;命令：用来压缩可执行文件以节省空间</td>
+  <td>gzip&nbsp;tar&nbsp;gunzip&nbsp;zip&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>286</td>
+  <td>压缩可执行文件</td>
+</tr>
+<tr>
+  <td>gzip</td>
+  <td>gzip[必要参数][选择参数][文件或者目录]</td>
+  <td>gzip&nbsp;命令：是使用广泛的压缩程序，这类压缩文件的扩展名为&nbsp;gz</td>
+  <td>tar&nbsp;bzip2&nbsp;compress&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>287</td>
+  <td>压缩文件</td>
+</tr>
+<tr>
+  <td>hdparm</td>
+  <td>hdparm[必要参数][选择参数][设备]</td>
+  <td>hdparm&nbsp;命令：提供了一个命令行接口来显示设置硬盘参数。一些参数可能只能在最新的内核下工作。最好在最新的内核下执行haparm</td>
+  <td>fdisk&nbsp;</td>
+  <td>超级用户</td>
+  <td>备份压缩</td>
+  <td>288</td>
+  <td>显示和设定硬盘参数</td>
+</tr>
+<tr>
+  <td>lha</td>
+  <td>lha[必要参数][选择参数][文件]</td>
+  <td>lha&nbsp;命令：从lharc命令演变而来的压缩程序，文件压缩过后会产生具有&nbsp;lhz后缀的文件</td>
+  <td>tar&nbsp;lharc&nbsp;zip&nbsp;7zip&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>289</td>
+  <td>压缩或解压文件</td>
+</tr>
+<tr>
+  <td>tar</td>
+  <td>tar[必要参数][选择参数][文件]</td>
+  <td>tar&nbsp;命令：用来压缩和解压文件。tar本身不具有压缩功能。他是调用压缩功能实现的</td>
+  <td>gzip&nbsp;bzip2&nbsp;compress&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>290</td>
+  <td>压缩/解压文件</td>
+</tr>
+<tr>
+  <td>unarj</td>
+  <td>unarj[必要参数][选择参数]</td>
+  <td>unarj&nbsp;命令：用来解压&nbsp;arj文件</td>
+  <td>arj&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>291</td>
+  <td>解压.arj文件</td>
+</tr>
+<tr>
+  <td>uncompress</td>
+  <td>uncompress[必要参数][选择参数][压缩文件]</td>
+  <td>uncompress&nbsp;命令：用来解压&nbsp;&nbsp;Z文件</td>
+  <td>tar&nbsp;compress&nbsp;&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>292</td>
+  <td>解压.Z文件</td>
+</tr>
+<tr>
+  <td>unzip</td>
+  <td>unzip[必要参数][选择参数][文件]</td>
+  <td>unzip&nbsp;命令：用来解压zip文件。</td>
+  <td>tar&nbsp;zip&nbsp;uncompress&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>293</td>
+  <td>解压ZIP文件</td>
+</tr>
+<tr>
+  <td>uudecode</td>
+  <td>uudecode[必要参数][选择参数]</td>
+  <td>uudecode&nbsp;命令：将uuencode编码后的档案还原</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>294</td>
+  <td>编码压缩打包</td>
+</tr>
+<tr>
+  <td>zip</td>
+  <td>zip[必要参数][选择参数][文件]</td>
+  <td>zip&nbsp;命令：是一个应用广泛的跨平台的压缩工具，压缩文件的后缀为&nbsp;zip文件</td>
+  <td>unzip&nbsp;tar&nbsp;bzip2&nbsp;compress&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>295</td>
+  <td>压缩文件</td>
+</tr>
+<tr>
+  <td>zipinfo</td>
+  <td>zipinfo[必要参数][选择参数][压缩文件][文件]</td>
+  <td>zipinfo&nbsp;命令：显示zip压缩文件信息</td>
+  <td>unzip&nbsp;zip&nbsp;tar&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>备份压缩</td>
+  <td>296</td>
+  <td>显示压缩文件的信息</td>
+</tr>
+<tr>
+  <td>apachectl</td>
+  <td>apachectl[参数]</td>
+  <td>apachectl&nbsp;命令：是&nbsp;apache&nbsp;HTTP&nbsp;服务器控制接口，通过&nbsp;apachectl&nbsp;&nbsp;可控制&nbsp;&nbsp;apache&nbsp;HTTP&nbsp;服务器&nbsp;开启和关闭</td>
+  <td>httpd&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>297</td>
+  <td>apache&nbsp;HTTP&nbsp;服务器控制接口</td>
+</tr>
+<tr>
+  <td>arp</td>
+  <td>arp[必要参数][选择参数]</td>
+  <td>arp&nbsp;命令：处理内核的ARP缓存信息，清理ARP缓存</td>
+  <td>rarp&nbsp;route&nbsp;ifconfig&nbsp;netstat&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>298</td>
+  <td>系统ARP缓存</td>
+</tr>
+<tr>
+  <td>arping</td>
+  <td>arping[必要参数][选择参数][目的地址]</td>
+  <td>arping&nbsp;命令：在指定网卡上发送ARP请求指定地址，源地址&nbsp;“-s”&nbsp;参数指定，可用来直接&nbsp;ping&nbsp;MAC&nbsp;地址，以及找出那些&nbsp;ip&nbsp;地址被哪些电脑所使用了</td>
+  <td>arp&nbsp;ping&nbsp;ping6&nbsp;clockdiff&nbsp;tracepath&nbsp;cu&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>299</td>
+  <td>向相邻主机发送ARP请求</td>
+</tr>
+<tr>
+  <td>arpwatch</td>
+  <td>arpwatch[必要参数][选择参数]</td>
+  <td>arpwatch&nbsp;命令：跟踪以太网地址和IP地址配对情况，通过E-mail的形式报告当前的变化。arpwatch使用pcap来监听本网卡和ARP数据包</td>
+  <td>arp&nbsp;arpsnmp&nbsp;bpf&nbsp;tcpdump&nbsp;pcapture&nbsp;pcap&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>300</td>
+  <td>监听ARP记录</td>
+</tr>
+<tr>
+  <td>cu</td>
+  <td>cu[必要参数][选择参数]</td>
+  <td>cu&nbsp;命令：用来进行主机间的通信</td>
+  <td>mesg&nbsp;ping&nbsp;ping6&nbsp;ssh&nbsp;telnet&nbsp;gaim&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>301</td>
+  <td>连接主机通信</td>
+</tr>
+<tr>
+  <td>dig</td>
+  <td>dig[必要参数][选择参数][查询对象][类型][选项]</td>
+  <td>dig&nbsp;命令：是一个功能类似nslookup命令的工具。能得到更详细的DNS解析报告。在使用上要比&nbsp;nslookup方便。可以作为网络故障的诊断工具</td>
+  <td>nslookup&nbsp;tracepath&nbsp;traceroute&nbsp;ping&nbsp;mtr&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>302</td>
+  <td>DNS查找/查询</td>
+</tr>
+<tr>
+  <td>dip</td>
+  <td>dip[必要参数][选择参数][脚本文件]</td>
+  <td>dip&nbsp;命令：dip可控制调制解调器，以拨号IP的方式建立对外的双向连接</td>
+  <td>ppp&nbsp;pppoeconf&nbsp;pppsetup&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>303</td>
+  <td>IP拨号</td>
+</tr>
+<tr>
+  <td>gaim</td>
+  <td>gaim[必要参数][选择参数]</td>
+  <td>gaim&nbsp;命令：即时信息传输</td>
+  <td>dmesg&nbsp;wall&nbsp;write&nbsp;qq&nbsp;pidgin&nbsp;eva&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>304</td>
+  <td>即时消息传输</td>
+</tr>
+<tr>
+  <td>getty</td>
+  <td>getty[必要参数][选择参数]</td>
+  <td>getty&nbsp;命令：是Unix类操作系统启动时必须的三个步骤之一，用来开启终端，进行终端的初始化，设置终端。</td>
+  <td>tty&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>305</td>
+  <td>设置终端配置</td>
+</tr>
+<tr>
+  <td>host</td>
+  <td>host[必要参数][选择参数][名字][服务器]</td>
+  <td>host&nbsp;命令：用于查询DNS的工具，它通过常转换指定主机名称的主机名称为IP地址。当不指定参数时，它显示host命令的帮助信息</td>
+  <td>dig&nbsp;named&nbsp;nslookup&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>306</td>
+  <td>dns&nbsp;查询</td>
+</tr>
+<tr>
+  <td>httpd</td>
+  <td>httpd[选择参数][必要参数]</td>
+  <td>httpd&nbsp;命令：是一个Apache超文本传输协议服务器程序。它作为一个独立的守护进程来运行。当使用时，它会创建一个子进程池或多线程来处理请求</td>
+  <td>httpd&nbsp;worker&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>307</td>
+  <td>Apache&nbsp;http&nbsp;服务器程序</td>
+</tr>
+<tr>
+  <td>iptables</td>
+  <td>iptables[必要参数][选择参数]</td>
+  <td>iptables&nbsp;命令：用来设置、维护或者检测Linux内核的IP数据包表，并且定义了不止一种数据表。每一个表包含一定数量的路由链，也可能维护用户定义的路由链。每一个路由链定义了相应的接收数据包的规则</td>
+  <td>iptables-save&nbsp;iptables-restore&nbsp;ip6tables&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>308</td>
+  <td>包过滤/防火墙/转发管理</td>
+</tr>
+<tr>
+  <td>iptables-save</td>
+  <td>iptables-save[-c][-t&nbsp;表]</td>
+  <td>iptables-save&nbsp;命令：用来输出iptable到标准输出</td>
+  <td>iptables&nbsp;iptables-restore&nbsp;ip6tables&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>309</td>
+  <td>IP&nbsp;列表存储</td>
+</tr>
+<tr>
+  <td>iwconfig</td>
+  <td>iwconfig[网络设备][必要参数][选择参数]</td>
+  <td>iwconfig&nbsp;命令：系统配置无线网络设备或显示无线网络设备信息。iwconfig&nbsp;命令类似于ifconfig命令，但是他配置对象是无线网卡，它对网络设备进行无线操作，如设置无线通信频段</td>
+  <td>ifconfig&nbsp;iwlist&nbsp;iwspy&nbsp;iwevent&nbsp;iwpriv&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>310</td>
+  <td>配置无线网络设备</td>
+</tr>
+<tr>
+  <td>iwlist</td>
+  <td>iwlist[网卡][必要参数][选择参数]</td>
+  <td>iwlist&nbsp;命令：用于对/proc/net/wireless文件进行分析，得出无线网卡相关信息</td>
+  <td>iwconfig&nbsp;iwspy&nbsp;iwevent&nbsp;iwpriv&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>311</td>
+  <td>获取无线网卡相关数据</td>
+</tr>
+<tr>
+  <td>mesg</td>
+  <td>mesg[必要参数]</td>
+  <td>mesg&nbsp;命令：控制其他用户能否使用write命令将信息发送到当前用户使用的终端上</td>
+  <td>write&nbsp;talk&nbsp;who&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>312</td>
+  <td>控制终端的写入</td>
+</tr>
+<tr>
+  <td>minicom</td>
+  <td>minicom[必要参数][选择参数]</td>
+  <td>minicom&nbsp;命令：一个相当受欢迎的PPP拨号连线程序</td>
+  <td>mingetty&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>313</td>
+  <td>调制解调器通信程序</td>
+</tr>
+<tr>
+  <td>mkfifo</td>
+  <td>mkfifo[必要参数][选择参数]</td>
+  <td>mkfifo&nbsp;命令：根据指定的名字创建FIFO管道</td>
+  <td>info&nbsp;coreutils&nbsp;mkfifo&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>314</td>
+  <td>创建管道</td>
+</tr>
+<tr>
+  <td>mtr</td>
+  <td>mtr[必要参数][选择参数]</td>
+  <td>mtr&nbsp;命令：集中tarceroute命令和平命令的功能的网络诊断工具</td>
+  <td>tarceroute&nbsp;ping&nbsp;nslookup&nbsp;host&nbsp;ifconfig&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>315</td>
+  <td>网络诊断工具</td>
+</tr>
+<tr>
+  <td>nc</td>
+  <td>nc[必要参数][选择参数]</td>
+  <td>nc&nbsp;命令：用来设置路由器参数。它可以打开TCP链接，发送UDP数据包，监听TCP和UDP端口，扫描端口，同时处理IPv4&nbsp;和IPv6，它实现的功能如下</td>
+  <td>route&nbsp;ifconfig&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>316</td>
+  <td>设置路由器/端口扫描</td>
+</tr>
+<tr>
+  <td>netstat</td>
+  <td>netstat[必要参数][选择参数]</td>
+  <td>netstat&nbsp;命令：用来显示整个Linux系统的网络情况</td>
+  <td>route&nbsp;nc&nbsp;host&nbsp;netconfig&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>317</td>
+  <td>显示网络状态</td>
+</tr>
+<tr>
+  <td>nslookup</td>
+  <td>nslookup[必要参数][选择参数][主机名称][服务器名称]</td>
+  <td>nslookup&nbsp;命令：用于查找域名服务器的程序，nslookup有两种模式：互交和非互交</td>
+  <td>dig&nbsp;host&nbsp;named&nbsp;nc&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>318</td>
+  <td>dns查找/查询</td>
+</tr>
+<tr>
+  <td>ping</td>
+  <td>ping[必要参数][选择参数]&nbsp;[主机名或IP地址]</td>
+  <td>ping&nbsp;命令：使用ICMP传输协议，发出要求回应的信息，若远端主机的网络功能没有问题，就会回应该信息，因而得知该主机运作正常</td>
+  <td>ping6&nbsp;host&nbsp;nslookup&nbsp;ifconfig&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>319</td>
+  <td>检测主机</td>
+</tr>
+<tr>
+  <td>ping6</td>
+  <td>ping6[必要参数][选择参数]</td>
+  <td>ping6&nbsp;命令：用语IPv6的ping&nbsp;程序</td>
+  <td>ping6&nbsp;host&nbsp;nslookup&nbsp;ifconfig&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>320</td>
+  <td>检测主机IPv6</td>
+</tr>
+<tr>
+  <td>ppp-off</td>
+  <td>ppp-off[必要参数][选择参数]</td>
+  <td>ppp-off&nbsp;命令：关闭ppp连线</td>
+  <td>pppdump&nbsp;ppsetup&nbsp;ppstats&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>321</td>
+  <td>关闭ppp连线/ADSL</td>
+</tr>
+<tr>
+  <td>pppd</td>
+  <td>pppd[必要参数][选择参数]</td>
+  <td>pppd&nbsp;命令：用来建立主机间的ppp连接</td>
+  <td>pppoeconf&nbsp;pppsetup&nbsp;ppp-off&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>322</td>
+  <td>ppp链接</td>
+</tr>
+<tr>
+  <td>pppoeconf</td>
+  <td>pppoeconf</td>
+  <td>pppoeconf&nbsp;命令：图形界面ADSL拨号程序，按照提示一步一步填写信息即可</td>
+  <td>pppd&nbsp;ppp-off&nbsp;pppsetup&nbsp;pppstats&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>323</td>
+  <td>ppp拨号连接/ADSL拨号</td>
+</tr>
+<tr>
+  <td>pppsetup</td>
+  <td>pppsetup</td>
+  <td>pppsetup&nbsp;命令：设置ppp连线</td>
+  <td>pppd&nbsp;ppp-off-pppstats.pppoeconf&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>324</td>
+  <td>设置ppp拨号</td>
+</tr>
+<tr>
+  <td>pppstats</td>
+  <td>pppstats[必要参数][选择参数]</td>
+  <td>pppstats&nbsp;命令：用来显示ppp当前连接状态</td>
+  <td>pppd&nbsp;ppp-off&nbsp;pppconfig&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>325</td>
+  <td>显示ppp连接状态/ADSL</td>
+</tr>
+<tr>
+  <td>rdate</td>
+  <td>rdate[必要参数][选择参数]</td>
+  <td>rdate&nbsp;命令：查询指定主机的系统时间</td>
+  <td>date&nbsp;ssh&nbsp;telnet&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>326</td>
+  <td>显示其他主机的日期与时间</td>
+</tr>
+<tr>
+  <td>samba</td>
+  <td>samba[必要参数]</td>
+  <td>samba&nbsp;命令：用来操作samba服务端启动与关闭等</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>327</td>
+  <td>控制Samba服务端</td>
+</tr>
+<tr>
+  <td>scp</td>
+  <td>scp[选择参数][路径][路径]</td>
+  <td>scp&nbsp;命令：用于在Linux下进行远程拷贝文件的命令</td>
+  <td>cp.ssh&nbsp;ftp&nbsp;tftp&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>328</td>
+  <td>加密远程文件传输</td>
+</tr>
+<tr>
+  <td>setserial</td>
+  <td>setserial[必要参数][设备][其他参数]</td>
+  <td>setserial&nbsp;命令：可用来设置串口或显示目前的设置</td>
+  <td>set&nbsp;setenv&nbsp;ping&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>329</td>
+  <td>显示和设置当前系统的串口信息</td>
+</tr>
+<tr>
+  <td>smbd</td>
+  <td>smbd[必要参数][选择参数]</td>
+  <td>smbd&nbsp;命令：用于Linux与Windows之间共享文件与打印机等网络资源</td>
+  <td>Samba&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>330</td>
+  <td>Samba服务器程序</td>
+</tr>
+<tr>
+  <td>statserial</td>
+  <td>statserial[必要参数][设备]</td>
+  <td>statserial&nbsp;命令：显示各个接脚的状态，常用来判断串口是否正常，Ctrl+C退出</td>
+  <td>stat&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>331</td>
+  <td>Samba服务器程序</td>
+</tr>
+<tr>
+  <td>tcpdump</td>
+  <td>tcpdump[必要参数][选择参数]</td>
+  <td>tcpdump&nbsp;命令：显示传输中的TCP数据包的信息</td>
+  <td>stty&nbsp;pcap&nbsp;bpf&nbsp;nit&nbsp;pfconfig&nbsp;</td>
+  <td>超级用户</td>
+  <td>网络通讯</td>
+  <td>332</td>
+  <td>显示网络传输数据</td>
+</tr>
+<tr>
+  <td>telnet</td>
+  <td>telnet[必要参数][选择参数][主机]</td>
+  <td>telnet&nbsp;命令：用于远程登录</td>
+  <td>ssh&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>333</td>
+  <td>远程登录</td>
+</tr>
+<tr>
+  <td>testparm</td>
+  <td>testparm[必要参数][配置文件]</td>
+  <td>testparm&nbsp;命令：用于简单测试Samba的配置文件是否正确</td>
+  <td>smbd&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>334</td>
+  <td>测试amba的设置</td>
+</tr>
+<tr>
+  <td>tracepath</td>
+  <td>tracepath[必要参数][选择参数]</td>
+  <td>tracepath&nbsp;命令：用来追踪连接到目标地址的所经过的路由</td>
+  <td>route&nbsp;traceroute&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>335</td>
+  <td>路由追踪</td>
+</tr>
+<tr>
+  <td>traceroute</td>
+  <td>traceroute[必要参数][选择参数][主机]</td>
+  <td>traceroute&nbsp;命令：追踪网络数据包的路由途径，默认数据包大小为40Bytes</td>
+  <td>route&nbsp;racepath&nbsp;ping&nbsp;host&nbsp;nslookup&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>336</td>
+  <td>显示数据包到主机间的路径</td>
+</tr>
+<tr>
+  <td>tty</td>
+  <td>tty[必要参数][选择参数]</td>
+  <td>tty&nbsp;命令：Linux的各类设备都是以文件形式存放在/dev&nbsp;目录下，tty命令可用来显示当前终端的名称</td>
+  <td>fdisk&nbsp;mount&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>337</td>
+  <td>显示标准输入设备名</td>
+</tr>
+<tr>
+  <td>uulog</td>
+  <td>uulog[必要参数][选择参数]</td>
+  <td>uulog&nbsp;命令：显示UUCP记录文件记录的信息</td>
+  <td>uucp&nbsp;cat&nbsp;tail&nbsp;more&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>338</td>
+  <td>显示UUCP记录文件</td>
+</tr>
+<tr>
+  <td>uuname</td>
+  <td>uuname[必要参数][选择参数]</td>
+  <td>uuname&nbsp;命令：显示全部的uucp远程主机</td>
+  <td>uucp&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>339</td>
+  <td>显示uucp远程主机</td>
+</tr>
+<tr>
+  <td>uustat</td>
+  <td>uustat[必要参数][选择参数]</td>
+  <td>uustat&nbsp;命令：显示当前uucp状态，它还可以显示、删除、启动uucp任务</td>
+  <td>uucp&nbsp;uuname&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>340</td>
+  <td>显示uucp状态</td>
+</tr>
+<tr>
+  <td>uux</td>
+  <td>uux[必要参数][选择参数][命令]</td>
+  <td>uux&nbsp;命令：可在远端的UUCP主机上执行命令</td>
+  <td>uucp&nbsp;uustat&nbsp;uuname&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>341</td>
+  <td>在远端的UUCP主机上执行命令</td>
+</tr>
+<tr>
+  <td>wall</td>
+  <td>wall[信息]</td>
+  <td>wall&nbsp;命令：可以用向所有的终端用户发送广播信息</td>
+  <td>dmesg&nbsp;mesg&nbsp;gaim&nbsp;write&nbsp;qq&nbsp;pidgin&nbsp;eva&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>342</td>
+  <td>信息广播/消息传输</td>
+</tr>
+<tr>
+  <td>wget</td>
+  <td>wget[必要参数][选择参数]</td>
+  <td>wget&nbsp;命令：用于从网络上下载资源，没有指定目录，下载资源回默认为当前目录</td>
+  <td>get&nbsp;firefox&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>343</td>
+  <td>从网络上下载资源</td>
+</tr>
+<tr>
+  <td>write</td>
+  <td>write[用户名][终端名]</td>
+  <td>write&nbsp;命令：用于用户之间发送信息</td>
+  <td>dmesg&nbsp;mesg&nbsp;gaim&nbsp;qq&nbsp;wall&nbsp;pidgin&nbsp;eva&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>344</td>
+  <td>传送信息/消息传输</td>
+</tr>
+<tr>
+  <td>ytalk</td>
+  <td>ytalk[必要参数][选择参数][用户]</td>
+  <td>ytalk&nbsp;命令：用于和其他用户线上交谈，如果想和其他主机的用户交谈，在用户名称后加上其主机名称或IP地址</td>
+  <td>dmesg&nbsp;mesg&nbsp;gaim&nbsp;qq&nbsp;wall&nbsp;pidgin&nbsp;eva&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>网络通讯</td>
+  <td>345</td>
+  <td>与其他用户交谈</td>
+</tr>
+<tr>
+  <td>automount</td>
+  <td>automount[必要参数][选择参数][挂载点映射类型][格式][映射参数]</td>
+  <td>automount&nbsp;命令：为auto文件系统配置挂载点。automount命令根据挂载点和相应的文件来自动挂载文件系统</td>
+  <td>mount&nbsp;autofs&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘管理</td>
+  <td>346</td>
+  <td>为auto文件系统配置挂载点</td>
+</tr>
+<tr>
+  <td>blkid</td>
+  <td>blkid[选择参数][块设备]</td>
+  <td>blkid&nbsp;命令：可以查看块设备（包括交换分区）的文件系统类型、LABEL、UUID、挂载目录等信息</td>
+  <td>fstab&nbsp;vol_id&nbsp;uuidgen&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘管理</td>
+  <td>347</td>
+  <td>查看块设备信息</td>
+</tr>
+<tr>
+  <td>df</td>
+  <td>df[必要参数][选择参数][文件或者设备]</td>
+  <td>df&nbsp;命令：显示指定磁盘文件的可用空间。如果没有文件名被指定，则所有当前被挂载的文件系统的可用空间将被显示。默认情况下，磁盘空间将以&nbsp;1KB&nbsp;为单位进行显示，除非环境变量&nbsp;POSIXLY_CORRECT&nbsp;被指定，那样将以512字节为单位进行显示</td>
+  <td>du&nbsp;ls&nbsp;mount&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘管理</td>
+  <td>348</td>
+  <td>查看磁盘信息/硬盘信息</td>
+</tr>
+<tr>
+  <td>dirs</td>
+  <td>dirs[必要参数]</td>
+  <td>dirs&nbsp;命令：用来显示目录信息</td>
+  <td>dir&nbsp;du&nbsp;df&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘管理</td>
+  <td>349</td>
+  <td>显示目录信息</td>
+</tr>
+<tr>
+  <td>du</td>
+  <td>du[必要参数][选择参数][目录或者文件]</td>
+  <td>du&nbsp;命令：显示每个文件的磁盘使用空间，对目录同样可以适用。</td>
+  <td>df&nbsp;wc&nbsp;stat&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘管理</td>
+  <td>350</td>
+  <td>显示目录或者文件所占空间/文件大小</td>
+</tr>
+<tr>
+  <td>eject</td>
+  <td>eject[必要参数][设备名/挂载点]</td>
+  <td>eject&nbsp;命令：对光驱设备这类抽取设备进行进行控制，光驱弹出/关闭，如果光驱（设备）已经被挂载了会自动卸载然后弹出</td>
+  <td>fdisk&nbsp;mount&nbsp;ls&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘管理</td>
+  <td>351</td>
+  <td>控制抽取设备</td>
+</tr>
+<tr>
+  <td>exportfs</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>磁盘管理</td>
+  <td>352</td>
+  <td>NFS共享管理</td>
+</tr>
+<tr>
+  <td>mount</td>
+  <td>mount[必要参数][选择参数]</td>
+  <td>mount&nbsp;命令：将指定设备上已存在的文件系统按照指定类型进行挂载。这并不是真正的挂在了设备，而是挂载了已有设备上的文件系统。出了打印和帮助和列表之类的命令外，一般挂载都需要指定设备和挂载点。设备名称类似/dev/had1,挂载点就是一个目录&nbsp;挂载完成后可以到挂载的目录打开挂载的设备</td>
+  <td>umount&nbsp;fstab&nbsp;sawpon&nbsp;nfs&nbsp;fdisk&nbsp;mountd&nbsp;nfsd&nbsp;losetup&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘管理</td>
+  <td>353</td>
+  <td>挂载文件系统</td>
+</tr>
+<tr>
+  <td>mzip</td>
+  <td>mzip[必要参数][选择参数]</td>
+  <td>mzip&nbsp;命令：用来进行磁带驱动的操作</td>
+  <td>zip&nbsp;tar&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘管理</td>
+  <td>354</td>
+  <td>zip/jaz&nbsp;磁盘驱动控制器命令</td>
+</tr>
+<tr>
+  <td>partprobe</td>
+  <td>partprobe[必要参数][选择参数][磁盘]</td>
+  <td>partprobe&nbsp;命令：用于重读分区表，当出现删除文件后,出现仍然占用空间。可以partprobe在不重启的情况下重读分区</td>
+  <td>fdisk&nbsp;</td>
+  <td>超级用户</td>
+  <td>磁盘管理</td>
+  <td>355</td>
+  <td>更新分区表/磁盘</td>
+</tr>
+<tr>
+  <td>quota</td>
+  <td>quota[必要参数][选择参数][用户名称或群组名称]</td>
+  <td>quota&nbsp;命令：用来显示磁盘的信息</td>
+  <td>quotachek&nbsp;quotaoff&nbsp;quotaon&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘管理</td>
+  <td>356</td>
+  <td>显示磁盘/硬盘已使用的空间与限制</td>
+</tr>
+<tr>
+  <td>quotacheck</td>
+  <td>quotacheck[必要参数][选择参数][文件系统]</td>
+  <td>quotacheck&nbsp;命令：用于扫描挂载的文件系统并设置磁盘的空间与限制</td>
+  <td>quota&nbsp;quotaoff&nbsp;quotaon&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘管理</td>
+  <td>357</td>
+  <td>检查磁盘/硬盘的使用空间与限制</td>
+</tr>
+<tr>
+  <td>quotaoff</td>
+  <td>quotaoff[必要参数][选择参数][文件系统]</td>
+  <td>quotaoff&nbsp;命令：用来关闭用户的磁盘空间的限制</td>
+  <td>quota&nbsp;quotacheck&nbsp;quotaon&nbsp;</td>
+  <td>超级用户</td>
+  <td>磁盘管理</td>
+  <td>358</td>
+  <td>关闭磁盘/硬盘空间限制</td>
+</tr>
+<tr>
+  <td>quotaon</td>
+  <td>quotaon[必要参数][选择参数][文件系统]</td>
+  <td>quotaon&nbsp;命令：用来开启用户的磁盘空间的限制</td>
+  <td>quota&nbsp;quotacheck&nbsp;quotaoff&nbsp;</td>
+  <td>超级用户</td>
+  <td>磁盘管理</td>
+  <td>359</td>
+  <td>开启磁盘/硬盘空间限制</td>
+</tr>
+<tr>
+  <td>quotastats</td>
+  <td>quotastats</td>
+  <td>quotastats&nbsp;命令：用来显示系统的磁盘空间限制的当前状态</td>
+  <td>&nbsp;</td>
+  <td>超级用户</td>
+  <td>磁盘管理</td>
+  <td>360</td>
+  <td>显示磁盘/硬盘空间配额</td>
+</tr>
+<tr>
+  <td>raidstop</td>
+  <td>raidstop[必要参数][选择参数][磁盘]</td>
+  <td>raidstop&nbsp;命令：用来关闭磁盘阵列</td>
+  <td>raidstart&nbsp;</td>
+  <td>超级用户</td>
+  <td>磁盘管理</td>
+  <td>361</td>
+  <td>关闭软件控制的磁盘阵列</td>
+</tr>
+<tr>
+  <td>repquota</td>
+  <td>repquota[必要参数][文件系统]</td>
+  <td>repquota&nbsp;命令：可以显示磁盘空间的限制以及磁盘的使用情况</td>
+  <td>quota&nbsp;quotaoff&nbsp;quotaon&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘管理</td>
+  <td>362</td>
+  <td>检查磁盘/硬盘空间限制的状态</td>
+</tr>
+<tr>
+  <td>rmt</td>
+  <td>rmt</td>
+  <td>rmt&nbsp;命令：通过进程间通信远程控制磁带机</td>
+  <td>rcmd&nbsp;rexec&nbsp;rdump&nbsp;rrestore&nbsp;</td>
+  <td>超级用户</td>
+  <td>磁盘管理</td>
+  <td>363</td>
+  <td>远端磁带传输协议模块</td>
+</tr>
+<tr>
+  <td>sfdisk</td>
+  <td>sfdisk[必要参数][选择参数]</td>
+  <td>sfdisk&nbsp;命令：个主要用途：显示分区大小，显示设备上的分区，检测设备上的分区和对设备进行重新分区</td>
+  <td>fdisk&nbsp;mount&nbsp;</td>
+  <td>超级用户</td>
+  <td>磁盘管理</td>
+  <td>364</td>
+  <td>硬盘分区工具程序</td>
+</tr>
+<tr>
+  <td>sync</td>
+  <td>sync[选择参数]</td>
+  <td>sync&nbsp;命令：将缓冲区数据写入磁盘</td>
+  <td>init&nbsp;shutdown&nbsp;</td>
+  <td>超级用户</td>
+  <td>磁盘管理</td>
+  <td>365</td>
+  <td>将内存缓冲区内的数据写入磁盘/硬盘</td>
+</tr>
+<tr>
+  <td>umount</td>
+  <td>umount[必要参数][选择参数][文件系统]</td>
+  <td>umount&nbsp;命令：用来卸载挂载的文件系统</td>
+  <td>mount&nbsp;fdisk&nbsp;smb&nbsp;</td>
+  <td>超级用户</td>
+  <td>磁盘管理</td>
+  <td>366</td>
+  <td>卸载文件系统</td>
+</tr>
+<tr>
+  <td>badblocks</td>
+  <td>badblocks[必要参数][选择参数][磁盘][磁盘块数][启动块]</td>
+  <td>badblocks&nbsp;命令：用来检查磁盘，指定磁盘装置和磁盘块数进行磁盘的坏道检查，以及进行相应的修复，badblocks是e2fsprogs包的一部分</td>
+  <td>e2fsck&nbsp;mke2fs&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘维护</td>
+  <td>367</td>
+  <td>检查磁盘坏道</td>
+</tr>
+<tr>
+  <td>cfdisk</td>
+  <td>cfdisk[必要参数][选择参数]</td>
+  <td>cfdisk&nbsp;命令：是一个基于鼠标的、用于硬盘分区的程序</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘维护</td>
+  <td>368</td>
+  <td>磁盘分区</td>
+</tr>
+<tr>
+  <td>cramfsck</td>
+  <td>cramfsck[选择参数][文件][目录]</td>
+  <td>cramfsck&nbsp;命令：解压cramfs文件系统，CRAMFS文件系统是专门针对闪存设计的只读压缩的文件系统,其容量上限为256M,采用zlib压缩,文件系统类型可以是EXT2或E</td>
+  <td>mkcramfs&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘维护</td>
+  <td>369</td>
+  <td>解压cramfs文件系统</td>
+</tr>
+<tr>
+  <td>dd</td>
+  <td>dd[选择参数]</td>
+  <td>dd&nbsp;命令：复制文件，或根据参数进行转换和格式化。可进行磁盘备份等操作。</td>
+  <td>tar&nbsp;zip&nbsp;cpio&nbsp;7zip&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘维护</td>
+  <td>370</td>
+  <td>转换复制文件</td>
+</tr>
+<tr>
+  <td>e2fsck</td>
+  <td>e2fsck[必要参数][选择参数][磁盘]</td>
+  <td>e2fsck&nbsp;命令：用来检查ext2文件系统的正确性</td>
+  <td>fsck&nbsp;mkfs&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘维护</td>
+  <td>371</td>
+  <td>检查ext2文件系统</td>
+</tr>
+<tr>
+  <td>fdisk</td>
+  <td>fdisk[必要参数][选择参数]</td>
+  <td>fdisk&nbsp;命令：是一个创建和维护分区表的程序，它兼容DOS类型的分区表、BSD或者SUN类型的磁盘列表</td>
+  <td>mkfs&nbsp;mount&nbsp;parted&nbsp;sfdisk&nbsp;dd&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘维护</td>
+  <td>372</td>
+  <td>分区表管理</td>
+</tr>
+<tr>
+  <td>mkbootdisk</td>
+  <td>mkbootdisk[必要参数][选择参数]</td>
+  <td>mkbootdisk&nbsp;命令：制作的启动盘完全自包括，而且包含了个初始化的RAM盘镜像。这个镜像将载入所有的系统必须的SCSI模块。穿件的启动盘根据/etc/fstab&nbsp;的建议寻找设备上的根文件系统。唯一需要的参数是要写入启动盘的内核版本</td>
+  <td>grubby&nbsp;mkinitrd&nbsp;make&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘维护</td>
+  <td>373</td>
+  <td>建立目前系统的启动盘</td>
+</tr>
+<tr>
+  <td>mkcramfs</td>
+  <td>mkcramfs[必要参数][选择参数][源目录][目标文件]</td>
+  <td>mkcramfs&nbsp;命令：用来创建CRAMFS只读文件系统</td>
+  <td>fdisk&nbsp;cramfsck&nbsp;mount&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘维护</td>
+  <td>374</td>
+  <td>创建只读文件系统</td>
+</tr>
+<tr>
+  <td>mke2fs</td>
+  <td>mke2fs[必要参数][选择参数]</td>
+  <td>mke2fs&nbsp;命令：建立Linux系统使用的ext2或ext3文件系统。</td>
+  <td>badblocks&nbsp;dumpe2fs&nbsp;e2fsck&nbsp;tune2fs&nbsp;mkfs&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘维护</td>
+  <td>375</td>
+  <td>建立ext2/ext3文件系统</td>
+</tr>
+<tr>
+  <td>mkfs</td>
+  <td>mkfs[必要参数][选择参数]</td>
+  <td>mkfs&nbsp;命令：必要参数为指定的设备或挂载点，后一个选择参数是指定文件系统的分区数，常用于硬盘分区，事实上，mkfs只是不同文件系统构建工具的一个前端，不同的系统系统实际使用工具不同</td>
+  <td>fsck&nbsp;proto&nbsp;dir&nbsp;fs&nbsp;mke2fs&nbsp;mkfs.vfat&nbsp;mkfs&nbsp;ext3&nbsp;mkfs.ext2&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘维护</td>
+  <td>376</td>
+  <td>建立各种文件系统</td>
+</tr>
+<tr>
+  <td>mkfs.minix</td>
+  <td>mkfs.minix[选择参数][必要参数][选择参数]</td>
+  <td>mkfs.minix&nbsp;命令：mkfs&nbsp;的一种实际构建工具。中间的必要参数是设备或挂载点，后面的选择性参数是块大小</td>
+  <td>mkfs&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘维护</td>
+  <td>377</td>
+  <td>建立minix文件系统</td>
+</tr>
+<tr>
+  <td>mkinitrd</td>
+  <td>mkinitrd[必要参数][选择参数]</td>
+  <td>mkinitrd&nbsp;命令：根据内核版本和指定参数生成映像文件</td>
+  <td>fstab&nbsp;insmod&nbsp;kerneld&nbsp;lilo&nbsp;</td>
+  <td>超级用户</td>
+  <td>磁盘维护</td>
+  <td>378</td>
+  <td>建立要载入ramdisk的映像文件</td>
+</tr>
+<tr>
+  <td>mkisofs</td>
+  <td>mkisofs[必要参数][选择参数]</td>
+  <td>mkisofs&nbsp;命令：根据参数生成ISO9660镜像文件</td>
+  <td>cdrecord&nbsp;mkzftree&nbsp;magic&nbsp;</td>
+  <td>超级用户</td>
+  <td>磁盘维护</td>
+  <td>379</td>
+  <td>建立ISO&nbsp;9660&nbsp;映像文件/光盘映像</td>
+</tr>
+<tr>
+  <td>mkswap</td>
+  <td>mkswap[选择参数][必要参数][选择参数]</td>
+  <td>mkswap&nbsp;命令：在一个文件或者设备上建立交换分区。在建立完之后要使用sawpon命令开始使用这个交换区。最后一个选择性参数指定了交换区的大小，但是这个参数是为了向后兼容设置的。没有使用的必要。一般都将整个文件或者设备作为交换区</td>
+  <td>fdisk&nbsp;swapon&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘维护</td>
+  <td>380</td>
+  <td>设置交换分区/Swap&nbsp;area/虚拟内存</td>
+</tr>
+<tr>
+  <td>mkswapon</td>
+  <td>swapon[必要参数][选择参数]</td>
+  <td>swapon&nbsp;命令：使用交换空间</td>
+  <td>mkswap&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘维护</td>
+  <td>381</td>
+  <td>使用交换空间/Swap/虚拟内存</td>
+</tr>
+<tr>
+  <td>swapon</td>
+  <td>swapon[必要参数][选择参数]</td>
+  <td>swapon&nbsp;命令：启动交换分区，swapoff用来关闭交换分区。</td>
+  <td>swapoff&nbsp;mkswapon&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>磁盘维护</td>
+  <td>382</td>
+  <td>启动系统交换分区</td>
+</tr>
+<tr>
+  <td>arm-linux-gcc</td>
+  <td>arm-linux-gcc[必要参数][选择参数]</td>
+  <td>arm-linux-gcc&nbsp;命令：用于交叉编译ARM开发板上的程序,交叉编译工具链中通常包含了arm-linux-g++</td>
+  <td>gcc&nbsp;g++&nbsp;mount&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>程序编译</td>
+  <td>383</td>
+  <td>交叉编译</td>
+</tr>
+<tr>
+  <td>as</td>
+  <td>as[必要参数][选择参数][文件]</td>
+  <td>as&nbsp;命令：可以利用指定的汇编文件生成目标文件,就是由&nbsp;s&nbsp;文件生成&nbsp;&nbsp;o文件</td>
+  <td>gcc&nbsp;ld&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>程序编译</td>
+  <td>384</td>
+  <td>标准GNU汇编程序</td>
+</tr>
+<tr>
+  <td>autoconf</td>
+  <td>autoconf[必要参数][选择参数][模板文件]</td>
+  <td>autoconf&nbsp;命令：将更具给定的模板文件产生一个配置脚本，这个给定的模板的心事为configure&nbsp;ac&nbsp;或者&nbsp;configure&nbsp;in&nbsp;如果模板文件给定，那么结果将输出到标准输出或者输出到configure&nbsp;文件</td>
+  <td>automake&nbsp;autoreconf&nbsp;autoupdat&nbsp;autoheader&nbsp;autoscan&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>程序编译</td>
+  <td>385</td>
+  <td>产生配置脚本</td>
+</tr>
+<tr>
+  <td>autoheader</td>
+  <td>autoheader[必要参数][选择参数][模板文件]</td>
+  <td>autoheader&nbsp;命令：用来产生模板头文件，以便于后面生成的configure文件的使用。运行此命令时，其将扫描模板文件、configure&nbsp;ac&nbsp;（如果存在的话）&nbsp;或者&nbsp;configure&nbsp;（如果存在的话）</td>
+  <td>automake&nbsp;autoreconf&nbsp;autoupdat&nbsp;&nbsp;autoscan&nbsp;autoreconf&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>程序编译</td>
+  <td>386</td>
+  <td>为configure产生模板头文件</td>
+</tr>
+<tr>
+  <td>autoreconf</td>
+  <td>autoreconf[必要参数][选择参数][文件]</td>
+  <td>autoreconf&nbsp;命令：可以重复地编译指定目录下的系统文件或者configure-ac指定的目录树。默认情况下，它只编译比以前编译的文件更新的文件</td>
+  <td>automake&nbsp;autoreconf&nbsp;autoupdat&nbsp;autoscan&nbsp;ifnames&nbsp;libtool&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>程序编译</td>
+  <td>387</td>
+  <td>更新已经生成的配置文件</td>
+</tr>
+<tr>
+  <td>autoscan</td>
+  <td>autoscan[必要参数][选择参数][源目录]</td>
+  <td>autoscan&nbsp;命令：用来产生一个初步的configure&nbsp;in文件</td>
+  <td>automake&nbsp;autoreconf&nbsp;autoupdat&nbsp;autoreconf&nbsp;ifnames&nbsp;gcc&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>程序编译</td>
+  <td>388</td>
+  <td>产生初步的configure.in文件</td>
+</tr>
+<tr>
+  <td>gcc</td>
+  <td>gcc[必要参数][选择参数][文件名]</td>
+  <td>gcc&nbsp;命令：用来编译C和C++文件</td>
+  <td>arm-linux-gcc&nbsp;g++&nbsp;gdb&nbsp;qmake&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>程序编译</td>
+  <td>389</td>
+  <td>GUN的C和C++编译器/C语言</td>
+</tr>
+<tr>
+  <td>gdb</td>
+  <td>gdb[可执行程序]</td>
+  <td>gdb&nbsp;命令：是GNU的调试工具</td>
+  <td>gcc&nbsp;g++&nbsp;qvb&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>程序编译</td>
+  <td>390</td>
+  <td>GNU调试器</td>
+</tr>
+<tr>
+  <td>gdbserver</td>
+  <td>gdbserver[必要参数][进程号]</td>
+  <td>gdbserver&nbsp;命令：用来远程控制gdb调试</td>
+  <td>gdb&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>程序编译</td>
+  <td>391</td>
+  <td>远端GNU服务器</td>
+</tr>
+<tr>
+  <td>make</td>
+  <td>make[必要参数][选择参数]</td>
+  <td>make&nbsp;命令：用来编译内核或者模块</td>
+  <td>configure&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>程序编译</td>
+  <td>392</td>
+  <td>编译内核或者模块</td>
+</tr>
+<tr>
+  <td>strip</td>
+  <td>strip[选择参数][文件]</td>
+  <td>strip&nbsp;命令：通过删除可执行文件中ELF头的&nbsp;typchk段、符号表、字符串表、行号信息、调试段、注解段、重定位信息等来实现缩减程序体积的目的。而被剪裁过的可执行文件不可进行还原。</td>
+  <td>gdb&nbsp;gcc&nbsp;split&nbsp;csplit&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>程序编译</td>
+  <td>393</td>
+  <td>可执行文件裁剪</td>
+</tr>
+<tr>
+  <td>cut</td>
+  <td>cut[必要参数][选择参数][文件]</td>
+  <td>cut&nbsp;命令：从文件中选择指定的行进行输出</td>
+  <td>paste&nbsp;cat&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>打印作业</td>
+  <td>394</td>
+  <td>剪切文件</td>
+</tr>
+<tr>
+  <td>pr</td>
+  <td>pr[必要参数][选择参数][文件]</td>
+  <td>pr&nbsp;命令：用于对文件进行编排，然后将结果输出到标准输出</td>
+  <td>cat&nbsp;more&nbsp;cut&nbsp;tail&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>打印作业</td>
+  <td>395</td>
+  <td>编排文件格式</td>
+</tr>
+<tr>
+  <td>tac</td>
+  <td>tac[必要参数][选择参数][文件]</td>
+  <td>tac&nbsp;命令：反序输出文件内容</td>
+  <td>cat&nbsp;more&nbsp;cut&nbsp;tail&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>打印作业</td>
+  <td>396</td>
+  <td>反序输出文件</td>
+</tr>
+<tr>
+  <td>tail</td>
+  <td>tail[必要参数][选择参数][文件]</td>
+  <td>tail&nbsp;命令：用于显示指定文件末尾内容，不指定文件时，作为输入信息进行处理。常用查看日志文件</td>
+  <td>head&nbsp;cat&nbsp;more&nbsp;cut&nbsp;pr&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>打印作业</td>
+  <td>397</td>
+  <td>显示文件的末尾</td>
+</tr>
+<tr>
+  <td>mail</td>
+  <td>mail[必要参数][选择参数][邮件地址]</td>
+  <td>mail&nbsp;命令：一个邮件工具，它在linux命令行下工作</td>
+  <td>tunderbird&nbsp;mutt&nbsp;fetchmail&nbsp;mailq&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>电子邮件</td>
+  <td>398</td>
+  <td>收发邮件</td>
+</tr>
+<tr>
+  <td>divps</td>
+  <td>divps[必要参数][选择参数][源文件][目标文件]</td>
+  <td>divps&nbsp;命令：用于将DVI文件转换为Postscript文件</td>
+  <td>mf&nbsp;afm2tfm&nbsp;tex&nbsp;latex&nbsp;lpr&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>格式转换</td>
+  <td>399</td>
+  <td>将DVI文件转换为Postscript文件</td>
+</tr>
+<tr>
+  <td>fiascotopnm</td>
+  <td>fiascotopnm[必要参数][选择参数][文件]</td>
+  <td>fiascotopnm&nbsp;命令：用于将压缩的fiasco镜像文件转换成pgm或ppm格式</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>格式转换</td>
+  <td>400</td>
+  <td>将压缩的fiasco镜像文件转换成pgm或ppm格式</td>
+</tr>
+<tr>
+  <td>find2perl</td>
+  <td>find2perl[路径][predicates][perl]</td>
+  <td>find2perl&nbsp;命令：将find指令行转换为perl代码</td>
+  <td>find&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>格式转换</td>
+  <td>401</td>
+  <td>将find命令行转换为perl代码</td>
+</tr>
+<tr>
+  <td>gemtopbm</td>
+  <td>gemtopbm[必要参数][选择参数]</td>
+  <td>gemtopbm&nbsp;命令：用来将gem文件转换为pbm文件</td>
+  <td>gemtopnm&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>格式转换</td>
+  <td>402</td>
+  <td>图形文件转换</td>
+</tr>
+<tr>
+  <td>giftopnm</td>
+  <td>giftopnm[必要参数][选择参数][文件]</td>
+  <td>giftopnm&nbsp;命令：将GIF文件转换为pnm文件</td>
+  <td>gemtopbm&nbsp;gemtopnm&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>格式转换</td>
+  <td>403</td>
+  <td>图形文件转换</td>
+</tr>
+<tr>
+  <td>iconv</td>
+  <td>iconv[必要参数][选择参数]</td>
+  <td>iconv&nbsp;命令：用于相关字符集的转换</td>
+  <td>fmt&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>格式转换</td>
+  <td>404</td>
+  <td>字符集转换</td>
+</tr>
+<tr>
+  <td>pcxtoppm</td>
+  <td>pcxtoppm[必要参数][选择参数][文件]</td>
+  <td>pcxtoppm&nbsp;命令：用来转换pcx图新文件，转换后的文件后缀为&nbsp;ppm，并将结果输出到标准输出</td>
+  <td>ppmtopcx&nbsp;ppm&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>格式转换</td>
+  <td>405</td>
+  <td>图形文件转换</td>
+</tr>
+<tr>
+  <td>pfbtops</td>
+  <td>pfbtops[选择参数][文件]</td>
+  <td>pfbtops&nbsp;命令：用来转换字体文件</td>
+  <td>grops&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>格式转换</td>
+  <td>406</td>
+  <td>转换字体文件</td>
+</tr>
+<tr>
+  <td>pi1toppm</td>
+  <td>pi1toppm[选择参数][文件]</td>
+  <td>pi1toppm&nbsp;命令：用于pil文件文件转换为ppm&nbsp;文件，并将结果输出到标准输出</td>
+  <td>pcxppm&nbsp;picttoppm&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>格式转换</td>
+  <td>407</td>
+  <td>图形文件转换</td>
+</tr>
+<tr>
+  <td>picttoppm</td>
+  <td>picttoppm[必要参数][选择参数][文件]</td>
+  <td>picttoppm&nbsp;命令：将pict类型文件转换为ppm类型文件</td>
+  <td>pfbtops&nbsp;pcxtoppm&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>格式转换</td>
+  <td>408</td>
+  <td>文件转换</td>
+</tr>
+<tr>
+  <td>pjtoppm</td>
+  <td>pjtoppm[文件]</td>
+  <td>pjtoppm&nbsp;命令：将打印文件转换成Portable&nbsp;Pixmap格式的文件，并将结果输出到标准输出</td>
+  <td>picttoppm&nbsp;pcxtoppm&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>格式转换</td>
+  <td>409</td>
+  <td>转换打印文件</td>
+</tr>
+<tr>
+  <td>qrttoppm</td>
+  <td>qrttoppm[文件]</td>
+  <td>qrttoppm&nbsp;命令：可以把qrt文件转换成ppm文件，并将结果输出到标准输出</td>
+  <td>picttoppm&nbsp;pcxtoppm&nbsp;&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>格式转换</td>
+  <td>410</td>
+  <td>转换&nbsp;qrt文件</td>
+</tr>
+<tr>
+  <td>sox</td>
+  <td>sox[必要参数][选择参数]</td>
+  <td>sox&nbsp;命令：可以转换各种音频格式</td>
+  <td>play&nbsp;rec&nbsp;soxexam&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>格式转换</td>
+  <td>411</td>
+  <td>音频文件转换</td>
+</tr>
+<tr>
+  <td>bc</td>
+  <td>bc[必要参数][选择参数]</td>
+  <td>bc&nbsp;命令：Linux简单的计算器,能进行进制转换与计算。能转换的进制包括十六进制、十进制、八进制、二进制等。可以使用的运算符号包括(+)加法、(-)减法、(*)乘法、(/)除法、(^)指数、(%)余数</td>
+  <td>expr&nbsp;dc&nbsp;echo&nbsp;awk&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统工具</td>
+  <td>412</td>
+  <td>计算器/转换进制</td>
+</tr>
+<tr>
+  <td>dc</td>
+  <td>dc[选择参数][文件]</td>
+  <td>dc&nbsp;命令：是一个reverse-polish&nbsp;桌面计算器，它支持无限制精度算法。通常情况下，dc命令从标准输入读取数据，如果指定了文件名的命令行谙熟，那么命令将从指定的文件中读取数据，而不是从标准输入读取数据。结果将输出到标准输出，所有的错误信息将输出到标准输出</td>
+  <td>expr&nbsp;xcalc&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统工具</td>
+  <td>413</td>
+  <td>一个任意精度的计算器</td>
+</tr>
+<tr>
+  <td>expr</td>
+  <td>expr[必要参数][选择参数]</td>
+  <td>expr&nbsp;命令：打印表达式的值到标准输出</td>
+  <td>dc&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统工具</td>
+  <td>414</td>
+  <td>简单计算器</td>
+</tr>
+<tr>
+  <td>xargs</td>
+  <td>xargs[选择参数][数据]</td>
+  <td>xargs&nbsp;命令：又称管道命令，构造参数等。是给命令传递参数的一个过滤器,也是组合多个命令的一个工具&nbsp;它把一个数据流分割为一些足够小的块,以方便过滤器和命令进行处理&nbsp;。简单的说&nbsp;就是把&nbsp;其他命令的给它的数据&nbsp;传递给它后面的命令作为参数</td>
+  <td>grep&nbsp;col&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>系统工具</td>
+  <td>415</td>
+  <td>参数传递</td>
+</tr>
+<tr>
+  <td>&amp;</td>
+  <td>&amp;</td>
+  <td>&amp;&nbsp;特殊符号：将进程放到后台执行</td>
+  <td>bg&nbsp;fg&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>其他命令</td>
+  <td>416</td>
+  <td>将进程放到后台执行</td>
+</tr>
+<tr>
+  <td>2&gt;</td>
+  <td>[命令]&nbsp;2&gt;&nbsp;[文件名]</td>
+  <td>2&gt;&nbsp;特殊符号：&nbsp;将屏幕输出错误提示重新定向输出到指定文件，如果文件存在将被覆盖</td>
+  <td>&amp;lt;&nbsp;&amp;gt;&amp;gt;&nbsp;2&amp;gt;&amp;gt;&nbsp;echo&nbsp;cat&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>其他命令</td>
+  <td>417</td>
+  <td>错误重定向输出</td>
+</tr>
+<tr>
+  <td>2&gt;&gt;</td>
+  <td>2&gt;&gt;[必要参数][选择参数]</td>
+  <td>2&gt;&gt;&nbsp;特殊符号：将屏幕输出错误提示重新定向输出到指定文件，如果文件存在输出的内容将追加到文件尾部</td>
+  <td>&amp;lt;&nbsp;2&amp;gt;&nbsp;&amp;gt;&amp;gt;&nbsp;echo&nbsp;cat&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>其他命令</td>
+  <td>418</td>
+  <td>错误重定向输出-追加</td>
+</tr>
+<tr>
+  <td>&gt;</td>
+  <td>[命令]&nbsp;&gt;&nbsp;[文件名]]</td>
+  <td>&gt;&nbsp;特殊符号：将屏幕输出的内容重新定向输出到指定文件，如果文件存在将被覆盖</td>
+  <td>&lt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&amp;gt;&nbsp;&amp;gt;&amp;gt;&nbsp;2&amp;gt;&amp;gt;&nbsp;echo&nbsp;cat&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>其他命令</td>
+  <td>419</td>
+  <td>重定向输出</td>
+</tr>
+<tr>
+  <td>&gt;&gt;</td>
+  <td>[命令]&nbsp;&gt;&nbsp;[文件名]</td>
+  <td>&gt;&gt;&nbsp;特殊符号：将屏幕输出的内容重新定向输出到指定文件，如果文件存在输出的内容将追加到文件尾部</td>
+  <td>&lt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;gt;&nbsp;2&amp;gt;&nbsp;2&amp;gt;&amp;gt;&nbsp;echo&nbsp;cat&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>其他命令</td>
+  <td>420</td>
+  <td>重定向输出-追加</td>
+</tr>
+<tr>
+  <td>audacious</td>
+  <td>audacious[必要参数][选择参数]</td>
+  <td>audacious&nbsp;命令：Audacious&nbsp;，一款音乐播放器软件，是&nbsp;beep-media-player&nbsp;0&nbsp;9&nbsp;7&nbsp;1的衍生软件</td>
+  <td>moc&nbsp;play&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>其他命令</td>
+  <td>421</td>
+  <td>音乐播放器</td>
+</tr>
+<tr>
+  <td>cairo-dock</td>
+  <td>&nbsp;</td>
+  <td>cairo-dock&nbsp;命令：Cairo&nbsp;Dock&nbsp;是一个适用于&nbsp;Linux&nbsp;桌面的&nbsp;Dock&nbsp;类程序。新版的Cairo&nbsp;Dock&nbsp;添加了诸多新特性，包括完全支持&nbsp;OpenGL、提供新的动画及视觉效果的插件、新的&nbsp;applet、重写了配置面板、新增了很多主题等等</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>其他命令</td>
+  <td>422</td>
+  <td>Dock栏</td>
+</tr>
+<tr>
+  <td>[]</td>
+  <td>命令[范围]</td>
+  <td>[]&nbsp;特殊符号：指定范围，可配合其他的特殊符号使用</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>其他命令</td>
+  <td>423</td>
+  <td>指定范围</td>
+</tr>
+<tr>
+  <td>&brvbar;</td>
+  <td>[命令1]&nbsp;&brvbar;&nbsp;[命令2]</td>
+  <td>&brvbar;&nbsp;特殊符号：上一个命令输出作为下一个命令输入，如同管道一样。从另一端输入，从另一端输出</td>
+  <td>&nbsp;</td>
+  <td>超级用户&nbsp;普通用户</td>
+  <td>其他命令</td>
+  <td>424</td>
+  <td>管道符号</td>
+</tr>
+<tr>
+  <td>startx</td>
+  <td>startx</td>
+  <td>startx&nbsp;命令：用来启动图形界面</td>
+  <td>xinit&nbsp;</td>
+  <td>超级用户</td>
+  <td>X-Windows-System</td>
+  <td>425</td>
+  <td>启动图形界面</td>
+</tr>
+<tr>
+  <td>xset</td>
+  <td>xset[必要参数][选择参数]</td>
+  <td>xset&nbsp;命令：用来设置&nbsp;X&nbsp;windows各项参数</td>
+  <td>X&nbsp;server&nbsp;</td>
+  <td>超级用户</td>
+  <td>X-Windows-System</td>
+  <td>426</td>
+  <td>设置X&nbsp;windows</td>
+</tr>
+</table>
+</body>
+</html>
