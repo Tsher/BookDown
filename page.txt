@@ -1,0 +1,2 @@
+树莓派官方下载  http://www.raspberrypi.org/downloads  
+装机起步指南 http://www.cnblogs.com/abel/p/3441175.html
