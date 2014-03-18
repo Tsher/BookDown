@@ -1,2 +1,6 @@
 树莓派官方下载  http://www.raspberrypi.org/downloads  
 装机起步指南 http://www.cnblogs.com/abel/p/3441175.html
+
+编译时告警：所生成项目的处理器架构“MSIL”与引用...的处理器架构“x86”不匹配在项目的属性页上修改
+http://www.dotblogs.com.tw/rainmaker/archive/2012/04/02/71244.aspx  
+
