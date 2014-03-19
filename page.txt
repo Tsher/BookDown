@@ -4,3 +4,9 @@
 编译时告警：所生成项目的处理器架构“MSIL”与引用...的处理器架构“x86”不匹配在项目的属性页上修改
 http://www.dotblogs.com.tw/rainmaker/archive/2012/04/02/71244.aspx  
 
+jquery中的ajax调用.net的ashx文件
+http://www.cnblogs.com/linyechengwei/archive/2011/03/09/1978442.html
+
+
+树莓派指南
+http://www.cnblogs.com/ma6174/archive/2013/01/25/2875617.html
