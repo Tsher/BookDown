@@ -10,3 +10,6 @@ http://www.cnblogs.com/linyechengwei/archive/2011/03/09/1978442.html
 
 树莓派指南
 http://www.cnblogs.com/ma6174/archive/2013/01/25/2875617.html
+
+npm指南
+http://blog.csdn.net/haidaochen/article/details/8546796
