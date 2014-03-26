@@ -1,0 +1,15 @@
+{
+  "name": "node-example",
+  "version": "0.0.1",
+  "dependencies": {
+    "jsdom": "https://github.com/tmpvar/jsdom/tarball/4cf155a1624b3fb54b2eec536a0c060ec1bab4ab",
+    "xmlhttprequest": "*",
+    "request": "*",
+    "htmlparser": "*",
+    "jQuery": "^1.7.4"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  }
+}
