@@ -1,0 +1,46 @@
+cygwin下配置sshd服务 2011-04-19 17:13:17
+分类： WINDOWS
+1、以管理员身份登录
+
+2、给文件授权，以完成sshd 服务的安装
+$ chmod +r /etc/group
+$ chmod +r /etc/passwd
+$ chmod +rwx /var
+
+2、安装 sshd 服务
+$ ssh-host-config 
+
+Query: Should privilege separation be used? (yes/no) yes
+Query: (Say "no" if it is already installed as a service) (yes/no) yes
+Query: Enter the value of CYGWIN for the daemon: [ntsec] ntsec
+Query: Do you want to use a different name? (yes/no) no
+不同版本的sshd问题不一样，假如有其他提问自己看着办
+
+3、使用 windows 用户本地认证，即使用windows 的用户名和密码登录
+$ mkpasswd -l > /etc/passwd 
+$ mkgroup -l > /etc/group    
+
+4、启动
+$ cygrunsrv --start sshd
+停止
+$ cygrunsrv --stop sshd
+
+5、客户端登录(假设服务器地址为192.168.1.100)
+$ ssh administrator@192.168.1.100
+
+常见问题：
+
+1、Q: cygrunsrv -S sshd不能启动，报告
+cygrunsrv: Error starting a service: QueryServiceStatus: Win32 error 1062
+
+A: 很可能是/var/log的权限设置不正确。首先执行 mkpasswd 和 mkgroup 重新生成权限信息，再删除sshd服务，重新配置：
+
+$ mkpasswd -l > /etc/passwd
+$ mkgroup -l > /etc/group
+$ cygrunsrv -R sshd
+$ ssh-host-config -y
+$ cygrunsrv -S sshd
+
+2、Q: 客户端连接时提示服务器密钥(ssh-rsa)不一致
+A: 应该是客户端以前连接时记录的服务器密钥跟新的不一致：
+在客户端的cygwin的 /home/xxx(用户名，比如Administrator)/.ssh/known_hosts文件中找到服务器地址所对应的一行，删除掉，重新连接
