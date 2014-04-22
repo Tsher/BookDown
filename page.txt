@@ -13,3 +13,6 @@ http://www.cnblogs.com/ma6174/archive/2013/01/25/2875617.html
 
 npm指南
 http://blog.csdn.net/haidaochen/article/details/8546796
+
+
+如果没有敏锐的行业嗅觉 注定会被超越——使用360微信网页插件有感
