@@ -1,0 +1,7 @@
+http://www.2cto.com/database/201211/171425.html
+查询删除前的当前数据库所有约束
+ select * from information_schema.key_column_usage
+删除主键 alter table [tablename] drop constraint [key]
+添加主键 alter table [tablename] add constraint [key] primary key(字段1，字段2)
+添加非聚集索引的主键
+alter table [tablename] add constraint [key] primary key NONCLUSTERED(字段1，字段2)

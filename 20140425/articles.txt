@@ -1,0 +1,30 @@
+http://blogs.msdn.com/b/cdnstudents/archive/2014/02/04/visual-studio-tips-and-tricks-5-great-keyboard-shortcuts.aspx
+
+summary:
+
+1、Move code ALT+UP/DOWN
+2、Create Collapsible Region CTRL+M+H/CTRL+M+U
+3、Comment code block CTRL+K+C/CTRL+K+U
+4、Peek Definition ALT+F12 	
+5、ctrl - 与 ctrl shift - 前后标签页锚点快速定位
+6、Alt+鼠标  块区选择
+7、拆分
+
+- 正在验证 (错误)
+消息
+错误 0xc0202049: 数据流任务 1: 无法在只读列“RebateDetailID”中插入数据。
+ (SQL Server 导入和导出向导)
+ 
+错误 0xc0202045: 数据流任务 1: 验证列元数据失败。
+ (SQL Server 导入和导出向导)
+ 
+错误 0xc004706b: 数据流任务 1: “组件“目标 - AgentRebateDetailInfo”(37)”验证失败，返回的验证状态为“VS_ISBROKEN”。
+ (SQL Server 导入和导出向导)
+ 
+错误 0xc004700c: 数据流任务 1: 一个或多个组件未能通过验证。
+ (SQL Server 导入和导出向导)
+ 
+错误 0xc0024107: 数据流任务 1: 任务验证期间出错。
+ (SQL Server 导入和导出向导)
+ 
+

@@ -1,0 +1,8 @@
+$(function(){ })启动
+
+//获取单选框按钮值
+var ordoValue=$("#Radio1").is(":checked")?"男":"女";
+
+jquery中的addClass()方法将该样式轻松地添加到页面指定的元素中，而不用考虑浏览器兼容性的问题。
+
+toggleClass切换样式

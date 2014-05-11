@@ -1,0 +1,4 @@
+持续发布系统指南
+
+
+chmod +x post-receive
